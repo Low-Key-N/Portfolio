@@ -1,0 +1,576 @@
+/* =========================================
+   1. FONTS & IMPORTS
+   ========================================= */
+
+@font-face {
+  font-family: 'Eina'; 
+  src: url('Fonts/Eina01-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Eina'; 
+  src: url('Fonts/Eina01-Semibold.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Eina';
+  src: url('Fonts/Eina01-Bold.ttf');
+  font-weight: 700;
+}
+
+/* =========================================
+   2. GLOBAL STYLES
+   ========================================= */
+
+body{
+margin: 0; 
+padding: 0;
+font-family: 'Eina';
+}
+
+/* =========================================
+   3. NAVIGATION BAR
+   ========================================= */
+nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 100px;
+    box-sizing: border-box; 
+    transition: all 0.4s ease;
+    border-bottom: 1px solid transparent;
+}
+
+/* --- THE SCROLLED STATE (Dark & Blurry) --- */
+.nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(10px);           
+    -webkit-backdrop-filter: blur(10px);   
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    height: 80px; 
+}
+
+/* Keep your existing Hover effect */
+nav:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- LEFT SIDE (About + Portfolio) --- */
+.nav-left {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px; 
+}
+
+/* --- CENTER (The Logo) --- */
+.nav-center {
+  position: absolute;  
+  left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%;
+    pointer-events: none;
+}
+
+#logo {
+  pointer-events: auto;
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* --- RIGHT SIDE (Contact + Icons) --- */
+.nav-right {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 25px; 
+}
+
+/* --- SHARED STYLES --- */
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    filter: invert(100%);
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+#hero-section {
+height: 90vh;
+background-image: url("keyon-park.png");
+background-size: cover;
+background-position: center top;
+color:white;
+font-weight: 600;
+}
+
+.social-icon{
+width:40px;
+height:40px;
+filter: invert(100%);
+display: block;
+transition: filter 0.3s ease;
+}
+nav:hover .social-icon {
+    filter: invert(100%);
+}
+
+#logo {
+font-size: 40px;
+line-height: 80px;
+}
+nav:hover #logo {
+color: white;
+}
+
+.hero-headline {
+    font-size: 74px;
+    margin-top: 0; 
+    padding-top: 350px; 
+    margin-left: 50%;
+    font-weight: 590;
+    margin-bottom: 0px;
+    line-height: .9;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle p{ 
+    font-size:38px;
+    margin-left: 50.1%;
+    margin-bottom: 40px;
+ margin-top:0px;
+  margin-bottom:0px;
+    font-weight:530;
+    word-spacing:2px;
+text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-details p{
+    font-size: 30px; 
+    line-height: 0; 
+    margin-left: 50.2%;
+    margin-top:14px;
+        line-height:0.3;
+        word-spacing:2px;
+           font-weight:550;
+           text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-resume{
+  position: relative;
+display: inline-block;
+margin-left: 50.2%;
+border: none;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.164);
+padding: 16px 20px 16px 70px;
+transition: background-color 0.2s;
+}
+.hero-resume:hover {
+    background-color: rgba(0, 0, 0, 0.301);
+border: none;
+}
+.btn-icon {
+    position: absolute;  
+    top: 50%;            
+    transform: translateY(-50%);
+    left: 15px;          
+    width: 40px;         
+    height: 40px;
+
+}
+
+/* =========================================
+   5. ANIMATIONS (Typewriter & Cursor)
+   ========================================= */
+
+.cursor {
+    display: inline-block;
+    font-weight: 100;
+    color: white;
+    animation: blink 2s infinite;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* =========================================
+   6. PROJECTS SECTION (Selected Works)
+   ========================================= */
+
+#content-section {
+    background-color: white; 
+    color: black;           
+    padding: 0px 60px 100px 60px;      
+    min-height: 50vh;  
+    overflow: hidden; 
+}
+
+.content-headline p {
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 15px;    
+    margin-bottom: 20px; 
+    font-variant-ligatures: none; 
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- CAROUSEL WRAPPER --- */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    
+    margin-left: 0; 
+}
+
+/* THE TRACK */
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    gap: 20px; 
+}
+
+/* --- THE CARD STYLE --- */
+.project-card {
+    min-width: calc(100% - 20px); 
+    height: 100%;
+    display: flex;       
+    background-color: #f9f9f9;
+    border-radius: 20px; 
+    overflow: hidden;    /* Keeps the zoom inside the rounded corners */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
+}
+
+/* --- THE IMAGE WRAPPER (The Mask) --- */
+.card-image-wrapper {
+  
+    flex: 0.9; 
+    
+    position: relative;
+    overflow: hidden; 
+    height: 100%;
+}
+
+/* --- THE ACTUAL IMAGE  --- */
+.card-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease; /* Smooth slow zoom */
+}
+
+/* --- HOVER EFFECT --- */
+.project-card:hover .card-bg {
+    transform: scale(1.02); /* Zooms in 5% */
+}
+
+
+/* RIGHT SIDE: TEXT */
+.card-details {
+    flex: 1;             
+    padding: 40px 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-align: left;
+}
+
+.card-details h3 {
+    font-size: 32px;   
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.tech-stack {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 18px;     
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.view-project {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    width: fit-content;
+    padding-bottom: 2px;
+}
+
+/* CARD 1: Portfolio Website */
+.project-card:nth-child(1) .card-bg {
+    background-image: url('portfolio-preview.png'); 
+    background-color: #222; /* Fallback color */
+}
+
+/* CARD 2: Example Project */
+.project-card:nth-child(2) .card-bg {
+    background-image: url('your-image2.jpg'); /* Replace with actual file name */
+    background-color: #444; 
+}
+
+/* CARD 3: Example Project */
+.project-card:nth-child(3) .card-bg {
+    background-image: url('your-image3.jpg'); /* Replace with actual file name */
+    background-color: #666; 
+}
+
+/* --- BUTTONS --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+.carousel-btn:hover {
+    background-color: #f4f4f4;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.btn-left { left: -25px; }
+.btn-right { right: 10px; } 
+
+/* --- DOTS NAVIGATION --- */
+.carousel-dots {
+    position: absolute;
+    bottom: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+    width: auto;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd; 
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #333; 
+    transform: scale(1.3);
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+.slim-footer {
+    background-color: #ffffff; 
+    padding: 30px 40px;        
+    border-top: 1px solid #f0f0f0;
+}
+
+.footer-container {
+  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    margin: 0 auto;
+}
+
+/* --- LEFT SIDE (Takes up equal space) --- */
+.footer-left {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.footer-logo-text {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: #111;
+}
+
+/* --- CENTER NAV (Dead Center) --- */
+.footer-nav {
+  position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    background: transparent !important;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #555; 
+    font-weight: 600;
+    font-size: 16px;
+    transition: opacity 0.3s ease; 
+    background: none !important; 
+    width: 110px;       
+    text-align: center;
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    opacity: 0.5; 
+    background: none !important; 
+}
+
+/* --- RIGHT SIDE (Takes up equal space) --- */
+.footer-right {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-right a:hover {
+    opacity: 0.5; 
+}
+
+/* RESPONSIVE: Stack on Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .footer-left, .footer-nav, .footer-right {
+        flex: auto;
+        justify-content: center;
+    }
+}
+
+/*
+----------------------------------------------------------------
+.philosophy-container {
+    width: 100%;
+    max-width: 100%; 
+    margin: -20px 0 60px 0; 
+    text-align: center;       
+}
+
+
+.philosophy-label {
+    display: flex;             
+    align-items: center;       
+    justify-content: center;
+    width: 100%;               
+    font-size: 14px;           
+    font-weight: 800;          
+    color: #999;               
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;       
+}
+
+ GREY LINES 
+.philosophy-label::before,
+.philosophy-label::after {
+    content: "";               
+    height: 2px;               
+    background-color: #ddd;    
+    flex-grow: 1;              
+}
+
+.philosophy-label::before { margin-right: 20px; }
+.philosophy-label::after { margin-left: 20px; }
+
+
+.philosophy-text {
+    font-weight: 600;          
+    font-size: 28px;      
+    line-height: 1.3;
+    color: #111;
+    margin: 0;
+    word-spacing: 2px;
+     Padding keeps it readable on wide screens 
+    padding: 0 5%;
+    display: inline-block;
+    max-width: 1100px; 
+}  */
