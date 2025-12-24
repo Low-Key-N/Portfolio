@@ -4,20 +4,21 @@
 
 @font-face {
   font-family: 'Eina'; 
-  src: url('Fonts/Eina01-Regular.ttf');
+  src: url('https://low-key-n.github.io/Portfolio/Fonts/Eina01-Regular.ttf');
   font-weight: 400;
 }
+
 @font-face {
   font-family: 'Eina'; 
-  src: url('Fonts/Eina01-SemiBold.ttf');
+  src: url('https://low-key-n.github.io/Portfolio/Fonts/Eina01-SemiBold.ttf');
   font-weight: 600;
 }
+
 @font-face {
   font-family: 'Eina';
-  src: url('Fonts/Eina01-Bold.ttf');
+  src: url('https://low-key-n.github.io/Portfolio/Fonts/Eina01-Bold.ttf');
   font-weight: 700;
 }
-
 /* =========================================
    2. GLOBAL STYLES
    ========================================= */
