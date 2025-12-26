@@ -524,34 +524,59 @@ border: none;
 /* =========================================
    TABLET & MOBILE REPAIR KIT
    ========================================= */
-   @media (max-width: 1024px) {
+@media (max-width: 1400px) {
+
+  /* 1. Center the background image */
   #hero-section {
     height: auto;
-    min-height: 720px;
-    background-position: center 15%;
+    min-height: 80vh;          /* Gives it enough height without being too tall */
+    background-position: center center;
   }
 
+  /* 2. Reset the Container */
   .hero-content {
-    padding-top: 120px;
-    padding-right: 30px;
+    margin-left: 0 !important; /* Overrides desktop margin */
+    padding-top: 150px;
+    padding-right: 0;          /* Remove side padding */
+    width: 100%;               /* Use full width */
+    text-align: center;        /* Center everything */
   }
 
+  /* 3. Fix the Headline Location */
   .hero-headline {
-    font-size: 36px;
-    line-height: 1.15;
+    font-size: 48px;           /* Good size for iPad */
+    line-height: 1.2;
+    margin-left: 0 !important; /* CRITICAL: Brings text back to center */
+    margin-bottom: 10px;
+    padding-top: 0;            /* Remove extra padding */
+    width: 100%;
   }
 
+  /* 4. Fix Subtitle Location */
   .hero-subtitle p {
-    font-size: 22px;
+    font-size: 26px;
+    margin-left: 0 !important; /* CRITICAL: Brings text back to center */
+    text-align: center;
+    width: 100%;
   }
 
+  /* 5. Fix Details Location */
   .hero-details p {
-    font-size: 17px;
-    line-height: 1.35;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-left: 0 !important; /* CRITICAL: Brings text back to center */
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
   }
 
+  /* 6. Center the Resume Button */
   .hero-resume {
-    margin-top: 24px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;            /* Needed for margin auto to work */
+    width: fit-content;
+    margin-top: 40px;
   }
 }
 
