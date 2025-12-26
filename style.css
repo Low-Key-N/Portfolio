@@ -529,29 +529,43 @@ border: none;
     }
 }
 
-/* TABLET & MOBILE TWEAKS */
+/* =========================================
+   TABLET & MOBILE REPAIR KIT
+   ========================================= */
 @media (max-width: 1024px) {
-    
-    /* 1. Reset the text position so it fits */
-    .hero-headline, 
-    .hero-subtitle p, 
-    .hero-details p,
-    .hero-resume {
-        margin-left: 40px; 
-        margin-right: 40px;
-        text-align: left; 
-        max-width: 90%;
+
+    /* 1. Center the background image */
+    #hero-section {
+        background-position: center center;
     }
 
-    /* 2. Shrink the big text a little */
+    /* 2. Fix the Headline: smaller, readable, and moved up */
     .hero-headline {
-        font-size: 50px;
-        padding-top: 200px; /* Adjust spacing */
+        font-size: 42px;        /* Smaller than 74px */
+        line-height: 1.2;       /* Fixes the "wrapping into itself" issue */
+        margin-left: 0;         /* Removes the 50% shift so it uses full width */
+        padding-top: 120px;     /* Moves text UP so there is room at the bottom */
+        text-align: center;     /* Centers text for tablet look */
+        padding-right: 20px;    /* Safety margins */
+        padding-left: 20px;
     }
 
-    /* 3. prevent horizontal scrolling */
-    body {
-        overflow-x: hidden;
+    /* 3. Fix the Subtitles: Give them room to breathe */
+    .hero-subtitle p, 
+    .hero-details p {
+        font-size: 22px;        /* Readable size */
+        margin-left: 0;         /* Center it */
+        line-height: 1.4;       /* No more squishing */
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* 4. Fix the Button: Bring it back on screen */
+    .hero-resume {
+        margin-left: 0;         /* Center the button */
+        display: block;         /* Allows us to use margin auto to center */
+        width: fit-content;     /* Button fits its text */
+        margin: 30px auto;      /* 30px spacing on top, centered horizontally */
     }
 }
 
