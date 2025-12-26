@@ -522,64 +522,70 @@ border: none;
 }
 
 /* =========================================
-   TABLET & MOBILE REPAIR KIT
+   TABLET & IPAD LANDSCAPE FIX
    ========================================= */
 @media (max-width: 1400px) {
 
-  /* 1. Center the background image */
+  /* 1. Background: Keep the face visible on the left */
   #hero-section {
-    height: auto;
-    min-height: 80vh;          /* Gives it enough height without being too tall */
-    background-position: center center;
+    background-position: left center; /* Anchors image to the left */
   }
 
-  /* 2. Reset the Container */
-  .hero-content {
-    margin-left: 0 !important; /* Overrides desktop margin */
-    padding-top: 150px;
-    padding-right: 0;          /* Remove side padding */
-    width: 100%;               /* Use full width */
-    text-align: center;        /* Center everything */
-  }
-
-  /* 3. Fix the Headline Location */
+  /* 2. Headline: Keep it on the RIGHT, but make it smaller */
   .hero-headline {
-    font-size: 48px;           /* Good size for iPad */
-    line-height: 1.2;
-    margin-left: 0 !important; /* CRITICAL: Brings text back to center */
-    margin-bottom: 10px;
-    padding-top: 0;            /* Remove extra padding */
-    width: 100%;
+    font-size: 42px !important;       
+    margin-left: 52% !important;     
+    margin-right: 20px;             
+    text-align: left;                 
+    padding-top: 220px;               
+    line-height: 1.1 !important;
+    width: auto;
   }
 
-  /* 4. Fix Subtitle Location */
+  /* 3. Subtitles: Align with the headline on the RIGHT */
   .hero-subtitle p {
-    font-size: 26px;
-    margin-left: 0 !important; /* CRITICAL: Brings text back to center */
-    text-align: center;
-    width: 100%;
+    font-size: 24px !important;
+    margin-left: 52% !important;      
+    margin-bottom: 20px;
+    text-align: left;
   }
 
-  /* 5. Fix Details Location */
+  /* 4. Details: Align with the headline on the RIGHT */
   .hero-details p {
-    font-size: 20px;
+    font-size: 18px !important;
     line-height: 1.4;
-    margin-left: 0 !important; /* CRITICAL: Brings text back to center */
-    text-align: center;
-    width: 100%;
-    margin-top: 15px;
+    margin-left: 52% !important;
+    margin-top: 10px;
+    text-align: left;
   }
 
-  /* 6. Center the Resume Button */
+  /* 5. Resume Button: Align on the RIGHT */
   .hero-resume {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block;            /* Needed for margin auto to work */
-    width: fit-content;
-    margin-top: 40px;
+    margin-left: 52% !important;
+    margin-top: 30px;
+    display: inline-block;
   }
 }
 
+/* =========================================
+   MOBILE PHONES (Vertical only)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-headline, 
+    .hero-subtitle p, 
+    .hero-details p, 
+    .hero-resume {
+        margin-left: 0 !important;
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    
+    .hero-headline {
+        font-size: 36px !important;
+        padding-top: 120px;
+    }
+}
 
 /* RESPONSIVE: Stack on Mobile */
 @media (max-width: 768px) {
