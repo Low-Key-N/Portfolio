@@ -532,7 +532,7 @@ border: none;
 /* =========================================
    TABLET & MOBILE REPAIR KIT
    ========================================= */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
 
     /* 1. Center the background image */
     #hero-section {
