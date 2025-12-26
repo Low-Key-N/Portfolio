@@ -524,33 +524,37 @@ border: none;
 /* =========================================
    TABLET & MOBILE REPAIR KIT
    ========================================= */
-@media (max-width: 1024px) {
+   @media (max-width: 1024px) {
+  #hero-section {
+    height: auto;
+    min-height: 720px;
+    background-position: center 15%;
+  }
+
   .hero-content {
-    margin-left: auto;
-    padding-top: 220px;
-    padding-right: 40px;
-    text-align: left;
+    padding-top: 120px;
+    padding-right: 30px;
   }
 
   .hero-headline {
-    font-size: 42px;
-    line-height: 1.2;
+    font-size: 36px;
+    line-height: 1.15;
   }
 
   .hero-subtitle p {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .hero-details p {
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.35;
   }
 
   .hero-resume {
-    margin-top: 30px;
-    margin-left: 0;
+    margin-top: 24px;
   }
 }
+
 
 /* RESPONSIVE: Stack on Mobile */
 @media (max-width: 768px) {
