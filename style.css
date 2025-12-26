@@ -523,7 +523,55 @@ border: none;
 /* =========================================
    TABLET & IPAD LANDSCAPE FIX
    ========================================= */
+@media (max-width: 1366px) {
 
+  /* 1. UNLOCK THE CONTAINER (Crucial Step) */
+  .hero-content {
+    max-width: 100% !important;   /* Breaks the global 900px limit */
+    width: 100% !important;       /* Uses full screen width */
+    margin: 0 !important;         /* Resets margins */
+    padding-right: 40px;          /* Adds a safety gap on the right edge */
+    box-sizing: border-box;       /* Ensures padding doesn't break layout */
+  }
+
+  /* 2. HEADLINE: Pushed Right & Smaller */
+  .hero-headline {
+    font-size: 32px !important;    /* Much smaller than desktop */
+    margin-left: 55% !important;   /* Starts 55% across the screen */
+    text-align: left;              /* Aligns text to the left */
+    line-height: 1.2;
+    width: auto;
+    padding-top: 150px;            /* Adjusts vertical height */
+  }
+
+  /* 3. SUBTITLE: Pushed Right & Smaller */
+  .hero-subtitle p {
+    font-size: 20px !important;
+    margin-left: 55% !important;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  /* 4. DETAILS: Pushed Right & Smaller */
+  .hero-details p {
+    font-size: 16px !important;
+    margin-left: 55% !important;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  /* 5. RESUME BUTTON: Pushed Right */
+  .hero-resume {
+    margin-left: 55% !important;
+    margin-top: 30px;
+    display: inline-block;
+  }
+  
+  /* OPTIONAL: Adjust background image if face is still covered */
+  #hero-section {
+      background-position: 20% center; 
+  }
+}
 
 /* RESPONSIVE: Stack on Mobile */
 @media (max-width: 768px) {
