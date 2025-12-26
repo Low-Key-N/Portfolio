@@ -529,6 +529,32 @@ border: none;
     }
 }
 
+/* TABLET & MOBILE TWEAKS */
+@media (max-width: 1024px) {
+    
+    /* 1. Reset the text position so it fits */
+    .hero-headline, 
+    .hero-subtitle p, 
+    .hero-details p,
+    .hero-resume {
+        margin-left: 40px; 
+        margin-right: 40px;
+        text-align: left; 
+        max-width: 90%;
+    }
+
+    /* 2. Shrink the big text a little */
+    .hero-headline {
+        font-size: 50px;
+        padding-top: 200px; /* Adjust spacing */
+    }
+
+    /* 3. prevent horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+}
+
 /*
 ----------------------------------------------------------------
 .philosophy-container {
