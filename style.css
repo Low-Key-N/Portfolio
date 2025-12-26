@@ -137,7 +137,15 @@ nav a:hover {
 /* =========================================
    4. HERO SECTION
    ========================================= */
-#hero-section {
+
+   .hero-content {
+  max-width: 900px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 50px;
+}
+
+   #hero-section {
 height: 90vh;
 background-image: url("keyon-park.png");
 background-size: cover;
@@ -169,7 +177,6 @@ color: white;
     font-size: 74px;
     margin-top: 0; 
     padding-top: 350px; 
-    margin-left: 50%;
     font-weight: 590;
     margin-bottom: 0px;
     line-height: .9;
@@ -178,7 +185,6 @@ color: white;
 
 .hero-subtitle p{ 
     font-size:38px;
-    margin-left: 50.1%;
     margin-bottom: 40px;
  margin-top:0px;
   margin-bottom:0px;
@@ -190,7 +196,6 @@ text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 .hero-details p{
     font-size: 30px; 
     line-height: 0; 
-    margin-left: 50.2%;
     margin-top:14px;
         line-height:0.3;
         word-spacing:2px;
@@ -201,7 +206,7 @@ text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 .hero-resume{
   position: relative;
 display: inline-block;
-margin-left: 50.2%;
+margin-left: 0;
 border: none;
     font-weight: 400;
     font-size: 20px;
@@ -516,6 +521,37 @@ border: none;
     opacity: 0.5; 
 }
 
+/* =========================================
+   TABLET & MOBILE REPAIR KIT
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero-content {
+    margin-left: auto;
+    padding-top: 220px;
+    padding-right: 40px;
+    text-align: left;
+  }
+
+  .hero-headline {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle p {
+    font-size: 24px;
+  }
+
+  .hero-details p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .hero-resume {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+}
+
 /* RESPONSIVE: Stack on Mobile */
 @media (max-width: 768px) {
     .footer-container {
@@ -526,46 +562,6 @@ border: none;
     .footer-left, .footer-nav, .footer-right {
         flex: auto;
         justify-content: center;
-    }
-}
-
-/* =========================================
-   TABLET & MOBILE REPAIR KIT
-   ========================================= */
-@media (max-width: 1400px) {
-
-    /* 1. Center the background image */
-    #hero-section {
-        background-position: center center;
-    }
-
-    /* 2. Fix the Headline: smaller, readable, and moved up */
-    .hero-headline {
-        font-size: 42px;        /* Smaller than 74px */
-        line-height: 1.2;       /* Fixes the "wrapping into itself" issue */
-        margin-left: 0;         /* Removes the 50% shift so it uses full width */
-        padding-top: 120px;     /* Moves text UP so there is room at the bottom */
-        text-align: center;     /* Centers text for tablet look */
-        padding-right: 20px;    /* Safety margins */
-        padding-left: 20px;
-    }
-
-    /* 3. Fix the Subtitles: Give them room to breathe */
-    .hero-subtitle p, 
-    .hero-details p {
-        font-size: 22px;        /* Readable size */
-        margin-left: 0;         /* Center it */
-        line-height: 1.4;       /* No more squishing */
-        text-align: center;
-        padding: 0 20px;
-    }
-
-    /* 4. Fix the Button: Bring it back on screen */
-    .hero-resume {
-        margin-left: 0;         /* Center the button */
-        display: block;         /* Allows us to use margin auto to center */
-        width: fit-content;     /* Button fits its text */
-        margin: 30px auto;      /* 30px spacing on top, centered horizontally */
     }
 }
 
