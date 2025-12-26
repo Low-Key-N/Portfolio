@@ -525,51 +525,61 @@ border: none;
    ========================================= */
 @media (max-width: 1366px) {
 
-  /* 1. UNLOCK THE CONTAINER (Crucial Step) */
+  /* 1. CONTAINER: Unlock width & pull everything UP */
   .hero-content {
-    max-width: 100% !important;   /* Breaks the global 900px limit */
-    width: 100% !important;       /* Uses full screen width */
-    margin: 0 !important;         /* Resets margins */
-    padding-right: 40px;          /* Adds a safety gap on the right edge */
-    box-sizing: border-box;       /* Ensures padding doesn't break layout */
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-right: 40px;
+    padding-top: 0 !important;     /* Reset container padding */
   }
 
-  /* 2. HEADLINE: Pushed Right & Smaller */
+  /* 2. HEADLINE: Moved UP & Tighter spacing */
   .hero-headline {
-    font-size: 32px !important;    /* Much smaller than desktop */
-    margin-left: 55% !important;   /* Starts 55% across the screen */
-    text-align: left;              /* Aligns text to the left */
-    line-height: 1.2;
+    font-size: 32px !important;
+    margin-left: 55% !important;
+    text-align: left;
     width: auto;
-    padding-top: 150px;            /* Adjusts vertical height */
+    
+    padding-top: 100px;            /* Moved UP (was 150px) */
+    margin-bottom: 5px;            /* Tighter gap below headline */
+    line-height: 1.1;
   }
 
-  /* 3. SUBTITLE: Pushed Right & Smaller */
+  /* 3. SUBTITLE: Tighter spacing */
   .hero-subtitle p {
     font-size: 20px !important;
     margin-left: 55% !important;
     text-align: left;
-    margin-bottom: 10px;
+    
+    margin-bottom: 5px;            /* Tighter gap below subtitle */
+    margin-top: 0;
   }
 
-  /* 4. DETAILS: Pushed Right & Smaller */
+  /* 4. DETAILS: Tighter spacing */
   .hero-details p {
     font-size: 16px !important;
     margin-left: 55% !important;
     text-align: left;
-    line-height: 1.4;
+    line-height: 1.3;              /* Slightly tighter line height */
+    margin-top: 5px;               /* Closer to the text above it */
   }
 
-  /* 5. RESUME BUTTON: Pushed Right */
+  /* 5. RESUME BUTTON: Downsized & Compact */
   .hero-resume {
     margin-left: 55% !important;
-    margin-top: 30px;
     display: inline-block;
+    
+    margin-top: 20px;              /* Closer to text */
+    font-size: 16px !important;    /* Smaller font (was 20px) */
+    padding: 12px 15px 12px 60px;  /* Smaller button padding */
   }
-  
-  /* OPTIONAL: Adjust background image if face is still covered */
-  #hero-section {
-      background-position: 20% center; 
+
+  /* Resize the button icon to match */
+  .btn-icon {
+      width: 30px;                 /* Smaller icon */
+      height: 30px;
+      left: 15px;
   }
 }
 
