@@ -524,56 +524,37 @@ border: none;
 /* =========================================
    TABLET & IPAD LANDSCAPE FIX
    ========================================= */
-@media (max-width: 1400px) {
-
-  /* 1. Unlock the Container (CRITICAL FIX) */
-  .hero-content {
-    max-width: 100% !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  /* 2. Background: Keep the face visible on the left */
+@media (max-width: 1024px) {
   #hero-section {
-    background-position: 15% center; 
+    height: auto;
+    min-height: 720px;
+    background-position: center 15%;
   }
 
-  /* 3. Headline: Push to the Right */
+  .hero-content {
+    padding-top: 120px;
+    padding-right: 30px;
+  }
+
   .hero-headline {
-    font-size: 40px !important;       
-    margin-left: 55% !important;      
-    margin-right: 30px;               
-    text-align: left;                 
-    padding-top: 180px;           
-    line-height: 1.1 !important;
-    width: auto;
+    font-size: 36px;
+    line-height: 1.15;
   }
 
-  /* 4. Subtitles: Align with Headline */
   .hero-subtitle p {
-    font-size: 24px !important;
-    margin-left: 55% !important;      
-    margin-bottom: 20px;
-    text-align: left;
+    font-size: 22px;
   }
 
-  /* 5. Details: Align with Headline */
   .hero-details p {
-    font-size: 18px !important;
-    line-height: 1.4;
-    margin-left: 55% !important;
-    margin-top: 10px;
-    text-align: left;
+    font-size: 17px;
+    line-height: 1.35;
   }
 
-  /* 6. Resume Button: Align with Headline */
   .hero-resume {
-    margin-left: 55% !important;
-    margin-top: 30px;
-    display: inline-block;
+    margin-top: 24px;
   }
 }
+
 
 /* RESPONSIVE: Stack on Mobile */
 @media (max-width: 768px) {
