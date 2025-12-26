@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // START THE TYPEWRITER (This was missing!)
+        // START THE TYPEWRITER 
         setTimeout(typeFirstWord, 1000); 
     }
 
