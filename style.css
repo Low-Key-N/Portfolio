@@ -525,60 +525,57 @@ border: none;
    ========================================= */
 @media (max-width: 1366px) {
 
-  /* 1. CONTAINER: Unlock width & pull everything UP */
+  /* 1. CONTAINER: Unlock width */
   .hero-content {
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
-    padding-right: 40px;
-    padding-top: 0 !important;     /* Reset container padding */
+    padding-right: 30px;
+    padding-top: 0 !important;
   }
 
-  /* 2. HEADLINE: Moved UP & Tighter spacing */
+  /* 2. HEADLINE: Bigger, Lower, & Shifted Left */
   .hero-headline {
-    font-size: 32px !important;
-    margin-left: 55% !important;
+    font-size: 38px !important;    /* BUMPED UP (was 32px) */
+    margin-left: 50% !important;   /* SHIFTED LEFT (was 55%) */
     text-align: left;
     width: auto;
     
-    padding-top: 100px;            /* Moved UP (was 150px) */
-    margin-bottom: 5px;            /* Tighter gap below headline */
+    padding-top: 140px;            /* MOVED DOWN (was 100px) */
+    margin-bottom: 10px;           
     line-height: 1.1;
   }
 
-  /* 3. SUBTITLE: Tighter spacing */
+  /* 3. SUBTITLE: Bigger & Shifted Left */
   .hero-subtitle p {
-    font-size: 20px !important;
-    margin-left: 55% !important;
+    font-size: 22px !important;    /* BUMPED UP (was 20px) */
+    margin-left: 50% !important;   /* SHIFTED LEFT */
     text-align: left;
-    
-    margin-bottom: 5px;            /* Tighter gap below subtitle */
-    margin-top: 0;
+    margin-bottom: 10px;
   }
 
-  /* 4. DETAILS: Tighter spacing */
+  /* 4. DETAILS: Bigger & Shifted Left */
   .hero-details p {
-    font-size: 16px !important;
-    margin-left: 55% !important;
+    font-size: 18px !important;    /* BUMPED UP (was 16px) */
+    margin-left: 50% !important;   /* SHIFTED LEFT */
     text-align: left;
-    line-height: 1.3;              /* Slightly tighter line height */
-    margin-top: 5px;               /* Closer to the text above it */
+    line-height: 1.4;
+    margin-top: 5px;
   }
 
-  /* 5. RESUME BUTTON: Downsized & Compact */
+  /* 5. RESUME BUTTON: Shifted Left */
   .hero-resume {
-    margin-left: 55% !important;
+    margin-left: 50% !important;   /* SHIFTED LEFT */
     display: inline-block;
     
-    margin-top: 20px;              /* Closer to text */
-    font-size: 16px !important;    /* Smaller font (was 20px) */
-    padding: 12px 15px 12px 60px;  /* Smaller button padding */
+    margin-top: 25px;              
+    font-size: 18px !important;    /* Sized up slightly to match text */
+    padding: 14px 20px 14px 65px;  /* Adjusted padding */
   }
 
-  /* Resize the button icon to match */
   .btn-icon {
-      width: 30px;                 /* Smaller icon */
-      height: 30px;
+      width: 35px;                 /* Sized up icon slightly */
+      height: 35px;
       left: 15px;
   }
 }
