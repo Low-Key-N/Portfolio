@@ -600,6 +600,20 @@ border: none;
   }
 }
 
+/* RESPONSIVE: Stack on Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .footer-left, .footer-nav, .footer-right {
+        flex: auto;
+        justify-content: center;
+    }
+}
+
+
 /*
 ----------------------------------------------------------------
 .philosophy-container {
