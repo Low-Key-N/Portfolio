@@ -598,27 +598,25 @@ border: none;
       height: 38px;
       left: 15px;
   }
-/* 1. CONTAINER: Taller to fit dots at the bottom */
+/* 1. CONTAINER: Taller to create space at the bottom */
 .carousel-container {
-    height: 450px !important;       /* Increased from 420px to fit dots */
+    height: 480px !important;       /* Increased to make room for dots */
     position: relative;             /* Anchors the dots */
-    padding-bottom: 40px;           /* Dedicates space for dots */
+    margin-bottom: 20px;
 }
 
-/* 2. TRACK: Enable Swipe */
+/* 2. TRACK: Swipe Enabled */
 .carousel-track {
     display: flex;
-    overflow-x: auto !important;       /* Enables swipe */
-    scroll-snap-type: x mandatory;     /* Snaps to cards */
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     
     width: 100% !important;
+    height: 90% !important;         /* LEAVE SPACE AT BOTTOM for dots */
     gap: 15px !important;
     
-    /* Disable Desktop Logic */
     transform: none !important; 
-    
-    /* Hide Scrollbar */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -626,40 +624,51 @@ border: none;
     display: none;
 }
 
-/* 3. CARDS: Fits nicely */
+/* 3. CARDS: Fit inside the 90% track */
 .project-card {
     min-width: 85% !important;
     max-width: 85% !important;
-    height: 100% !important;
+    height: 100% !important;        /* Fills the 90% track height */
     scroll-snap-align: center;
     margin: 0 auto !important;
     border-radius: 15px !important;
 }
 
-/* 4. DOTS: Pushed Down & Centered */
+/* 4. DOTS: Centered & Lowered into the gap */
 .carousel-dots {
     display: flex !important;
-    justify-content: center;
-    width: 100%;
+    justify-content: center;        /* Flex centering */
+    align-items: center;
     
     position: absolute !important;
-    bottom: 5px !important;            /* Puts them at the very bottom */
-    left: 0 !important;
-    z-index: 10;
+    bottom: 5px !important;         /* Sits at the very bottom */
+    left: 50% !important;           /* Pushes to middle */
+    transform: translateX(-50%) !important; /* PERFECTLY centers it */
+    
+    width: auto !important;         /* Let it shrink to fit dots */
+    z-index: 20;
+    padding: 0;
+    margin: 0;
 }
 
-/* Optional: Make dots slightly larger for touch */
+/* Optional: Ensure dots are visible */
 .dot {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+    background-color: #ccc;         /* Make sure they are visible */
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.active {
+    background-color: #333;         /* Darker active color */
 }
 
-/* 5. BUTTONS: Visible & Centered */
+/* 5. BUTTONS: Vertically Centered */
 .carousel-btn {
     display: flex !important;
-    z-index: 20;
-    top: 45% !important;               /* Vertically centered */
+    z-index: 30;
+    top: 45% !important;            /* Centered relative to the image */
 }
 }
 
