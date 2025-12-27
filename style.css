@@ -525,69 +525,75 @@ border: none;
    ========================================= */
 @media (max-width: 1366px) {
 
-  /* 0. SAFETY NET: This kills the side-scrolling white space */
+  /* 0. SAFETY NET: Kills the side scrolling completely */
   html, body {
     overflow-x: hidden !important;
+    width: 100% !important;
   }
 
-  /* 1. CONTAINER: Fixed Math & Positioning */
+  /* 1. CONTAINER: Fixes the invisible box logic */
   .hero-content {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     
-    /* FIX: This tells the browser to include padding INSIDE the width */
+    /* CRITICAL: Includes padding in width calculation so it doesn't expand */
     box-sizing: border-box !important; 
     
-    padding-right: 30px;
     padding-top: 130px; 
+    padding-right: 20px; /* Small safety gap on the right */
   }
 
   /* 2. BACKGROUND & HEIGHT */
   #hero-section {
-    height: 75vh !important;       /* Peaking effect */
+    height: 75vh !important;       
     min-height: 600px;             
     background-position: 20% center; 
   }
 
-  /* 3. HEADLINE: Moved Left (48%) */
+  /* 3. HEADLINE: Moved Left (42%) */
   .hero-headline {
     font-size: 44px !important;    
-    margin-left: 48% !important;   /* SHIFTED LEFT (Was 53%) */
+    margin-left: 42% !important;   /* MOVED LEFT MORE (Was 48%) */
     text-align: left;
     width: auto;
+    
+    /* PREVENTS OVERFLOW: Forces text to stay on screen */
+    max-width: 58%;                
     
     margin-bottom: 5px;           
     line-height: 1.1;
   }
 
-  /* 4. SUBTITLE: Moved Left (48%) */
+  /* 4. SUBTITLE: Moved Left (42%) */
   .hero-subtitle p {
     font-size: 26px !important;    
-    margin-left: 48% !important;   /* SHIFTED LEFT */
+    margin-left: 42% !important;   /* Aligned with Headline */
     text-align: left;
-    margin-bottom: 5px;           
+    margin-bottom: 5px;
+    max-width: 58%;
   }
 
-  /* 5. DETAILS: Moved Left (48%) & Tight Spacing */
+  /* 5. DETAILS: Moved Left (42%) & Tight Spacing */
   .hero-details p {
     font-size: 20px !important;    
-    margin-left: 48% !important;   /* SHIFTED LEFT */
+    margin-left: 42% !important;   /* Aligned with Headline */
     text-align: left;
+    max-width: 58%;
     
-    /* Tight vertical spacing */
+    /* Maximum Tightness */
     line-height: 1.2 !important;              
     margin-top: 0 !important;      
     margin-bottom: 0 !important;   
     display: block;                
   }
 
-  /* 6. RESUME BUTTON: Moved Left (48%) */
+  /* 6. RESUME BUTTON: Moved Left & Up Close */
   .hero-resume {
-    margin-left: 48% !important;   /* SHIFTED LEFT */
+    margin-left: 42% !important;   /* Aligned with Headline */
     display: inline-block;
     
-    margin-top: 15px !important;   
+    margin-top: 10px !important;   /* VERY CLOSE (Was 15px) */
     font-size: 20px !important;    
     padding: 16px 20px 16px 65px;  
   }
