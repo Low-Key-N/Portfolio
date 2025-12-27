@@ -525,35 +525,35 @@ border: none;
    ========================================= */
 @media (max-width: 1366px) {
 
-  /* 0. SAFETY NET: This kills the side-scrolling white space */
+  /* 0. SAFETY NET: Keep this to prevent scrolling */
   html, body {
     overflow-x: hidden !important;
   }
 
-  /* 1. CONTAINER: Fixed Math & Positioning */
+  /* 1. CONTAINER: Moves Text DOWN */
   .hero-content {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     
-    /* FIX: This tells the browser to include padding INSIDE the width */
+    /* Box Sizing keeps padding inside width */
     box-sizing: border-box !important; 
     
     padding-right: 30px;
-    padding-top: 130px; 
+    padding-top: 150px;            /* MOVED DOWN (Was 130px) */
   }
 
-  /* 2. BACKGROUND & HEIGHT */
+  /* 2. BACKGROUND */
   #hero-section {
-    height: 75vh !important;       /* Peaking effect */
+    height: 75vh !important;       
     min-height: 600px;             
     background-position: 20% center; 
   }
 
-  /* 3. HEADLINE: Moved Left (48%) */
+  /* 3. HEADLINE: Moved Right (50%) */
   .hero-headline {
     font-size: 44px !important;    
-    margin-left: 48% !important;   /* SHIFTED LEFT (Was 53%) */
+    margin-left: 50% !important;   /* SMIDGE RIGHT (Was 48%) */
     text-align: left;
     width: auto;
     
@@ -561,18 +561,18 @@ border: none;
     line-height: 1.1;
   }
 
-  /* 4. SUBTITLE: Moved Left (48%) */
+  /* 4. SUBTITLE: Moved Right (50%) */
   .hero-subtitle p {
     font-size: 26px !important;    
-    margin-left: 48% !important;   /* SHIFTED LEFT */
+    margin-left: 50% !important;   /* SMIDGE RIGHT */
     text-align: left;
     margin-bottom: 5px;           
   }
 
-  /* 5. DETAILS: Moved Left (48%) & Tight Spacing */
+  /* 5. DETAILS: Moved Right (50%) */
   .hero-details p {
     font-size: 20px !important;    
-    margin-left: 48% !important;   /* SHIFTED LEFT */
+    margin-left: 50% !important;   /* SMIDGE RIGHT */
     text-align: left;
     
     /* Tight vertical spacing */
@@ -582,9 +582,9 @@ border: none;
     display: block;                
   }
 
-  /* 6. RESUME BUTTON: Moved Left (48%) */
+  /* 6. RESUME BUTTON: Moved Right (50%) */
   .hero-resume {
-    margin-left: 48% !important;   /* SHIFTED LEFT */
+    margin-left: 50% !important;   /* SMIDGE RIGHT */
     display: inline-block;
     
     margin-top: 15px !important;   
@@ -598,19 +598,6 @@ border: none;
       height: 38px;
       left: 15px;
   }
-}
-
-/* RESPONSIVE: Stack on Mobile */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
-    }
-    .footer-left, .footer-nav, .footer-right {
-        flex: auto;
-        justify-content: center;
-    }
 }
 
 /*
