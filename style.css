@@ -525,57 +525,61 @@ border: none;
    ========================================= */
 @media (max-width: 1366px) {
 
-  /* 1. CONTAINER: Unlock width */
+  /* 1. CONTAINER: Moves text DOWN a little */
   .hero-content {
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
     padding-right: 30px;
-    padding-top: 0 !important;
+    
+    padding-top: 130px;            /* Moved down slightly from 100px */
   }
 
-  /* 2. HEADLINE: Bigger, Lower, & Shifted Left */
+  /* 2. HEADLINE: Big & Right */
   .hero-headline {
-    font-size: 38px !important;    /* BUMPED UP (was 32px) */
-    margin-left: 50% !important;   /* SHIFTED LEFT (was 55%) */
+    font-size: 44px !important;    
+    margin-left: 53% !important;   
     text-align: left;
     width: auto;
     
-    padding-top: 140px;            /* MOVED DOWN (was 100px) */
     margin-bottom: 10px;           
     line-height: 1.1;
   }
 
-  /* 3. SUBTITLE: Bigger & Shifted Left */
+  /* 3. SUBTITLE: Matched Sizing */
   .hero-subtitle p {
-    font-size: 22px !important;    /* BUMPED UP (was 20px) */
-    margin-left: 50% !important;   /* SHIFTED LEFT */
+    font-size: 26px !important;    
+    margin-left: 53% !important;   
     text-align: left;
     margin-bottom: 10px;
   }
 
-  /* 4. DETAILS: Bigger & Shifted Left */
+  /* 4. DETAILS: Tighter Spacing for Honors/Emerging Tech */
   .hero-details p {
-    font-size: 18px !important;    /* BUMPED UP (was 16px) */
-    margin-left: 50% !important;   /* SHIFTED LEFT */
+    font-size: 20px !important;    
+    margin-left: 53% !important;   
     text-align: left;
-    line-height: 1.4;
-    margin-top: 5px;
+    
+    /* TIGHTER SPACING HERE */
+    line-height: 1.3;              
+    margin-top: 2px !important;    /* Very small gap between the two sentences */
+    margin-bottom: 0 !important;   
   }
 
-  /* 5. RESUME BUTTON: Shifted Left */
+  /* 5. RESUME BUTTON: Matched Sizing */
   .hero-resume {
-    margin-left: 50% !important;   /* SHIFTED LEFT */
+    margin-left: 53% !important;   
     display: inline-block;
     
-    margin-top: 25px;              
-    font-size: 18px !important;    /* Sized up slightly to match text */
-    padding: 14px 20px 14px 65px;  /* Adjusted padding */
+    margin-top: 30px;              
+    font-size: 20px !important;    
+    padding: 16px 20px 16px 65px;  
   }
 
+  /* Icon Adjustment */
   .btn-icon {
-      width: 35px;                 /* Sized up icon slightly */
-      height: 35px;
+      width: 38px;                 
+      height: 38px;
       left: 15px;
   }
 }
