@@ -598,56 +598,70 @@ border: none;
       height: 38px;
       left: 15px;
   }
-
-/* 1. SHORTEN THE SECTION HEIGHT */
+/* 1. SHORTEN HEIGHT (Fixes Image Aspect Ratio) */
   .carousel-container {
-      height: 400px !important;       /* Reduced from 500px to be more compact */
+      height: 420px !important;       /* Shorter height (was 500px) */
       margin-bottom: 20px;
+      position: relative;             /* Ensures buttons stay inside */
   }
 
   /* 2. ENABLE SWIPE (The "Sliding" Feature) */
   .carousel-track {
       display: flex;
-      overflow-x: auto !important;       /* Allows horizontal sliding */
+      overflow-x: auto !important;       /* Enables dragging/swiping */
       scroll-snap-type: x mandatory;     /* Snaps cards into place */
       scroll-behavior: smooth;
       
-      transform: none !important;        /* Disables desktop JS logic */
       width: 100% !important;
-      gap: 20px !important;              /* Adds space between cards */
-      padding-left: 20px;                /* Peaking effect on left */
-      padding-right: 20px;               /* Peaking effect on right */
+      gap: 15px !important;              /* Space between cards */
+      padding-left: 0;                   
+      padding-right: 0;
       
-      /* Hide Scrollbar */
+      /* Hide Scrollbar (Clean look) */
       scrollbar-width: none;
       -ms-overflow-style: none;
+      
+      /* Important: This ensures CSS scrolling works, 
+         but allows JS buttons to try to work too */
+      transform: none !important; 
   }
+  
   .carousel-track::-webkit-scrollbar {
       display: none;
   }
 
-  /* 3. SHORTEN THE CARD WIDTH (The "Correlate" Fix) */
+  /* 3. SHORTEN CARD WIDTH (The "Correlate" Fix) */
   .project-card {
-      min-width: 85% !important;         /* Makes card narrower (85% of screen) */
-      max-width: 85% !important;         /* Ensures it doesn't stretch */
+      min-width: 85% !important;         /* Narrower cards (85% width) */
+      max-width: 85% !important;
       height: 100% !important;
-      scroll-snap-align: center;         /* Snaps to the center of screen */
-      margin: 0 !important;
       
-      /* Visual Cleanup */
+      scroll-snap-align: center;         /* Centers the card when you let go */
+      margin: 0 auto !important;         /* Centers it in the view */
+      
       border-radius: 15px !important;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
   }
 
   /* 4. FIX IMAGE POSITION */
   .card-bg {
-      background-position: top center !important; /* Shows the top of your site (Header) */
+      /* Shows the top of your site (Header) instead of the middle */
+      background-position: top center !important; 
       background-size: cover !important; 
   }
 
-  /* 5. HIDE DESKTOP BUTTONS */
-  .carousel-btn, .carousel-dots {
-      display: none !important;
+  /* 5. KEEP BUTTONS & DOTS VISIBLE */
+  .carousel-btn {
+      display: flex !important;          /* Force buttons to show */
+      z-index: 10;                       /* Sit on top of images */
+      
+      /* Optional: Move them slightly if they block the text */
+      /* top: 50%; */
+  }
+  
+  .carousel-dots {
+      display: flex !important;          /* Force dots to show */
+      bottom: 10px !important;           /* Position at bottom */
   }
 
 }
