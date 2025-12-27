@@ -1,21 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =========================================
-       1. TYPEWRITER EFFECT
+       1. TYPEWRITER EFFECT (Unchanged)
        ========================================= */
     const textElement = document.getElementById("typewriter-text");
-    
-    // Safety check: only run if the element exists
+
     if (textElement) {
-        const text1 = "UI/UX Designer";      
-        const text2 = "UX Engineer";       
-        const typingSpeed = 100;             
-        const deletingSpeed = 50;            
-        const pauseDelay = 1000;             
+        const text1 = "UI/UX Designer";
+        const text2 = "UX Engineer";
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseDelay = 1000;
 
         let charIndex = 0;
 
-        // Function 1: Type the first word
         function typeFirstWord() {
             if (charIndex < text1.length) {
                 textElement.textContent += text1.charAt(charIndex);
@@ -26,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Function 2: Delete the word
         function deleteWord() {
             if (charIndex > 0) {
                 textElement.textContent = text1.substring(0, charIndex - 1);
@@ -37,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Function 3: Type the final word
         function typeFinalWord() {
-            // We use a local index here relative to text2
             let currentLength = textElement.textContent.length;
             if (currentLength < text2.length) {
                 textElement.textContent += text2.charAt(currentLength);
@@ -47,17 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // START THE TYPEWRITER 
-        setTimeout(typeFirstWord, 1000); 
+        setTimeout(typeFirstWord, 1000);
     }
 
 
     /* =========================================
-       2. CAROUSEL LOGIC
+       2. SMART CAROUSEL LOGIC (Upgraded!)
        ========================================= */
     const track = document.querySelector('.carousel-track');
-    
-    // Safety check: only run if carousel exists
+
     if (track) {
         const cards = Array.from(track.children);
         const nextBtn = document.getElementById('nextBtn');
@@ -66,69 +59,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentIndex = 0;
 
-        const moveToSlide = (index) => {
-            // Get current width dynamically
-            const cardWidth = cards[0].getBoundingClientRect().width;
-            const gap = 20; // Must match CSS gap
+        // --- HELPER: Detect if we are on iPad/Mobile ---
+        // Matches your CSS @media (max-width: 1366px)
+        const isMobileMode = () => window.innerWidth <= 1366;
 
-            const slideAmount = index * -(cardWidth + gap);
-            
-            track.style.transform = `translateX(${slideAmount}px)`;
-            
-            // Update Dots
+        const updateDots = (index) => {
             dots.forEach(dot => dot.classList.remove('active'));
             if (dots[index]) {
                 dots[index].classList.add('active');
             }
+        };
+
+        const moveToSlide = (index) => {
+            const cardWidth = cards[0].getBoundingClientRect().width;
             
+            // LOGIC A: iPad/Mobile (Use Native Scroll)
+            if (isMobileMode()) {
+                const gap = 15; // Matches CSS gap
+                const scrollPosition = index * (cardWidth + gap);
+                
+                // Smoothly scroll to the correct position
+                track.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            } 
+            // LOGIC B: Desktop (Use Transform Slide)
+            else {
+                const gap = 20; // Matches CSS gap
+                const slideAmount = index * -(cardWidth + gap);
+                track.style.transform = `translateX(${slideAmount}px)`;
+            }
+
+            updateDots(index);
             currentIndex = index;
         };
 
-        // Listeners
-        if(nextBtn) {
+        // --- BUTTON LISTENERS ---
+        if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                if (currentIndex < cards.length - 1) {
-                    moveToSlide(currentIndex + 1);
+                // Check Mode
+                if (isMobileMode()) {
+                    // Just scroll forward by one card width
+                    const cardWidth = cards[0].offsetWidth;
+                    track.scrollBy({ left: cardWidth + 15, behavior: 'smooth' });
                 } else {
-                    moveToSlide(0);
+                    // Desktop Logic
+                    if (currentIndex < cards.length - 1) {
+                        moveToSlide(currentIndex + 1);
+                    } else {
+                        moveToSlide(0);
+                    }
                 }
             });
         }
 
-        if(prevBtn) {
+        if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    moveToSlide(currentIndex - 1);
+                // Check Mode
+                if (isMobileMode()) {
+                    // Just scroll backward
+                    const cardWidth = cards[0].offsetWidth;
+                    track.scrollBy({ left: -(cardWidth + 15), behavior: 'smooth' });
                 } else {
-                    moveToSlide(cards.length - 1);
+                    // Desktop Logic
+                    if (currentIndex > 0) {
+                        moveToSlide(currentIndex - 1);
+                    } else {
+                        moveToSlide(cards.length - 1);
+                    }
                 }
             });
         }
 
+        // --- DOT LISTENERS (Works for both modes) ---
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 moveToSlide(index);
             });
         });
-        
-        // Handle Resize
+
+        // Handle Resize (Resets position to prevent glitches)
         window.addEventListener('resize', () => {
-            moveToSlide(currentIndex);
+            // Optional: reset to 0 or try to maintain current index
+            // moveToSlide(currentIndex);
         });
     }
 
-// 1. Select the navigation bar
-const nav = document.querySelector('nav');
-
-// 2. Listen for the scroll event
-window.addEventListener('scroll', () => {
-    
-    // 3. Check if user has scrolled down more than 50 pixels
-    if (window.scrollY > 50) {
-        nav.classList.add('nav-scrolled');
-    } else {
-        nav.classList.remove('nav-scrolled');
+    /* =========================================
+       3. NAVBAR SCROLL (Unchanged)
+       ========================================= */
+    const nav = document.querySelector('nav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
     }
-});
 
 });
