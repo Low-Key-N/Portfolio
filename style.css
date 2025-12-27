@@ -598,6 +598,58 @@ border: none;
       height: 38px;
       left: 15px;
   }
+
+/* 1. SHORTEN THE SECTION HEIGHT */
+  .carousel-container {
+      height: 400px !important;       /* Reduced from 500px to be more compact */
+      margin-bottom: 20px;
+  }
+
+  /* 2. ENABLE SWIPE (The "Sliding" Feature) */
+  .carousel-track {
+      display: flex;
+      overflow-x: auto !important;       /* Allows horizontal sliding */
+      scroll-snap-type: x mandatory;     /* Snaps cards into place */
+      scroll-behavior: smooth;
+      
+      transform: none !important;        /* Disables desktop JS logic */
+      width: 100% !important;
+      gap: 20px !important;              /* Adds space between cards */
+      padding-left: 20px;                /* Peaking effect on left */
+      padding-right: 20px;               /* Peaking effect on right */
+      
+      /* Hide Scrollbar */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+  }
+  .carousel-track::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* 3. SHORTEN THE CARD WIDTH (The "Correlate" Fix) */
+  .project-card {
+      min-width: 85% !important;         /* Makes card narrower (85% of screen) */
+      max-width: 85% !important;         /* Ensures it doesn't stretch */
+      height: 100% !important;
+      scroll-snap-align: center;         /* Snaps to the center of screen */
+      margin: 0 !important;
+      
+      /* Visual Cleanup */
+      border-radius: 15px !important;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+  }
+
+  /* 4. FIX IMAGE POSITION */
+  .card-bg {
+      background-position: top center !important; /* Shows the top of your site (Header) */
+      background-size: cover !important; 
+  }
+
+  /* 5. HIDE DESKTOP BUTTONS */
+  .carousel-btn, .carousel-dots {
+      display: none !important;
+  }
+
 }
 
 /* RESPONSIVE: Stack on Mobile */
