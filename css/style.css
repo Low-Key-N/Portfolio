@@ -4,19 +4,19 @@
 
 @font-face {
   font-family: 'Eina'; 
-  src: url('https://low-key-n.github.io/Portfolio/Fonts/Eina01-Regular.ttf');
+  src: url('../assets/Fonts/Eina01-Regular.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Eina'; 
-  src: url('https://low-key-n.github.io/Portfolio/Fonts/Eina01-SemiBold.ttf');
+  src: url('../assets/Fonts/Eina01-SemiBold.ttf');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Eina';
-  src: url('https://low-key-n.github.io/Portfolio/Fonts/Eina01-Bold.ttf');
+  src: url('../assets/Fonts/Eina01-Bold.ttf');
   font-weight: 700;
 }
 /* =========================================
@@ -147,7 +147,7 @@ nav a:hover {
 
    #hero-section {
 height: 90vh;
-background-image: url("keyon-park.png");
+background-image: url("../assets/images/keyon-park.png");
 background-size: cover;
 background-position: center top;
 color:white;
@@ -366,19 +366,19 @@ border: none;
 
 /* CARD 1: Portfolio Website */
 .project-card:nth-child(1) .card-bg {
-    background-image: url('portfolio-preview.png'); 
+    background-image: url('../assets/images/portfolio-preview.png'); 
     background-color: #222; /* Fallback color */
 }
 
 /* CARD 2: Example Project */
 .project-card:nth-child(2) .card-bg {
-    background-image: url('your-image2.jpg'); /* Replace with actual file name */
+    background-image: url('../assets/images/your-image2.jpg'); /* Replace with actual file name */
     background-color: #444; 
 }
 
 /* CARD 3: Example Project */
 .project-card:nth-child(3) .card-bg {
-    background-image: url('your-image3.jpg'); /* Replace with actual file name */
+    background-image: url('../assets/images/your-image3.jpg'); /* Replace with actual file name */
     background-color: #666; 
 }
 
