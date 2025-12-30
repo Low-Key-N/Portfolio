@@ -540,7 +540,7 @@ border: none;
     overflow-x: hidden !important;
   }
 
-  /* 1. CONTAINER: Moves Text DOWN */
+  /* CONTAINER: Moves Text DOWN */
   .hero-content {
     width: 100% !important;
     max-width: 100% !important;
@@ -550,20 +550,20 @@ border: none;
     box-sizing: border-box !important; 
     
     padding-right: 30px;
-    padding-top: 150px;            /* MOVED DOWN (Was 130px) */
+    padding-top: 150px;            
   }
 
-  /* 2. BACKGROUND */
+  /* BACKGROUND */
   #hero-section {
     height: 75vh !important;       
     min-height: 600px;             
     background-position: 20% center; 
   }
 
-  /* 3. HEADLINE: Moved Right (50%) */
+  /* HEADLINE: Moved Right (50%) */
   .hero-headline {
     font-size: 44px !important;    
-    margin-left: 50% !important;   /* SMIDGE RIGHT (Was 48%) */
+    margin-left: 50% !important;   /* SMIDGE RIGHT */
     text-align: left;
     width: auto;
     
@@ -579,7 +579,7 @@ border: none;
     margin-bottom: 5px;           
   }
 
-  /* 5. DETAILS: Moved Right (50%) */
+  /* DETAILS: Moved Right (50%) */
   .hero-details p {
     font-size: 20px !important;    
     margin-left: 50% !important;   /* SMIDGE RIGHT */
@@ -604,12 +604,12 @@ border: none;
       width: auto;
   }
 
-  /* 6. RESUME BUTTON: Moved Right (50%) */
+  /* RESUME BUTTON: Moved Right (50%) */
   .hero-resume {
     margin-left: 50% !important;   /* SMIDGE RIGHT */
     display: inline-block;
     
-    margin-top: 15px !important;   
+    margin-top: 0px !important;   
     font-size: 20px !important;    
     padding: 16px 20px 16px 65px;  
   }
@@ -620,24 +620,22 @@ border: none;
       height: 38px;
       left: 15px;
   }
-/* 1. CONTAINER: Taller to create space at the bottom */
+/* CONTAINER: Taller to create space at the bottom */
 .carousel-container {
     height: 480px !important;       /* Increased to make room for dots */
     position: relative;             /* Anchors the dots */
     margin-bottom: 0px;
 }
 
-/* 2. TRACK: Swipe Enabled */
+/* TRACK: Swipe Enabled */
 .carousel-track {
     display: flex;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    
     width: 100% !important;
     height: 90% !important;         /* LEAVE SPACE AT BOTTOM for dots */
     gap: 15px !important;
-    
     transform: none !important; 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -646,7 +644,7 @@ border: none;
     display: none;
 }
 
-/* 3. CARDS: Fit inside the 90% track */
+/* CARDS: Fit inside the 90% track */
 .project-card {
     min-width: 85% !important;
     max-width: 85% !important;
@@ -656,7 +654,7 @@ border: none;
     border-radius: 15px !important;
 }
 
-/* 4. DOTS: Centered & Lowered into the gap */
+/* DOTS: Centered & Lowered into the gap */
 .carousel-dots {
     display: flex !important;
     justify-content: center;        /* Flex centering */
@@ -686,7 +684,7 @@ border: none;
     background-color: #333;         /* Darker active color */
 }
 
-/* 5. BUTTONS: Vertically Centered */
+/* BUTTONS: Vertically Centered */
 .carousel-btn {
     display: flex !important;
     z-index: 30;
@@ -700,7 +698,7 @@ border: none;
    ========================================= */
 @media (max-width: 1024px) {
 
-  /* 1. Reset Hero Text (Center everything) */
+  /* Reset Hero Text (Center everything) */
   .hero-headline, 
   .hero-subtitle p, 
   .hero-details p, 
@@ -712,7 +710,7 @@ border: none;
       width: 100% !important;
   }
 
-  /* 2. Reset Container Padding */
+  /* Reset Container Padding */
   .hero-content {
       padding-top: 150px !important;  /* Adjusts top space */
       padding-left: 20px !important;  /* Normal side padding */
@@ -720,19 +718,19 @@ border: none;
       text-align: center;
   }
 
-  /* 3. Center the Background Image */
+  /* Center the Background Image */
   #hero-section {
       background-position: center center !important;
   }
   
-  /* 4. Fix Tech Stack Spacing for Vertical View */
+  /* Fix Tech Stack Spacing for Vertical View */
   .hero-tech-stack p {
       margin-top: 20px !important;
       margin-bottom: 30px !important;
       font-size: 16px !important;
   }
 
-  /* 5. Adjust Carousel for Vertical Screens */
+  /* Adjust Carousel for Vertical Screens */
   .carousel-container {
       height: 420px !important;       /* Good height for portrait */
   }
@@ -742,7 +740,7 @@ border: none;
       max-width: 90% !important;
   }
   
-  /* 6. Stack the Footer */
+  /* Stack the Footer */
   .footer-container {
       flex-direction: column;
       gap: 20px;
