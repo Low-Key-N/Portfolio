@@ -27,6 +27,7 @@ body{
 margin: 0; 
 padding: 0;
 font-family: 'Eina';
+
 }
 
 /* =========================================
@@ -700,6 +701,177 @@ border: none;
     z-index: 30;
     top: 45% !important;            /* Centered relative to the image */
 }
+}
+
+/* =========================================
+   ABOUT PAGE STYLES
+   ========================================= */
+
+.about-page-section {
+background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
+    min-height: calc(100vh - 80px); 
+    padding-top: 135px;         /* Space for the header */
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.about-page-wrapper {
+    max-width: 1400px;           /* Limit width so text isn't too wide */
+    width: 95%;
+    
+    /* THE BIG CHANGE: Stack items vertically */
+    display: flex;
+    flex-direction: column;     
+    align-items: center;        /* Center everything */
+    gap: 40px;                  /* Space between Image and Text Box */
+}
+
+/* --- 1. THE IMAGE (Top) --- */
+.about-image-container {
+    position: relative;         /* Allows us to stack things inside */
+    width: 100%;
+    height: 400px;              /* Set a fixed height for the banner area */
+    border-radius: 20px;
+    overflow: hidden;           /* Clips the edges so they stay rounded */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: block;             /* Resets flex behavior if needed */
+}
+
+/* 1. THE BIG IMAGE (Background) */
+.big-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Ensures it fills the box without stretching */
+    display: block;
+}
+
+/* 2. THE GREY TINT */
+.grey-tint {
+    position: absolute;         /* Floats on top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* The Tint Color: Black with 50% opacity creates a dark grey tint */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;                 /* Sits above the background */
+}
+
+/* 3. THE PROFILE CUBE (Center) */
+.profile-cube {
+    position: absolute;         /* Floats on top */
+    top: 50%;                   /* Move to middle vertical */
+    left: 50%;                  /* Move to middle horizontal */
+    
+    /* This centers it perfectly by pulling it back half its own size */
+    transform: translate(-50%, -50%); 
+    
+    width: 180px;               /* Size of the cube */
+    height: 180px;
+    object-fit: cover;
+    
+    border-radius: 20px;        /* "Cube-like" rounded corners */
+    border: 4px solid white;    /* White border to make it pop */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Shadow for depth */
+    z-index: 2;                 /* Sits on top of the tint */
+}
+/* --- 2. THE TEXT BOX (Bottom) --- */
+.about-text-container {
+    background-color: white;    /* The "Box" effect */
+    padding: 80px;              /* Room inside the box */
+    border-radius: 20px;        /* Soft edges */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.137); /* Subtle lift */
+    text-align: left;           /* Keep text easy to read */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-text-container h1 {
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #111;
+    text-align: center;         /* Center the headline for impact */
+}
+
+.about-text-container p {
+    font-size: 18px;
+    line-height: 1.8;           /* Relaxed spacing for reading */
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Hobbies List */
+.hobbies-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    display: flex;              /* Layout hobbies in a row or grid if you want */
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;    /* Center the tags */
+}
+
+.hobbies-list li {
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Centered Button */
+.about-resume-btn {
+    display: block;             /* Allows auto margins */
+    width: fit-content;
+    margin: 0 auto;             /* Centers the button */
+    background-color: #111;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;        /* Pill shape */
+    transition: transform 0.2s;
+}
+
+.about-resume-btn:hover {
+    transform: translateY(-3px); /* Little hop effect */
+    background-color: #333;
+}
+
+.dark-mode-nav {
+    /* Exact same dark color/blur as your scroll effect */
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(10px);           
+    -webkit-backdrop-filter: blur(10px);   
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle divider line */
+}
+
+
+/* --- RESPONSIVE: Stack on Mobile --- */
+@media (max-width: 900px) {
+    .about-page-wrapper {
+        flex-direction: column; /* Stack them vertically */
+        text-align: center;
+    }
+
+    .about-text-container h1 {
+        font-size: 36px;
+    }
+
+    .about-image-container img {
+        margin-bottom: 30px;
+        max-width: 300px;
+    }
+
+
+    
 }
 
 /* =========================================
