@@ -130,6 +130,11 @@ nav a:hover {
     transition: opacity 0.3s ease;
 }
 
+a[href*="linkedin"] .social-icon {
+    position: relative;
+    top: -3px; 
+}
+
 .social-icon:hover {
     opacity: 0.7;
 }
