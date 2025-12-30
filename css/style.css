@@ -612,7 +612,7 @@ border: none;
 .carousel-container {
     height: 480px !important;       /* Increased to make room for dots */
     position: relative;             /* Anchors the dots */
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 /* 2. TRACK: Swipe Enabled */
