@@ -627,6 +627,11 @@ border: none;
     margin-bottom: 0px;
 }
 
+#content-section {
+    padding-bottom: 30px !important;   
+    min-height: auto !important;       
+}
+
 /* TRACK: Swipe Enabled */
 .carousel-track {
     display: flex;
