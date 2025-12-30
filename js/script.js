@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =========================================
-       1. TYPEWRITER EFFECT (Unchanged)
+       1. TYPEWRITER EFFECT
        ========================================= */
     const textElement = document.getElementById("typewriter-text");
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =========================================
-       2. SMART CAROUSEL LOGIC (Upgraded!)
+       2. SMART CAROUSEL LOGIC
        ========================================= */
     const track = document.querySelector('.carousel-track');
 
@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
 
         // --- HELPER: Detect if we are on iPad/Mobile ---
-        // Matches your CSS @media (max-width: 1366px)
         const isMobileMode = () => window.innerWidth <= 1366;
 
         const updateDots = (index) => {
@@ -70,15 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        // --- NEW: LISTEN FOR PHYSICAL SCROLL/SWIPE ---
+        // This makes the dots update when you drag with your finger
+        track.addEventListener('scroll', () => {
+            if (isMobileMode()) {
+                const cardWidth = cards[0].getBoundingClientRect().width;
+                const gap = 15; // Matches CSS gap
+                
+                // Calculate which card is currently centered based on scroll position
+                const scrollLeft = track.scrollLeft;
+                const newIndex = Math.round(scrollLeft / (cardWidth + gap));
+
+                // Only update if the index actually changed
+                if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
+                    currentIndex = newIndex;
+                    updateDots(currentIndex);
+                }
+            }
+        });
+
         const moveToSlide = (index) => {
             const cardWidth = cards[0].getBoundingClientRect().width;
             
             // LOGIC A: iPad/Mobile (Use Native Scroll)
             if (isMobileMode()) {
-                const gap = 15; // Matches CSS gap
+                const gap = 15; 
                 const scrollPosition = index * (cardWidth + gap);
                 
-                // Smoothly scroll to the correct position
                 track.scrollTo({
                     left: scrollPosition,
                     behavior: 'smooth'
@@ -86,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } 
             // LOGIC B: Desktop (Use Transform Slide)
             else {
-                const gap = 20; // Matches CSS gap
+                const gap = 20; 
                 const slideAmount = index * -(cardWidth + gap);
                 track.style.transform = `translateX(${slideAmount}px)`;
             }
@@ -98,13 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- BUTTON LISTENERS ---
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                // Check Mode
                 if (isMobileMode()) {
                     // Just scroll forward by one card width
                     const cardWidth = cards[0].offsetWidth;
                     track.scrollBy({ left: cardWidth + 15, behavior: 'smooth' });
                 } else {
-                    // Desktop Logic
                     if (currentIndex < cards.length - 1) {
                         moveToSlide(currentIndex + 1);
                     } else {
@@ -116,13 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                // Check Mode
                 if (isMobileMode()) {
                     // Just scroll backward
                     const cardWidth = cards[0].offsetWidth;
                     track.scrollBy({ left: -(cardWidth + 15), behavior: 'smooth' });
                 } else {
-                    // Desktop Logic
                     if (currentIndex > 0) {
                         moveToSlide(currentIndex - 1);
                     } else {
@@ -132,22 +145,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // --- DOT LISTENERS (Works for both modes) ---
+        // --- DOT LISTENERS ---
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 moveToSlide(index);
             });
         });
 
-        // Handle Resize (Resets position to prevent glitches)
+        // Handle Resize
         window.addEventListener('resize', () => {
-            // Optional: reset to 0 or try to maintain current index
-            // moveToSlide(currentIndex);
+            // Optional: Recalculate if needed
         });
     }
 
     /* =========================================
-       3. NAVBAR SCROLL (Unchanged)
+       3. NAVBAR SCROLL
        ========================================= */
     const nav = document.querySelector('nav');
     if (nav) {
