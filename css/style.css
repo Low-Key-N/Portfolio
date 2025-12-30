@@ -141,7 +141,7 @@ nav a:hover {
    .hero-content {
   max-width: 900px;
   margin-left: auto;
-  padding-top: 350px;
+  padding-top: 320px;
   padding-right: 50px;
 }
 
@@ -177,7 +177,7 @@ color: white;
     font-size: 74px;
     margin-top: 0; 
     font-weight: 590;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     line-height: .9;
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -185,7 +185,7 @@ color: white;
 .hero-subtitle p{ 
     font-size:38px;
     margin-bottom: 40px;
- margin-top:0px;
+ margin-top:5px;
   margin-bottom:0px;
     font-weight:530;
     word-spacing:2px;
@@ -193,13 +193,23 @@ text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-details p{
-    font-size: 30px; 
+    font-size: 28px; 
     line-height: 0; 
     margin-top:14px;
         line-height:0.3;
         word-spacing:2px;
            font-weight:550;
            text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+.hero-tech-stack p{
+    font-size: 16px; 
+    line-height: 0; 
+    margin-top:50px;
+        line-height:0.04;
+        word-spacing:2px;
+        color: #ffffffd0;
+           font-weight:600;
+           text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.712);
 }
 
 .hero-resume{
@@ -525,7 +535,7 @@ border: none;
    ========================================= */
 @media (max-width: 1366px) {
 
-  /* 0. SAFETY NET: Keep this to prevent scrolling */
+  /* 0. SAFETY NET: prevents scrolling */
   html, body {
     overflow-x: hidden !important;
   }
@@ -628,7 +638,7 @@ border: none;
 .project-card {
     min-width: 85% !important;
     max-width: 85% !important;
-    height: 100% !important;        /* Fills the 90% track height */
+    height: 100% !important;        
     scroll-snap-align: center;
     margin: 0 auto !important;
     border-radius: 15px !important;
@@ -639,13 +649,11 @@ border: none;
     display: flex !important;
     justify-content: center;        /* Flex centering */
     align-items: center;
-    
     position: absolute !important;
-    bottom: 5px !important;         /* Sits at the very bottom */
+    bottom: 5px !important;         
     left: 50% !important;           /* Pushes to middle */
-    transform: translateX(-50%) !important; /* PERFECTLY centers it */
-    
-    width: auto !important;         /* Let it shrink to fit dots */
+    transform: translateX(-50%) !important; /* PERFECTLY centers it */   
+    width: auto !important;         
     z-index: 20;
     padding: 0;
     margin: 0;
@@ -660,6 +668,7 @@ border: none;
     border-radius: 50%;
     display: inline-block;
 }
+
 .dot.active {
     background-color: #333;         /* Darker active color */
 }
