@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =========================================
-       2. SMART CAROUSEL LOGIC
+       2. SMART CAROUSEL LOGIC (Fixed Bounds)
        ========================================= */
     const track = document.querySelector('.carousel-track');
 
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- HELPER: Detect if we are on iPad/Mobile ---
         const isMobileMode = () => window.innerWidth <= 1366;
 
+        // --- UPDATE DOTS VISUALLY ---
         const updateDots = (index) => {
             dots.forEach(dot => dot.classList.remove('active'));
             if (dots[index]) {
@@ -69,31 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // --- NEW: LISTEN FOR PHYSICAL SCROLL/SWIPE ---
-        // This makes the dots update when you drag with your finger
-        track.addEventListener('scroll', () => {
-            if (isMobileMode()) {
-                const cardWidth = cards[0].getBoundingClientRect().width;
-                const gap = 15; // Matches CSS gap
-                
-                // Calculate which card is currently centered based on scroll position
-                const scrollLeft = track.scrollLeft;
-                const newIndex = Math.round(scrollLeft / (cardWidth + gap));
-
-                // Only update if the index actually changed
-                if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
-                    currentIndex = newIndex;
-                    updateDots(currentIndex);
-                }
-            }
-        });
-
+        // --- MAIN MOVE FUNCTION (Handles both Scroll & Slide) ---
         const moveToSlide = (index) => {
+            // BOUNDARY CHECK: Prevent scrolling too far left or right
+            if (index < 0 || index >= cards.length) return;
+
             const cardWidth = cards[0].getBoundingClientRect().width;
-            
-            // LOGIC A: iPad/Mobile (Use Native Scroll)
+
+            // LOGIC A: iPad/Mobile (Use Native Scroll to SPECIFIC position)
             if (isMobileMode()) {
-                const gap = 15; 
+                const gap = 15; // Matches CSS gap
+                // Calculate exact position of the target card
                 const scrollPosition = index * (cardWidth + gap);
                 
                 track.scrollTo({
@@ -103,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } 
             // LOGIC B: Desktop (Use Transform Slide)
             else {
-                const gap = 20; 
+                const gap = 20; // Matches CSS gap
                 const slideAmount = index * -(cardWidth + gap);
                 track.style.transform = `translateX(${slideAmount}px)`;
             }
@@ -112,18 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = index;
         };
 
-        // --- BUTTON LISTENERS ---
+        // --- LISTEN FOR PHYSICAL SCROLL/SWIPE (Syncs Dots & Buttons) ---
+        track.addEventListener('scroll', () => {
+            if (isMobileMode()) {
+                const cardWidth = cards[0].getBoundingClientRect().width;
+                const gap = 15; 
+                
+                // Calculate which card is closest to the center
+                const scrollLeft = track.scrollLeft;
+                const newIndex = Math.round(scrollLeft / (cardWidth + gap));
+
+                // Only update if index changed and is valid
+                if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
+                    currentIndex = newIndex;
+                    updateDots(currentIndex);
+                }
+            }
+        });
+
+        // --- BUTTON LISTENERS (Now with Bounds Checks) ---
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                if (isMobileMode()) {
-                    // Just scroll forward by one card width
-                    const cardWidth = cards[0].offsetWidth;
-                    track.scrollBy({ left: cardWidth + 15, behavior: 'smooth' });
-                } else {
-                    if (currentIndex < cards.length - 1) {
-                        moveToSlide(currentIndex + 1);
-                    } else {
+                // Calculate next index
+                const nextIndex = currentIndex + 1;
+                
+                // Desktop Looping (Optional) vs Mobile Hard Stop
+                if (!isMobileMode()) {
+                    // Desktop: Loop back to start if at end
+                    if (nextIndex >= cards.length) {
                         moveToSlide(0);
+                    } else {
+                        moveToSlide(nextIndex);
+                    }
+                } else {
+                    // Mobile: Hard Stop (Prevents breaking layout)
+                    if (nextIndex < cards.length) {
+                        moveToSlide(nextIndex);
                     }
                 }
             });
@@ -131,15 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                if (isMobileMode()) {
-                    // Just scroll backward
-                    const cardWidth = cards[0].offsetWidth;
-                    track.scrollBy({ left: -(cardWidth + 15), behavior: 'smooth' });
-                } else {
-                    if (currentIndex > 0) {
-                        moveToSlide(currentIndex - 1);
-                    } else {
+                const prevIndex = currentIndex - 1;
+
+                if (!isMobileMode()) {
+                    // Desktop: Loop to end
+                    if (prevIndex < 0) {
                         moveToSlide(cards.length - 1);
+                    } else {
+                        moveToSlide(prevIndex);
+                    }
+                } else {
+                    // Mobile: Hard Stop
+                    if (prevIndex >= 0) {
+                        moveToSlide(prevIndex);
                     }
                 }
             });
@@ -152,9 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Handle Resize
+        // Handle Resize (Keeps things aligned)
         window.addEventListener('resize', () => {
-            // Optional: Recalculate if needed
+            // moveToSlide(currentIndex); // Optional: Re-aligns on resize
         });
     }
 
