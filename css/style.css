@@ -694,6 +694,64 @@ border: none;
 }
 }
 
+/* =========================================
+   MOBILE & IPAD PORTRAIT OVERRIDE 
+   (Undo the Split Layout for vertical screens)
+   ========================================= */
+@media (max-width: 1024px) {
+
+  /* 1. Reset Hero Text (Center everything) */
+  .hero-headline, 
+  .hero-subtitle p, 
+  .hero-details p, 
+  .hero-resume,
+  .hero-tech-stack p {
+      margin-left: 0 !important;      /* Moves text back to center */
+      max-width: 100% !important;     /* Uses full screen width */
+      text-align: center !important;  /* Centers text */
+      width: 100% !important;
+  }
+
+  /* 2. Reset Container Padding */
+  .hero-content {
+      padding-top: 150px !important;  /* Adjusts top space */
+      padding-left: 20px !important;  /* Normal side padding */
+      padding-right: 20px !important;
+      text-align: center;
+  }
+
+  /* 3. Center the Background Image */
+  #hero-section {
+      background-position: center center !important;
+  }
+  
+  /* 4. Fix Tech Stack Spacing for Vertical View */
+  .hero-tech-stack p {
+      margin-top: 20px !important;
+      margin-bottom: 30px !important;
+      font-size: 16px !important;
+  }
+
+  /* 5. Adjust Carousel for Vertical Screens */
+  .carousel-container {
+      height: 420px !important;       /* Good height for portrait */
+  }
+  
+  .project-card {
+      min-width: 90% !important;      /* Wider cards */
+      max-width: 90% !important;
+  }
+  
+  /* 6. Stack the Footer */
+  .footer-container {
+      flex-direction: column;
+      gap: 20px;
+  }
+  .footer-left, .footer-nav, .footer-right {
+      flex: auto;
+      justify-content: center;
+  }
+}
 /* RESPONSIVE: Stack on Mobile */
 @media (max-width: 768px) {
     .footer-container {
@@ -706,7 +764,6 @@ border: none;
         justify-content: center;
     }
 }
-
 
 /*
 ----------------------------------------------------------------
