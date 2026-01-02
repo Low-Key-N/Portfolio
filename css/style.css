@@ -44,7 +44,7 @@ nav {
     align-items: center;
     padding-left: 40px;
     padding-right: 40px;
-    height: 100px;
+    height: 100px; /* Default tall height for Home Page top */
     box-sizing: border-box; 
     transition: all 0.4s ease;
     border-bottom: 1px solid transparent;
@@ -139,6 +139,23 @@ a[href*="linkedin"] .social-icon {
 .social-icon:hover {
     opacity: 0.7;
 }
+
+/* =========================================
+   FORCE DARK NAV (CSS Override)
+   ========================================= */
+
+/* Any page with <body class="dark-mode-active"> will 
+   FORCE the nav to look like the scrolled version 
+   regardless of what the JavaScript is doing.
+*/
+body.dark-mode-active nav {
+    background-color: rgba(0, 0, 0, 0.9) !important; /* Force dark background */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    height: 80px !important;                          /* Force shrink height */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
 
 /* =========================================
    4. HERO SECTION
@@ -709,7 +726,7 @@ border: none;
 .about-page-section {
 background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     min-height: calc(100vh - 80px); 
-    padding-top: 135px;         /* Space for the header */
+    padding-top: 110px;         /* Space for the header */
     padding-bottom: 70px;
     display: flex;
     justify-content: center;
@@ -878,7 +895,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
  .portfolio-page-section {
     background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     min-height: calc(100vh - 80px); 
-    padding-top: 135px;         
+    padding-top: 110px;         
     padding-bottom: 70px;
     display: flex;
     justify-content: center;
@@ -910,7 +927,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 800;
     margin: 0 0 20px 0;
     color: #111;
@@ -1098,7 +1115,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
 /* YELLOW THEME */
 .card-yellow .g-card-body { background-color: #fce8b2; }
-/* Note: Darkened the text on yellow button for better readability */
 .card-yellow .g-btn       { background-color: #e37400; color: white; } 
 .card-yellow .g-btn:hover { background-color: #d56a00; }
 
