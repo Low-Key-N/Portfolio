@@ -742,7 +742,6 @@ border: none;
 
     /* Pulls the cards closer to the text above */
     .philosophy-container {
-        /* Default was 80px -> We reduce it to 30px */
         margin-bottom: 50px !important; 
     }
     
@@ -1097,7 +1096,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 /* --- PHILOSOPHY SECTION --- */
 .philosophy-container {
     width: 100%;
-    margin: 0 auto 80px auto; 
+    margin: 0 auto 60px auto; 
     text-align: center;       
 }
 
@@ -1138,10 +1137,10 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 /* --- CARDS GRID --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
     gap: 30px;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 .g-card {
@@ -1295,20 +1294,19 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
       flex-direction: column;
       gap: 20px;
   }
-  .footer-left, .footer-nav, .footer-right {
+
+.footer-nav {
+        position: static !important; 
+        transform: none !important;  
+        left: auto !important;
+        
+        /* Optional: Add space if needed */
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+  .footer-left, .footer-right {
       flex: auto;
       justify-content: center;
   }
-}
-/* RESPONSIVE: Stack on Mobile */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
-    }
-    .footer-left, .footer-nav, .footer-right {
-        flex: auto;
-        justify-content: center;
-    }
 }
