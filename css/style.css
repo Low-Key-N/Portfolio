@@ -720,34 +720,86 @@ border: none;
 }
 
 /* =========================================
-   IPAD LANDSCAPE / TABLET FIX (Portfolio Hero)
+   IPAD LANDSCAPE / TABLET FIX (Portfolio)
    ========================================= */
 
 /* Target screens that are wide (tablets) but not quite desktop size */
 @media (min-width: 1025px) and (max-width: 1366px) {
 
     .portfolio-hero {
-        /* 1. Stop pushing items to the far edges */
         justify-content: center !important; 
-        
-        /* 2. Add a nice gap between text and image */
         gap: 60px !important;
     }
 
     .hero-left {
-        /* 3. This pushes the text/toggle group to the right */
         margin-left: 60px; 
-        
-        /* Optional: limit width so lines don't get too long */
         max-width: 450px; 
     }
 
-    /* Adjust the image container slightly if needed */
     .hero-right {
-        justify-content: flex-start !important; /* Keeps image near the text */
+        justify-content: flex-start !important; 
+    }
+
+    /* Pulls the cards closer to the text above */
+    .philosophy-container {
+        /* Default was 80px -> We reduce it to 30px */
+        margin-bottom: 50px !important; 
+    }
+    
+    /* Optional: Ensure the grid itself doesn't have extra top margin */
+    .projects-grid {
+        margin-top: 0 !important;
     }
 }
 
+.cycling-card {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative; 
+    overflow: hidden;
+    background-color: #333; /* Fallback color */
+}
+
+/* The Individual Slide Images */
+.slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    
+    /* Start invisible */
+    opacity: 0;
+    
+    /* The Animation: Lasts 12s, loops forever */
+    animation: crossFade 12s infinite;
+}
+
+/* Ensure the text stays on top of the images */
+.cycle-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10; /* Lifts it above the images */
+}
+
+/* The New Animation (Changes Opacity, not Image) */
+@keyframes crossFade {
+    0% { opacity: 0; }
+    5% { opacity: 1; }     /* Fast fade in */
+    33% { opacity: 1; }    /* Stay visible for 4 seconds */
+    38% { opacity: 0; }    /* Fast fade out */
+    100% { opacity: 0; }   /* Stay invisible while others play */
+}
 
 /* =========================================
    ABOUT PAGE STYLES
