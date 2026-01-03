@@ -720,6 +720,36 @@ border: none;
 }
 
 /* =========================================
+   IPAD LANDSCAPE / TABLET FIX (Portfolio Hero)
+   ========================================= */
+
+/* Target screens that are wide (tablets) but not quite desktop size */
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+    .portfolio-hero {
+        /* 1. Stop pushing items to the far edges */
+        justify-content: center !important; 
+        
+        /* 2. Add a nice gap between text and image */
+        gap: 60px !important;
+    }
+
+    .hero-left {
+        /* 3. This pushes the text/toggle group to the right */
+        margin-left: 60px; 
+        
+        /* Optional: limit width so lines don't get too long */
+        max-width: 450px; 
+    }
+
+    /* Adjust the image container slightly if needed */
+    .hero-right {
+        justify-content: flex-start !important; /* Keeps image near the text */
+    }
+}
+
+
+/* =========================================
    ABOUT PAGE STYLES
    ========================================= */
 
