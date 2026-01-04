@@ -1291,14 +1291,21 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
       left: auto !important;
   }
 
-  .about-image-container img, 
   .big-bg-img {
-      max-width: 100% !important;  
-      width: 100% !important;      
-      height: 100% !important;     
-      object-fit: cover !important; 
-      object-position: center !important; 
-      margin-bottom: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+  }
+
+  .profile-cube {
+      width: 180px !important;      
+      height: 180px !important;
+      position: absolute !important; 
+      top: 50% !important;           
+      left: 50% !important;          
+      transform: translate(-50%, -50%) !important; 
+      margin: 0 !important;
   }
 
 }
