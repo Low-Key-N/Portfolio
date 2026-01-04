@@ -1311,14 +1311,4 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     z-index: 0;          
   }
 
-  .profile-cube {
-      width: 180px !important;      
-      height: 180px !important;
-      position: absolute !important; 
-      top: 50% !important;           
-      left: 50% !important;          
-      transform: translate(-50%, -50%) !important; 
-      margin: 0 !important;
-  }
-
 }
