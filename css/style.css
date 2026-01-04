@@ -1222,7 +1222,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
 
 /* =========================================
-   MOBILE & IPAD PORTRAIT OVERRIDE 
+   IPAD PORTRAIT OVERRIDE 
    (Undo the Split Layout for vertical screens)
    ========================================= */
 @media (max-width: 1024px) {
@@ -1290,4 +1290,15 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
       transform: none !important;  
       left: auto !important;
   }
+
+  .about-image-container img, 
+  .big-bg-img {
+      max-width: 100% !important;  
+      width: 100% !important;      
+      height: 100% !important;     
+      object-fit: cover !important; 
+      object-position: center !important; 
+      margin-bottom: 0 !important;
+  }
+
 }
