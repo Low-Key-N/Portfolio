@@ -1220,26 +1220,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     transition: background-color 0.2s;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .portfolio-hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .hero-right {
-        width: 100%;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .toggle-placeholder {
-        justify-content: center;
-    }
-}
-
 
 /* =========================================
    MOBILE & IPAD PORTRAIT OVERRIDE 
@@ -1289,24 +1269,25 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
       max-width: 90% !important;
   }
   
-  /* Stack the Footer */
   .footer-container {
-      flex-direction: column;
+      flex-direction: row !important; 
+      flex-wrap: wrap !important;     
+      justify-content: center !important; 
       gap: 20px;
   }
 
-.footer-nav {
-        position: static !important; 
-        transform: none !important;  
-        left: auto !important;
-        
-        /* Optional: Add space if needed */
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+  .footer-left, 
+  .footer-nav, 
+  .footer-right {
+      min-width: 200px; 
+      flex: 1; 
+      text-align: center; 
+      margin-bottom: 10px;
+  }
 
-  .footer-left, .footer-right {
-      flex: auto;
-      justify-content: center;
+  .footer-nav {
+      position: static !important; 
+      transform: none !important;  
+      left: auto !important;
   }
 }
