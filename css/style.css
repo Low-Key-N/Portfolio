@@ -1438,22 +1438,47 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
     #logo { font-size: 28px !important; }
 
+    /* HERO CONTENT: Positioning & Size */
     #hero-section .hero-content {
         padding-top: 120px !important;
         padding-left: 60% !important; 
         padding-right: 20px !important;
         align-items: flex-start !important;
         text-align: left !important;
-        font-size: 60px !important;
+    }
+
+    /* DECREASED HERO TEXT SIZES */
+    .hero-headline { 
+        font-size: 28px !important; /* Shrunk from original large size */
+        line-height: 1.1 !important;
+    }
+    .hero-subtitle p { 
+        font-size: 18px !important; /* Shrunk from 25px */
+    }
+    .hero-details p { 
+        font-size: 14px !important; /* Shrunk from 16px */
+    }
+    .hero-tech-stack p { 
+        font-size: 12px !important; /* Shrunk from 14px */
     }
 
     .hero-headline, .hero-subtitle p, .hero-details p, .hero-tech-stack p {
         text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
-/* 4. FOOTER: Center Stack */
-    .footer-container { flex-direction: column !important; gap: 10px !important; }
-    .footer-nav { position: static !important; transform: none !important; gap: 15px !important; }
+    /* FOOTER: Shorter area with Octagonal Style */
+    .slim-footer { 
+        padding: 15px 0 5px 0 !important; /* Removed excess top/bottom room */
+    }
+    .footer-container { 
+        flex-direction: column !important; 
+        gap: 10px !important; 
+    }
+    .footer-nav { 
+        position: static !important; 
+        transform: none !important; 
+        gap: 10px !important; /* Tightened gap between links */
+    }
 }
 
 /* =========================================
