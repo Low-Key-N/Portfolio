@@ -1251,11 +1251,47 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         background-size: cover !important;
     }
 
-    .about-image-container {
-        background-position: center center !important; 
-        background-size: cover !important;
-        height: 400px !important;
-    }
+  .about-image-container {
+      position: relative;
+      width: 100%;
+      /* Adjust height to be slightly shorter for better framing on iPad */
+      height: 380px !important; 
+      border-radius: 20px;
+      overflow: hidden;
+      display: block;
+      margin-bottom: 20px;
+      /* Ensure the background of the container matches the tint */
+      background-color: #333; 
+  }
+
+  .big-bg-img {
+      width: 100%;
+      height: 100%;
+      /* 'cover' ensures the image fills the entire 380px height without gaps */
+      object-fit: cover !important; 
+      /* 'center' is the safest bet to avoid that gray void */
+      object-position: center !important; 
+      display: block;
+  }
+
+  .grey-tint {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: 1;
+  }
+
+  .profile-cube {
+      z-index: 2;
+      /* Keep your existing centering logic */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
 
     /* 2. HEADER: Restore Normal Spacing */
     nav {
@@ -1273,6 +1309,11 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     .nav-left a, .nav-right a {
         font-size: 15px !important; /* Slightly smaller for fit */
+    }
+
+.social-icon {
+        width: 22px !important;  /* Reduced from 40px */
+        height: 22px !important; /* Reduced from 40px */
     }
 
     .nav-center {
