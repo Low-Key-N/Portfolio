@@ -145,14 +145,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLeft = document.querySelector('.nav-left');
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navLeft.classList.toggle('active');
-        });
-    }
-});
+    
 });

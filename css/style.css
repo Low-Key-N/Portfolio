@@ -1422,98 +1422,63 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     margin-left: 0 !important;
 }}
 
+/* =========================================
+   IPHONE PORTRAIT (Standard & Max)
+   ========================================= */
 @media (max-width: 480px) {
-    /* 1. HEADER & SLIDE-DOWN MENU */
-    nav { padding: 0 20px !important; height: 70px !important; display: flex !important; align-items: center !important; }
-    .nav-right { display: none !important; }
-    
+    nav { padding: 0 15px !important; height: 70px !important; }
+    .nav-left, .nav-right { display: none !important; }
     .nav-center {
-        position: absolute !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
         display: flex !important;
+        justify-content: center !important;
     }
+    #logo { font-size: 28px !important; }
 
-    /* Full-screen Slide Down */
-    .nav-left.active {
-        display: flex !important;
-        flex-direction: column !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.98);
-        backdrop-filter: blur(15px);
-        justify-content: center;
-        align-items: center;
-        z-index: 1500;
-    }
-
-    /* Section Separators */
-    .menu-separator {
-        width: 40px;
-        height: 1px;
-        background-color: rgba(255, 255, 255, 0.3);
-        margin: 10px 0;
-    }
-
-    .mobile-socials {
-        display: flex;
-        gap: 30px;
-        margin-top: 20px;
-    }
-
-    /* 2. REDUCED CARD WIDTH */
-    .project-card {
-        width: 85% !important; /* Reduced width for better framing */
-        margin: 0 auto !important;
-        min-width: unset !important;
-    }
-
-    /* 3. HERO CONTENT (Remaining exactly as is) */
+    /* HERO CONTENT: Positioning & Size */
     #hero-section .hero-content {
         padding-top: 120px !important;
-        padding-left: 60% !important;
+        padding-left: 60% !important; 
         padding-right: 20px !important;
         align-items: flex-start !important;
         text-align: left !important;
     }
 
-    .hero-headline { font-size: 28px !important; line-height: 1.1 !important; }
-    .hero-subtitle p { font-size: 18px !important; }
-    .hero-details p { font-size: 14px !important; }
-    .hero-tech-stack p { font-size: 12px !important; }
+    /* DECREASED HERO TEXT SIZES */
+    .hero-headline { 
+        font-size: 28px !important; /* Shrunk from original large size */
+        line-height: 1.1 !important;
+    }
+    .hero-subtitle p { 
+        font-size: 18px !important; /* Shrunk from 25px */
+    }
+    .hero-details p { 
+        font-size: 14px !important; /* Shrunk from 16px */
+    }
+    .hero-tech-stack p { 
+        font-size: 12px !important; /* Shrunk from 14px */
+    }
 
-    /* 4. HORIZONTAL FOOTER WITH EVEN SPACING */
+    .hero-headline, .hero-subtitle p, .hero-details p, .hero-tech-stack p {
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    /* FOOTER: Shorter area with Octagonal Style */
     .slim-footer { 
-        padding: 20px 10px !important; 
+        padding: 15px 0 5px 0 !important; /* Removed excess top/bottom room */
     }
-
     .footer-container { 
-        flex-direction: row !important; /* Back to horizontal */
-        justify-content: center !important;
-        width: 100% !important;
+        flex-direction: column !important; 
+        gap: 10px !important; 
     }
-
-    .footer-left { display: none !important; } /* Keeps your logo name hidden */
-
     .footer-nav { 
         position: static !important; 
         transform: none !important; 
-        flex-direction: row !important; /* Horizontal layout */
-        justify-content: space-evenly !important; /* Even spacing for each word */
-        width: 100% !important;
-        gap: 0 !important; 
+        gap: 10px !important; /* Tightened gap between links */
     }
-
-    .footer-nav a {
-        font-size: 13px !important;
-        flex: 1; /* Ensures each link takes up equal space */
-        text-align: center;
-    }
-
-    .footer-right { display: none !important; } /* Simplifies the mobile footer */
 }
 
 /* =========================================
