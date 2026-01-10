@@ -1244,14 +1244,22 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 @media (max-width: 1024px) {
 
-    /* 1. BACKGROUND: LOCKED TO THE FAR LEFT */
+    /* 1. THE BIG BACKGROUND FIX: MOVE LEFT */
+    /* If using <img> tags inside containers: */
+    #hero-section img, .big-bg-img {
+        object-position: 0% center !important; /* Forces the far-left side of the image into view */
+        object-fit: cover !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* If using CSS background-images: */
     #hero-section, .about-image-container {
-        /* This anchors the monitors/desk setup to the left edge */
-        background-position: left center !important; 
+        background-position: left center !important; /* Anchors image to the far-left edge */
         background-size: cover !important;
     }
 
-    /* 2. HEADER: Big Logo & Column Logic */
+    /* 2. HEADER: Big Logo & Spacing */
     nav {
         display: grid !important;
         grid-template-columns: 0.8fr 2.4fr 0.8fr !important; 
@@ -1262,75 +1270,76 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     .nav-center {
         grid-column: 2;
-        display: flex !important;
-        justify-content: center !important;
-        position: static !important;
-        transform: none !important;
+        padding-left: 45px !important; /* Explicitly shifts logo right */
     }
 
     #logo {
-        font-size: 32px !important;
+        font-size: 36px !important; /* Large, bold logo */
         font-weight: 700 !important;
-        white-space: nowrap !important;
     }
 
     /* 3. PROJECT CARD: Shrink Text to Fit */
     .card-details h3 {
-        font-size: 22px !important; /* Shrunk for iPad space */
-        margin-bottom: 8px !important;
+        font-size: 22px !important; 
     }
 
     .description {
-        font-size: 14px !important; /* Shrunk for iPad space */
+        font-size: 14px !important;
         line-height: 1.4 !important;
     }
 
-    /* 4. CAROUSEL DOTS: Dead Center Alignment */
+    /* 4. CAROUSEL DOTS: Align Left over Portfolio */
     .carousel-dots {
         position: absolute !important;
-        left: 50% !important; /* Move to horizontal middle */
-        transform: translateX(-50%) !important; /* Perfectly center it */
-        bottom: 12px !important; 
+        left: 40px !important; /* Matches your left-margin preference */
+        bottom: 15px !important;
+        transform: none !important;
         display: flex !important;
-        width: auto !important;
-        justify-content: center !important;
-        z-index: 20;
     }
 
-    /* 5. FOOTER: Clean Spacing (No Overlap) */
+    /* 5. FOOTER: Spread Out (Not Stacked) */
     .slim-footer {
-        padding: 40px 20px !important;
+        padding: 30px 40px !important;
     }
 
     .footer-container {
         display: flex !important;
-        flex-direction: column !important; /* Stack vertically to prevent overlap */
+        flex-direction: row !important; /* Forces horizontal spread */
+        justify-content: space-between !important; /* Pushes items to the edges */
         align-items: center !important;
-        gap: 20px !important;
-        text-align: center !important;
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
     }
 
-    .footer-left, .footer-right {
-        justify-content: center !important;
-        width: 100% !important;
+    .footer-left {
+        display: block !important;
+        flex: 1;
     }
 
     .footer-nav {
         position: static !important;
         display: flex !important;
+        flex: 2;
         justify-content: center !important;
         gap: 20px !important;
         transform: none !important;
-        width: 100% !important;
+        padding-left: 45px !important; /* Matches Header Logo shift for alignment */
     }
 
-    .footer-nav a {
+    .footer-right {
+        display: flex !important;
+        flex: 1;
+        justify-content: flex-end !important;
+        gap: 20px !important;
+    }
+
+    .footer-nav a, .footer-right a {
         font-size: 15px !important;
-        width: auto !important;
-        display: inline-block !important;
+        white-space: nowrap !important;
     }
 
-    /* 6. HERO CONTENT CENTER */
+    /* 6. HERO TEXT RESET */
     .hero-content {
         padding-top: 150px !important;
         text-align: center !important;
@@ -1339,5 +1348,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .hero-headline, .hero-subtitle p, .hero-details p, .hero-resume, .hero-tech-stack p {
         margin-left: 0 !important;
         text-align: center !important;
+        width: 100% !important;
     }
 }
