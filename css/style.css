@@ -1323,7 +1323,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-  hero-content {
+  .hero-content {
     padding-top: 100px !important; 
     /* Keeps the stack pushed to the right side of the screen */
     padding-left: 35% !important; 
