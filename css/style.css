@@ -1325,15 +1325,15 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
   .hero-content {
     padding-top: 100px !important; 
-    /* Swapping left push for right push to move it to the right */
-    padding-left: 0 !important;
-    padding-right: 60px !important; 
+    /* This pushes the entire block to the right side of the screen */
+    padding-left: 35% !important; 
+    padding-right: 30px !important;
     
     display: flex !important;
     flex-direction: column !important;
-    /* Aligns the stack to the right side */
-    align-items: flex-end !important; 
-    text-align: right !important;
+    /* This ensures all items start at the same left vertical line */
+    align-items: flex-start !important; 
+    text-align: left !important;
     gap: 8px !important; 
 }
 
@@ -1341,7 +1341,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     font-size: 38px !important;
     line-height: 1.1 !important;
     margin-left: 0 !important;
-    max-width: 90% !important; 
+    max-width: 100% !important; 
 }
 
 .hero-subtitle p {
@@ -1352,8 +1352,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
 .hero-details p {
     font-size: 16px !important;
-    max-width: 80% !important; 
+    max-width: 90% !important; 
     line-height: 1.4 !important;
+    /* Margin keeps the text locked to the left alignment */
     margin: 5px 0 15px 0 !important; 
 }
 
@@ -1362,9 +1363,11 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     margin-left: 0 !important;
 }
 
+/* 3. TECH STACK: Shortened Spacing */
 .hero-tech-stack {
-    margin-top: 40px !important; 
-    text-align: right !important;
+    /* Shortened gap as requested */
+    margin-top: 10px !important; 
+    text-align: left !important;
 }
 
 .hero-tech-stack p {
