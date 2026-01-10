@@ -1475,7 +1475,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     /* SPECIFICALLY LOWERING THE DESCRIPTION TEXT */
     .card-details .description {
-        font-size: 11px !important; /* Shrunk further from 13px for a cleaner look */
+        font-size: 9px !important; /* Shrunk further from 13px for a cleaner look */
         line-height: 1.4 !important;
         margin-bottom: 15px !important;
     }
