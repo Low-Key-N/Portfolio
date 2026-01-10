@@ -1323,59 +1323,52 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-  /* 1. HERO CONTENT: Right-Aligned Stack */
-    .hero-content {
-        padding-top: 100px !important; 
-        /* Reset left padding and push from the right */
-        padding-left: 0 !important;
-        padding-right: 60px !important; 
-        
-        display: flex !important;
-        flex-direction: column !important;
-        /* Forces all children to the RIGHT edge */
-        align-items: flex-end !important; 
-        text-align: right !important;
-        gap: 8px !important; 
-    }
+  .hero-content {
+    padding-top: 100px !important; 
+    /* Swapping left push for right push to move it to the right */
+    padding-left: 0 !important;
+    padding-right: 60px !important; 
+    
+    display: flex !important;
+    flex-direction: column !important;
+    /* Aligns the stack to the right side */
+    align-items: flex-end !important; 
+    text-align: right !important;
+    gap: 8px !important; 
+}
 
-    .hero-headline {
-        font-size: 38px !important;
-        line-height: 1.1 !important;
-        margin-right: 0 !important; /* Lock to right side */
-        max-width: 90% !important; 
-    }
+.hero-headline {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    margin-left: 0 !important;
+    max-width: 90% !important; 
+}
 
-    .hero-subtitle p {
-        font-size: 20px !important;
-        margin: 0 !important;
-        font-weight: 600 !important;
-    }
+.hero-subtitle p {
+    font-size: 20px !important;
+    margin: 0 !important;
+    font-weight: 600 !important;
+}
 
-    .hero-details p {
-        font-size: 16px !important;
-        max-width: 80% !important; 
-        line-height: 1.4 !important;
-        /* Aligns description text box to the right */
-        margin: 5px 0 10px 0 !important; 
-    }
+.hero-details p {
+    font-size: 16px !important;
+    max-width: 80% !important; 
+    line-height: 1.4 !important;
+    margin: 5px 0 15px 0 !important; 
+}
 
-    .hero-resume {
-        margin-top: 5px !important; 
-        margin-right: 0 !important;
-        /* Flip the internal button padding if icon needs to be on right */
-        padding: 16px 70px 16px 20px !important; 
-    }
+.hero-resume {
+    margin-top: 5px !important; 
+    margin-left: 0 !important;
+}
 
-    /* 2. TECH STACK: Shortened Spacing & Right Aligned */
-    .hero-tech-stack {
-        /* Reduced from 40px to 15px to shorten the gap */
-        margin-top: 15px !important; 
-        text-align: right !important;
-        width: 100% !important;
-    }
+.hero-tech-stack {
+    margin-top: 40px !important; 
+    text-align: right !important;
+}
 
-    .hero-tech-stack p {
-        font-size: 14px !important;
-        line-height: 1.6 !important;
-        margin-right: 0 !important;
-    }}
+.hero-tech-stack p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-left: 0 !important;
+}}
