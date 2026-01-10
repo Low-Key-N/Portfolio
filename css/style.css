@@ -1240,13 +1240,12 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
 
 /* =========================================
-   IPAD PORTRAIT OVERRIDE 
+   IPAD PORTRAIT OVERRIDE (Orientation Isolated)
    ========================================= */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
 
     /* 1. BACKGROUND: "GOLDILOCKS" FRAMING */
     #hero-section {
-        /* 15% is the sweet spot: shows the desk setup without cutting it off */
         background-position: -200px center !important;
         background-size: cover !important;
     }
@@ -1254,22 +1253,18 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
   .about-image-container {
       position: relative;
       width: 100%;
-      /* Adjust height to be slightly shorter for better framing on iPad */
       height: 380px !important; 
       border-radius: 20px;
       overflow: hidden;
       display: block;
       margin-bottom: 20px;
-      /* Ensure the background of the container matches the tint */
       background-color: #333; 
   }
 
   .big-bg-img {
       width: 100%;
       height: 100%;
-      /* 'cover' ensures the image fills the entire 380px height without gaps */
       object-fit: cover !important; 
-      /* 'center' is the safest bet to avoid that gray void */
       object-position: center !important; 
       display: block;
   }
@@ -1286,7 +1281,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
   .profile-cube {
       z-index: 2;
-      /* Keep your existing centering logic */
       position: absolute;
       top: 50%;
       left: 50%;
@@ -1295,7 +1289,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     /* 2. HEADER: Restore Normal Spacing */
     nav {
-        display: flex !important; /* Back to Flex for normal spacing */
+        display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
         height: 80px !important;
@@ -1308,12 +1302,12 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .nav-left a, .nav-right a {
-        font-size: 15px !important; /* Slightly smaller for fit */
+        font-size: 15px !important;
     }
 
-.social-icon {
-        width: 22px !important;  /* Reduced from 40px */
-        height: 22px !important; /* Reduced from 40px */
+    .social-icon {
+        width: 22px !important;
+        height: 22px !important;
     }
 
     .nav-center {
@@ -1324,7 +1318,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     #logo {
-        font-size: 32px !important; /* Big and clear */
+        font-size: 32px !important;
         margin: 0 !important;
     }
 
@@ -1346,7 +1340,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     .footer-container {
         display: flex !important;
-        flex-direction: row !important; /* Forces horizontal line */
+        flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
@@ -1372,55 +1366,51 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
   .hero-content {
     padding-top: 150px !important; 
-    /* Keeps the stack pushed to the right side of the screen */
     padding-left: 60% !important; 
     padding-right: 30px !important;
-    
     display: flex !important;
     flex-direction: column !important;
-    /* Aligns everything perfectly to the left edge under the headline */
     align-items: flex-start !important; 
     text-align: left !important;
     gap: 8px !important; 
-}
+  }
 
-.hero-headline {
+  .hero-headline {
     font-size: 40px !important;
     line-height: 1.1 !important;
     margin-left: 0 !important;
     max-width: 100% !important; 
-}
+  }
 
-.hero-subtitle p {
+  .hero-subtitle p {
     font-size: 25px !important;
     margin: 0 !important;
     font-weight: 600 !important;
-}
+  }
 
-.hero-details p {
+  .hero-details p {
     font-size: 16px !important;
     max-width: 90% !important; 
     line-height: 1.4 !important;
     margin: 5px 0 5px 0 !important; 
-}
+  }
 
-.hero-resume {
+  .hero-resume {
     margin-top: 0px !important; 
     margin-left: 0 !important;
-}
+  }
 
-/* 3. TECH STACK: Minimized Gap */
-.hero-tech-stack {
-    /* Space removed to sit immediately under the bio */
+  .hero-tech-stack {
     margin-top: 0px !important; 
     text-align: left !important;
-}
+  }
 
-.hero-tech-stack p {
+  .hero-tech-stack p {
     font-size: 14px !important;
     line-height: 1.6 !important;
     margin-left: 0 !important;
-}}
+  }
+}
 
 /* =========================================
    IPHONE PORTRAIT (Standard & Max)
@@ -1547,14 +1537,24 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 @media (max-device-width: 932px) and (orientation: landscape) {
 
+    /* 0. PARENT CONSTRAINTS: Forces full-bleed width */
+    html, body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
     /* 1. FILL THE SCREEN: Fixes the gap on Pro Max */
     #hero-section {
         height: 100vh !important; 
         min-height: 100vh !important;
-        width: 100vw !important;
+        width: 100vw !important; /* Uses absolute viewport width */
         background-position: center center !important;
         background-size: cover !important;
         background-attachment: scroll !important;
+        position: relative !important;
+        left: 0 !important;
     }
 
     /* 2. TEXT POSITION: Dragged Lower & Pushed Right */
@@ -1564,6 +1564,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         /* Pushed right to clear your face */
         padding-left: 55% !important; 
         gap: 4px !important;
+        box-sizing: border-box !important;
     }
 
     .hero-headline { font-size: 32px !important; }
