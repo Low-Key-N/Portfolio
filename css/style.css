@@ -724,7 +724,7 @@ border: none;
    ========================================= */
 
 /* Target screens that are wide (tablets) but not quite desktop size */
-@media (min-width: 1025px) and (max-width: 1366px) {
+@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
 
     .portfolio-hero {
         justify-content: center !important; 
