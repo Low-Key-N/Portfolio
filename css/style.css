@@ -1445,7 +1445,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .card-image-wrapper {
         width: 100% !important; 
         /* REDUCED IMAGE HEIGHT: This gives the text below more room */
-        height: 140px !important; 
+        height: 90px !important; 
     }
 
     .card-details {
