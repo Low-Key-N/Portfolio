@@ -1444,26 +1444,47 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
     #logo { font-size: 26px !important; }
 
-    /* 2. PROJECT CARDS: Image on Top */
+    /* 2. PROJECT CARDS: Image on Top & Shrunken Text */
     .project-card {
-        flex-direction: column !important; /* Stacks image above text */
+        flex-direction: column !important; 
         height: auto !important;
         width: 90% !important;
         margin: 0 auto !important;
     }
 
     .card-image-wrapper {
-        width: 100% !important; /* Full width for the top image */
-        height: 200px !important;
+        width: 100% !important; 
+        height: 200px !important; /* Image size remains unchanged */
     }
 
     .card-details {
         width: 100% !important;
         padding: 20px !important;
-        border-radius: 0 0 20px 20px !important; /* Matches bottom corners only */
+        border-radius: 0 0 20px 20px !important; 
     }
 
-    /* 3. HERO CONTENT (Remaining as established) */
+    /* Target text inside the card to decrease size */
+    .card-details h3 {
+        font-size: 18px !important; /* Shrunk for better fit */
+        margin-bottom: 5px !important;
+    }
+
+    .card-details .tech-stack {
+        font-size: 9px !important; /* Shrunk for better fit */
+        margin-bottom: 10px !important;
+    }
+
+    .card-details .description {
+        font-size: 13px !important; /* Shrunk for better fit */
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .card-details .view-project {
+        font-size: 13px !important; /* Shrunk for better fit */
+    }
+
+    /* 3. HERO CONTENT */
     #hero-section .hero-content {
         padding-top: 120px !important;
         padding-left: 60% !important; 
@@ -1487,7 +1508,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .footer-container { 
-        flex-direction: column !important; /* Stack Nav over Socials for better centering */
+        flex-direction: column !important; 
         align-items: center !important;
         width: 100% !important;
         gap: 15px !important;
@@ -1501,21 +1522,21 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         display: flex !important;
         flex-direction: row !important;
         justify-content: center !important; 
-        gap: 20px !important; /* Even spacing for text links */
+        gap: 20px !important; 
     }
 
     .footer-nav a {
-        font-size: 12px !important; /* Shrunken font size */
+        font-size: 12px !important; 
     }
 
     .footer-right { 
         display: flex !important;
         justify-content: center !important;
-        gap: 20px !important; /* Even spacing for icons */
+        gap: 20px !important; 
     }
 
     .footer-right .social-icon {
-        width: 20px !important; /* Shrunken icon size */
+        width: 20px !important; 
         height: 20px !important;
     }
 }
