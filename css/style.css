@@ -1309,7 +1309,8 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 .about-image-container {
       position: relative;
       width: 100%;
-      height: 350px; /* Force a consistent height for the frame */
+      /* Increase height slightly for portrait to show more of the desk/environment */
+      height: 450px !important; 
       border-radius: 20px;
       overflow: hidden;
       display: block;
@@ -1319,11 +1320,10 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
   .big-bg-img {
       width: 100%;
       height: 100%;
-      object-fit: cover; 
-      object-position: center; 
+      object-fit: cover;
+      object-position: 20% center !important; 
   }
 
-  /* Ensure the tint stays on top of the fixed image */
   .grey-tint {
       position: absolute;
       top: 0;
@@ -1333,9 +1333,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
       z-index: 1;
   }
 
-  /* Keep the profile cube centered in the frame */
   .profile-cube {
       z-index: 2;
+      width: 150px !important;
+      height: 150px !important;
   }
-
 }
