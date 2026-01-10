@@ -144,4 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.addEventListener('click', () => moveToSlide(index));
         });
     }
+
+    const menuToggle = document.getElementById('mobile-menu');
+const navLeft = document.querySelector('.nav-left');
+
+menuToggle.addEventListener('click', () => {
+    navLeft.classList.toggle('active');
+    // Optional: Animate hamburger to X
+    menuToggle.classList.toggle('is-active');
+});
 });
