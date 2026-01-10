@@ -1423,105 +1423,80 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }}
 
 /* =========================================
-   IPHONE (MOBILE) OVERRIDE 
+   IPHONE PORTRAIT (Max-width: 480px)
    ========================================= */
 @media (max-width: 480px) {
-
-    /* 1. BACKGROUND: Center Frame */
-    #hero-section, .about-image-container {
-        /* Mobile needs a center anchor because it's too narrow for offsets */
-        background-position: center center !important; 
-        height: 80vh !important;
-    }
-
-    /* 2. NAVIGATION: Minimal for small screens */
+    /* 1. HEADER: Shrink & Simplify */
     nav {
-        padding: 0 15px !important;
         height: 70px !important;
+        padding: 0 15px !important;
     }
+    /* Hide nav text to prevent clumping; keep icons and logo */
+    .nav-left a, .nav-right a:not(.social-link) { display: none !important; }
+    
+    #logo { font-size: 24px !important; }
+    .social-icon { width: 22px !important; height: 22px !important; }
 
-    /* Hide side text links on mobile to prevent overlap; keep icons */
-    .nav-left a, .nav-right a:not(.social-link) {
-        display: none !important; 
-    }
-
-    #logo {
-        font-size: 24px !important; /* Scale down logo */
-    }
-
-    .social-icon {
-        width: 20px !important;
-        height: 20px !important;
-    }
-
-    /* 3. HERO CONTENT: Center Everything */
+    /* 2. HERO CONTENT: Center Everything & Shrink */
     .hero-content {
-        padding-top: 100px !important; 
-        padding-left: 20px !important; /* Reset that 60% iPad push */
+        padding-top: 80px !important;
+        padding-left: 20px !important;  /* Reset iPad 60% push */
         padding-right: 20px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important; /* Center stack for mobile */
+        align-items: center !important; /* Center the stack */
         text-align: center !important;
-        gap: 12px !important;
+        gap: 5px !important;
     }
 
-    .hero-headline {
-        font-size: 32px !important; /* Smaller for mobile width */
-        line-height: 1.2 !important;
-    }
-
-    .hero-subtitle p {
-        font-size: 18px !important;
-    }
-
-    .hero-details p {
-        font-size: 14px !important;
+    .hero-headline { font-size: 28px !important; }
+    .hero-subtitle p { font-size: 18px !important; }
+    .hero-details p { 
+        font-size: 14px !important; 
         max-width: 100% !important;
-        margin: 0 auto !important;
+        margin: 5px auto !important; 
     }
 
     .hero-resume {
         font-size: 16px !important;
-        padding: 12px 15px 12px 50px !important;
+        padding: 12px 15px 12px 55px !important;
     }
+    .btn-icon { width: 30px !important; height: 30px !important; }
 
-    .hero-tech-stack {
-        margin-top: 10px !important;
-    }
+    .hero-tech-stack { margin-top: 10px !important; }
+    .hero-tech-stack p { font-size: 12px !important; }
 
-    /* 4. CAROUSEL/PROJECT CARDS: Stacked Layout */
-    .project-card {
-        flex-direction: column !important; /* Image on top, text on bottom */
-        min-width: 100% !important;
-        height: auto !important;
-    }
-
-    .card-image-wrapper {
-        height: 200px !important;
-        width: 100% !important;
-    }
-
-    .card-details {
-        padding: 20px !important;
-        border-radius: 0 0 20px 20px !important;
-    }
-
+    /* 3. CARDS: Vertical Stack */
+    .project-card { flex-direction: column !important; height: auto !important; }
+    .card-image-wrapper { height: 180px !important; width: 100% !important; }
+    .card-details { padding: 20px !important; }
     .card-details h3 { font-size: 20px !important; }
 
-    /* 5. FOOTER: Vertical Stack */
-    .footer-container {
-        flex-direction: column !important;
-        gap: 15px !important;
+    /* 4. FOOTER: Center Stack */
+    .footer-container { flex-direction: column !important; gap: 10px !important; }
+    .footer-nav { position: static !important; transform: none !important; gap: 15px !important; }
+}
+
+/* =========================================
+   IPHONE LANDSCAPE (Max-height: 480px)
+   ========================================= */
+@media (max-device-width: 932px) and (orientation: landscape) {
+    /* Shrink the Hero height so it fits the short screen */
+    #hero-section { height: 100vh !important; min-height: 320px !important; }
+
+    .hero-content {
+        padding-top: 60px !important;
+        padding-left: 50px !important; /* Side-align looks better in landscape */
+        align-items: flex-start !important;
+        text-align: left !important;
     }
 
-    .footer-nav {
-        flex-direction: row !important;
-        gap: 10px !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-    }
+    .hero-headline { font-size: 26px !important; }
+    .hero-subtitle p { font-size: 16px !important; margin-bottom: 0 !important; }
+    
+    /* Hide details in landscape if it's too cramped, or make it tiny */
+    .hero-details p { font-size: 13px !important; line-height: 1.2 !important; }
+
+    .hero-resume { transform: scale(0.8); transform-origin: left; }
+    
+    /* Move dots out of the way */
+    .carousel-dots { bottom: 10px !important; left: 50px !important; transform: none !important; }
 }
