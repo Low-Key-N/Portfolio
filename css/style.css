@@ -1423,58 +1423,87 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }}
 
 /* =========================================
-   IPHONE PORTRAIT (NEW FIXES)
+   IPHONE PORTRAIT (Standard & Max)
    ========================================= */
 @media (max-width: 480px) {
-    /* 1. HERO CONTENT: Fit for Phone width */
-    .hero-content {
-        padding-left: 35% !important; /* Adjusted from 60% to fit iPhone screen */
-        padding-top: 120px !important;
+
+    /* 1. HEADER: Logo Only */
+    nav {
+        padding: 0 15px !important;
+        height: 70px !important;
     }
 
-    /* Darker Shadow for iPhone readability */
+    /* Hide ALL links (Left and Right) so only the Center Logo remains */
+    .nav-left, .nav-right {
+        display: none !important; 
+    }
+
+    .nav-center {
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    #logo {
+        font-size: 28px !important;
+    }
+
+    /* 2. HERO CONTENT: Horizontal Positioning */
+    #hero-section .hero-content {
+        padding-top: 120px !important;
+        /* PUSHED RIGHT: Increase this number to move it further right */
+        padding-left: 45% !important; 
+        padding-right: 20px !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    /* Darker Shadows */
     .hero-headline, .hero-subtitle p, .hero-details p, .hero-tech-stack p {
         text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
-    /* 2. FOOTER: Remove Name & Tighten Space */
-    .footer-left { display: none !important; } /* Removes "Keyon Bigelow" from footer */
-    
-    .slim-footer {
-        padding: 30px 20px 5px 20px !important; /* Tightens bottom gap */
-    }
-
-    .footer-nav { gap: 15px !important; }
-    .footer-nav a, .footer-right a { font-size: 13px !important; }
+    /* 3. FOOTER CLEANUP */
+    .footer-left { display: none !important; }
+    .slim-footer { padding: 30px 20px 5px 20px !important; }
 }
 
 /* =========================================
-   IPHONE LANDSCAPE (UNIVERSAL COMPATIBILITY)
+   IPHONE LANDSCAPE (Universal Coverage)
    ========================================= */
 @media (max-device-width: 932px) and (orientation: landscape) {
-    /* FIX BROKEN BG: Use scroll to fix Safari rendering */
+
+    /* 1. BACKGROUND: Full Screen Fill Fix */
     #hero-section {
-        height: 100vh !important;
-        background-position: center 20% !important;
-        background-attachment: scroll !important; 
+        /* Changed to 100vh to ensure it fills the 13 Pro Max screen height */
+        height: 100vh !important; 
+        width: 100vw !important;
+        min-height: 400px !important;
+        background-position: center center !important;
         background-size: cover !important;
+        background-attachment: scroll !important;
     }
 
-    /* Compact Landscape Layout */
+    /* 2. TEXT POSITION: Dragged Lower */
     .hero-content {
-        padding-top: 60px !important;
-        padding-left: 45% !important; /* Pushed right for landscape framing */
+        /* Increased from 60px to 110px to drag the text lower */
+        padding-top: 110px !important; 
+        padding-left: 45% !important;
         gap: 4px !important;
     }
 
     .hero-headline { font-size: 32px !important; }
     .hero-subtitle p { font-size: 18px !important; }
-    .hero-details p { font-size: 14px !important; max-width: 80% !important; }
+    
+    .hero-resume { 
+        transform: scale(0.8) !important; 
+        transform-origin: left !important; 
+    }
 
-    /* Shrink button for landscape height */
-    .hero-resume { transform: scale(0.8) !important; transform-origin: left !important; }
-
-    /* Footer Cleanup Landscape */
+    /* Footer Landscape */
     .footer-left { display: none !important; }
     .slim-footer { padding: 10px 20px !important; }
 }
