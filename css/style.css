@@ -1421,3 +1421,107 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     line-height: 1.6 !important;
     margin-left: 0 !important;
 }}
+
+/* =========================================
+   IPHONE (MOBILE) OVERRIDE 
+   ========================================= */
+@media (max-width: 480px) {
+
+    /* 1. BACKGROUND: Center Frame */
+    #hero-section, .about-image-container {
+        /* Mobile needs a center anchor because it's too narrow for offsets */
+        background-position: center center !important; 
+        height: 80vh !important;
+    }
+
+    /* 2. NAVIGATION: Minimal for small screens */
+    nav {
+        padding: 0 15px !important;
+        height: 70px !important;
+    }
+
+    /* Hide side text links on mobile to prevent overlap; keep icons */
+    .nav-left a, .nav-right a:not(.social-link) {
+        display: none !important; 
+    }
+
+    #logo {
+        font-size: 24px !important; /* Scale down logo */
+    }
+
+    .social-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    /* 3. HERO CONTENT: Center Everything */
+    .hero-content {
+        padding-top: 100px !important; 
+        padding-left: 20px !important; /* Reset that 60% iPad push */
+        padding-right: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Center stack for mobile */
+        text-align: center !important;
+        gap: 12px !important;
+    }
+
+    .hero-headline {
+        font-size: 32px !important; /* Smaller for mobile width */
+        line-height: 1.2 !important;
+    }
+
+    .hero-subtitle p {
+        font-size: 18px !important;
+    }
+
+    .hero-details p {
+        font-size: 14px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-resume {
+        font-size: 16px !important;
+        padding: 12px 15px 12px 50px !important;
+    }
+
+    .hero-tech-stack {
+        margin-top: 10px !important;
+    }
+
+    /* 4. CAROUSEL/PROJECT CARDS: Stacked Layout */
+    .project-card {
+        flex-direction: column !important; /* Image on top, text on bottom */
+        min-width: 100% !important;
+        height: auto !important;
+    }
+
+    .card-image-wrapper {
+        height: 200px !important;
+        width: 100% !important;
+    }
+
+    .card-details {
+        padding: 20px !important;
+        border-radius: 0 0 20px 20px !important;
+    }
+
+    .card-details h3 { font-size: 20px !important; }
+
+    /* 5. FOOTER: Vertical Stack */
+    .footer-container {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .footer-nav {
+        flex-direction: row !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+}
