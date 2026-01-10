@@ -760,6 +760,9 @@ border: none;
     position: relative; 
     overflow: hidden;
     background-color: #333; /* Fallback color */
+    will-change: background-image; 
+    transform: translateZ(0);       
+    backface-visibility: hidden;
 }
 
 /* The Individual Slide Images */
@@ -771,10 +774,8 @@ border: none;
     height: 100%;
     background-size: cover;
     background-position: center;
-    
     /* Start invisible */
     opacity: 0;
-    
     /* The Animation: Lasts 12s, loops forever */
     animation: crossFade 12s infinite;
 }
@@ -789,6 +790,20 @@ border: none;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 10; /* Lifts it above the images */
+}
+
+/* Individual Slides with actual URLs */
+.slide-1 { 
+    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'); 
+    animation-delay: 0s;
+}
+.slide-2 { 
+    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80'); 
+    animation-delay: 4s; 
+}
+.slide-3 { 
+    background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'); 
+    animation-delay: 8s; 
 }
 
 /* The New Animation (Changes Opacity, not Image) */
@@ -1292,23 +1307,35 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
   }
 
 .about-image-container {
-    position: relative;  
-    width: 100%;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;    
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    display: block;
-}
+      position: relative;
+      width: 100%;
+      height: 350px; /* Force a consistent height for the frame */
+      border-radius: 20px;
+      overflow: hidden;
+      display: block;
+      margin-bottom: 20px;
+  }
 
   .big-bg-img {
-    position: absolute;  
-    top: 0;
-    left: 0;
-    width: 100%;        
-    height: 100%;       
-    object-fit: cover; 
-    z-index: 0;          
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+      object-position: center; 
+  }
+
+  /* Ensure the tint stays on top of the fixed image */
+  .grey-tint {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+  }
+
+  /* Keep the profile cube centered in the frame */
+  .profile-cube {
+      z-index: 2;
   }
 
 }
