@@ -1426,8 +1426,14 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    IPHONE PORTRAIT (Standard & Max)
    ========================================= */
 @media (max-width: 480px) {
-    nav { padding: 0 15px !important; height: 70px !important; }
-    .nav-left, .nav-right { display: none !important; }
+    /* 1. HEADER: Centered Logo Only */
+    nav { 
+        padding: 0 15px !important; 
+        height: 70px !important; 
+    }
+    .nav-left, .nav-right { 
+        display: none !important; 
+    }
     .nav-center {
         position: relative !important;
         left: 0 !important;
@@ -1438,7 +1444,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
     #logo { font-size: 28px !important; }
 
-    /* HERO CONTENT: Positioning & Size */
+    /* 2. HERO CONTENT: Positioning & Size */
     #hero-section .hero-content {
         padding-top: 120px !important;
         padding-left: 60% !important; 
@@ -1447,40 +1453,57 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         text-align: left !important;
     }
 
-    /* DECREASED HERO TEXT SIZES */
+    /* Shrunken Hero Text */
     .hero-headline { 
-        font-size: 28px !important; /* Shrunk from original large size */
+        font-size: 28px !important; 
         line-height: 1.1 !important;
     }
     .hero-subtitle p { 
-        font-size: 18px !important; /* Shrunk from 25px */
+        font-size: 18px !important; 
     }
     .hero-details p { 
-        font-size: 14px !important; /* Shrunk from 16px */
+        font-size: 14px !important; 
     }
     .hero-tech-stack p { 
-        font-size: 12px !important; /* Shrunk from 14px */
+        font-size: 12px !important; 
     }
 
     .hero-headline, .hero-subtitle p, .hero-details p, .hero-tech-stack p {
         text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
-    /* FOOTER: Shorter area with Octagonal Style */
+    /* 3. FOOTER: Horizontal Center Style */
     .slim-footer { 
-        padding: 15px 0 5px 0 !important; /* Removed excess top/bottom room */
+        padding: 20px 0 10px 0 !important; /* Shorter area */
     }
+
     .footer-container { 
-        flex-direction: column !important; 
-        gap: 10px !important; 
+        flex-direction: row !important; /* Back to horizontal */
+        justify-content: center !important; 
+        align-items: center !important;
+        width: 100% !important;
     }
+
+    /* Removes the footer name logo */
+    .footer-left { 
+        display: none !important; 
+    }
+
     .footer-nav { 
         position: static !important; 
         transform: none !important; 
-        gap: 10px !important; /* Tightened gap between links */
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important; /* Center alignment */
+        gap: 20px !important; /* Normal spacing between words */
+        width: 100% !important;
+    }
+
+    /* Hide social icons if they crowd the horizontal center line */
+    .footer-right {
+        display: none !important;
     }
 }
-
 /* =========================================
    IPHONE LANDSCAPE (13 Pro Max & Standard)
    ========================================= */
