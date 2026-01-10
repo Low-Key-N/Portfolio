@@ -1454,7 +1454,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     .card-image-wrapper {
         width: 100% !important; 
-        height: 200px !important; /* Image size remains unchanged */
+        height: 200px !important; 
     }
 
     .card-details {
@@ -1463,25 +1463,25 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         border-radius: 0 0 20px 20px !important; 
     }
 
-    /* Target text inside the card to decrease size */
     .card-details h3 {
-        font-size: 18px !important; /* Shrunk for better fit */
+        font-size: 18px !important; 
         margin-bottom: 5px !important;
     }
 
     .card-details .tech-stack {
-        font-size: 9px !important; /* Shrunk for better fit */
+        font-size: 9px !important; 
         margin-bottom: 10px !important;
     }
 
+    /* SPECIFICALLY LOWERING THE DESCRIPTION TEXT */
     .card-details .description {
-        font-size: 13px !important; /* Shrunk for better fit */
+        font-size: 11px !important; /* Shrunk further from 13px for a cleaner look */
         line-height: 1.4 !important;
         margin-bottom: 15px !important;
     }
 
     .card-details .view-project {
-        font-size: 13px !important; /* Shrunk for better fit */
+        font-size: 13px !important; 
     }
 
     /* 3. HERO CONTENT */
