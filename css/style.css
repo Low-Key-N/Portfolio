@@ -1244,31 +1244,29 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 @media (max-width: 1024px) {
 
-    /* 1. MOVE BACKGROUND IMAGE LEFT */
+    /* 1. BACKGROUND: "GOLDILOCKS" FRAMING */
     #hero-section, .about-image-container {
-        /* 5% pulls the image further left than previous versions */
-        background-position: 5% center !important; 
+        /* 15% is the sweet spot: shows the desk setup without cutting it off */
+        background-position: -100px center !important;
         background-size: cover !important;
     }
 
-    /* 2. ALIGN DOTS OVER PORTFOLIO */
-    .carousel-dots {
-        position: absolute !important;
-        /* Anchors dots to the left side to align with nav links */
-        left: 85px !important; 
-        bottom: 15px !important;
-        transform: none !important;
-        display: flex !important;
-        width: auto !important;
-    }
-
-    /* KEEPING ALL OTHER STYLES AS IS */
+    /* 2. HEADER: Restore Normal Spacing */
     nav {
-        display: flex !important;
+        display: flex !important; /* Back to Flex for normal spacing */
         justify-content: space-between !important;
         align-items: center !important;
         height: 80px !important;
         padding: 0 30px !important;
+    }
+
+    .nav-left, .nav-right {
+        flex: 1;
+        gap: 20px !important;
+    }
+
+    .nav-left a, .nav-right a {
+        font-size: 15px !important; /* Slightly smaller for fit */
     }
 
     .nav-center {
@@ -1279,26 +1277,53 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     #logo {
-        font-size: 32px !important;
+        font-size: 32px !important; /* Big and clear */
+        margin: 0 !important;
+    }
+
+    /* 3. PROJECT CARD: Shrink Text for the Frame */
+    .card-details h3 {
+        font-size: 22px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .description {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 5. FOOTER: Normal Spread (No Stacking) */
+    .slim-footer {
+        padding: 40px 30px !important;
     }
 
     .footer-container {
         display: flex !important;
-        flex-direction: row !important;
+        flex-direction: row !important; /* Forces horizontal line */
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
-        padding: 20px 40px !important;
+    }
+
+    .footer-left, .footer-right {
+        flex: 1;
     }
 
     .footer-nav {
-        position: static !important;
+        flex: 2;
         display: flex !important;
         justify-content: center !important;
+        gap: 25px !important;
+        position: static !important;
         transform: none !important;
-        gap: 20px !important;
     }
 
+    .footer-nav a, .footer-right a {
+        font-size: 15px !important;
+        white-space: nowrap !important;
+    }
+
+    /* 6. HERO CONTENT: Center Lock */
     .hero-content {
         padding-top: 150px !important;
         text-align: center !important;
@@ -1307,6 +1332,5 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .hero-headline, .hero-subtitle p, .hero-details p, .hero-resume, .hero-tech-stack p {
         margin-left: 0 !important;
         text-align: center !important;
-        width: 100% !important;
     }
 }
