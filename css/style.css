@@ -1244,30 +1244,26 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 @media (max-width: 1024px) {
 
-    /* 1. HOME PAGE HERO: Pull Background Image Left */
-    #hero-section {
-        /* 0% anchors the left side of the photo to the left edge of the screen */
-        background-position: 0% top !important; 
-        background-size: cover !important;
-        height: 75vh !important;
-    }
-
-    /* 2. ABOUT PAGE: Background Framing */
-    .about-image-container {
-        height: 400px !important;
-        background-position: 0% center !important; 
-        background-size: cover !important;
-        display: block !important;
-    }
-
-    /* 3. HEADER: Locked Center Grid */
+    /* 1. HEADER: Smaller Sides, Bigger Center */
     nav {
         display: grid !important;
-        grid-template-columns: 1fr 2fr 1fr !important; 
+        /* Side columns (0.8fr) are smaller, Center (2.4fr) is much bigger */
+        grid-template-columns: 0.8fr 2.4fr 0.8fr !important; 
         align-items: center;
-        padding: 0 24px !important;
+        padding: 0 15px !important; /* Tighter padding to save space */
         height: 80px !important;
         width: 100% !important;
+    }
+
+    .nav-left {
+        grid-column: 1;
+        display: flex !important;
+        justify-content: flex-start !important;
+        gap: 10px !important; /* Shrunk gap */
+    }
+
+    .nav-left a {
+        font-size: 15px !important; /* Smaller text for side links */
     }
 
     .nav-center {
@@ -1279,27 +1275,53 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     #logo {
-        font-size: 26px !important;
+        font-size: 28px !important; /* Kept large as the main focus */
         white-space: nowrap !important;
+    }
+
+    .nav-right {
+        grid-column: 3;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 10px !important;
+    }
+
+    .nav-right a {
+        font-size: 15px !important;
+    }
+
+    .social-icon {
+        width: 24px !important; /* Shrunk icons to fit */
+        height: 24px !important;
+    }
+
+    /* 2. INDEX BACKGROUND: Pull further left */
+    #hero-section {
+        /* Anchors the leftmost pixels to the edge */
+        background-position: 0% top !important; 
+        background-size: cover !important;
+    }
+
+    /* 3. ABOUT PAGE BACKGROUND */
+    .about-image-container {
+        height: 400px !important;
+        background-position: 0% center !important; 
+        background-size: cover !important;
     }
 
     /* 4. CAROUSEL DOTS: Center Alignment */
     .carousel-dots {
         position: absolute !important;
-        /* Using 50% left + -50% transform is the most reliable center lock */
         left: 50% !important;
         transform: translateX(-50%) !important;
         bottom: 10px !important;
         width: auto !important;
-        display: flex !important;
-        justify-content: center !important;
-        gap: 12px !important;
     }
 
-    /* 5. FOOTER: Sync Grid with Header */
+    /* 5. FOOTER: Sync with Header Grid */
     .footer-container {
         display: grid !important;
-        grid-template-columns: 1fr 2fr 1fr !important;
+        grid-template-columns: 0.8fr 2.4fr 0.8fr !important;
         align-items: center;
         width: 100% !important;
     }
@@ -1310,10 +1332,15 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         justify-content: center !important;
         position: static !important;
         transform: none !important;
-        gap: 20px !important;
+        gap: 15px !important;
     }
 
-    /* 6. HERO CONTENT & TEXT: Global Center */
+    .footer-nav a {
+        font-size: 14px !important;
+        width: auto !important; /* Removes fixed widths */
+    }
+
+    /* 6. HERO TEXT & CONTENT: Center Lock */
     .hero-content {
         padding-top: 150px !important;
         text-align: center !important;
