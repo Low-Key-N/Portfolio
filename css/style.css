@@ -1247,7 +1247,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     /* 1. BACKGROUND: "GOLDILOCKS" FRAMING */
     #hero-section, .about-image-container {
         /* 15% is the sweet spot: shows the desk setup without cutting it off */
-        background-position: -100px center !important;
+        background-position: -200px center !important;
         background-size: cover !important;
     }
 
