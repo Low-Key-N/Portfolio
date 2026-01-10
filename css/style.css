@@ -1240,126 +1240,118 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
 
 /* =========================================
-   FULL PORTRAIT OVERRIDE (max-width: 1024px)
+   IPAD PORTRAIT OVERRIDE 
    ========================================= */
 @media (max-width: 1024px) {
 
-    /* 1. HEADER: 3-Column Grid for Perfect Centering */
-    nav, .dark-mode-nav {
+    /* 1. HEADER NAV: Locked 3-Column Grid */
+    nav {
         display: grid !important;
-        grid-template-columns: 1fr 450px 1fr !important; 
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0 30px !important;
-        height: 100px !important; /* Keep original height for logo scale */
-        position: fixed !important;
+        /* Middle column is wider to ensure the logo is perfectly centered */
+        grid-template-columns: 1fr 2fr 1fr !important; 
+        align-items: center;
+        padding: 0 24px !important;
+        height: 80px !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
     }
 
     .nav-left {
         grid-column: 1;
-        display: flex;
-        justify-content: flex-start;
+        display: flex !important;
+        justify-content: flex-start !important;
         gap: 15px !important;
-        position: static !important;
     }
 
     .nav-center {
         grid-column: 2;
-        position: static !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: static !important; /* Removes absolute drift */
         transform: none !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     #logo {
-        font-size: 40px !important; /* Original PC Size */
-        font-weight: 700 !important;
-        line-height: 80px !important;
+        font-size: 26px !important;
         white-space: nowrap !important;
         text-align: center !important;
+        margin: 0 !important;
     }
 
     .nav-right {
         grid-column: 3;
-        display: flex;
-        justify-content: flex-end;
+        display: flex !important;
+        justify-content: flex-end !important;
         gap: 15px !important;
-        position: static !important;
     }
 
-    /* 2. ABOUT IMAGE: Shifting Left for Room */
+    /* 2. ABOUT PAGE: Background Framing */
     .about-image-container {
-        width: 100% !important;
-        height: 400px !important; 
-        background-image: url('../assets/images/techtint.jpg');
+        height: 400px !important;
+        /* 0% or 10% pulls the image to the far left to show the desk */
+        background-position: 0% center !important; 
         background-size: cover !important;
-        /* Shifted to 15% to move the image left and show more desk */
-        background-position: 15% center !important; 
-        border-radius: 20px !important;
         display: block !important;
-        margin-bottom: 30px !important;
-    }
-
-    /* Hide the old physical img tag if it still exists */
-    .about-image-container .big-bg-img {
-        display: none !important;
+        margin-bottom: 20px !important;
     }
 
     .profile-cube {
-        width: 160px !important;
-        height: 160px !important;
-        z-index: 2;
+        width: 150px !important;
+        height: 150px !important;
+        z-index: 2 !important;
     }
 
-    /* 3. TEXT RE-ORGANIZATION: Matching Normal Pages */
-    .about-text-container {
-        padding: 40px !important; /* Reduced padding for mobile/tablet */
-        text-align: left !important; /* Back to standard left alignment */
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .about-text-container h1 {
-        text-align: left !important; /* Align header to left to match normal style */
-        font-size: 36px !important;
-        margin-bottom: 15px !important;
-    }
-
-    .about-text-container p {
-        font-size: 18px !important;
-        line-height: 1.6 !important;
-        text-align: left !important;
-    }
-
-    .hobbies-list {
-        justify-content: flex-start !important; /* Align tags to the left */
-        gap: 10px !important;
-    }
-
-    .about-resume-btn {
-        margin: 0 !important; /* Remove auto centering to align left */
-    }
-
-    /* 4. FOOTER SYNC: Match Header Grid */
+    /* 3. FOOTER: Locked Grid Sync */
     .footer-container {
         display: grid !important;
-        grid-template-columns: 1fr 450px 1fr !important;
-        align-items: center !important;
+        /* Matches the header grid exactly for perfect alignment */
+        grid-template-columns: 1fr 2fr 1fr !important;
+        align-items: center;
         width: 100% !important;
+    }
+
+    .footer-left {
+        grid-column: 1;
+        justify-content: flex-start !important;
     }
 
     .footer-nav {
         grid-column: 2;
-        position: static !important;
-        transform: none !important;
         display: flex !important;
         justify-content: center !important;
-        gap: 30px !important;
+        position: static !important;
+        transform: none !important;
+        gap: 20px !important;
     }
 
-    .footer-left { grid-column: 1; justify-content: flex-start; }
-    .footer-right { grid-column: 3; justify-content: flex-end; }
+    .footer-right {
+        grid-column: 3;
+        justify-content: flex-end !important;
+    }
+
+    /* 4. CAROUSEL DOTS: Center Lock */
+    .carousel-dots {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: 10px !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: auto !important;
+    }
+
+    /* 5. HERO TEXT RESET */
+    .hero-headline, 
+    .hero-subtitle p, 
+    .hero-details p, 
+    .hero-resume,
+    .hero-tech-stack p {
+        margin-left: 0 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
 }
