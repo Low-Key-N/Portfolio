@@ -1244,79 +1244,64 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 @media (max-width: 1024px) {
 
-    /* 1. HEADER NAV: Locked 3-Column Grid */
+    /* 1. HOME PAGE HERO: Pull Background Image Left */
+    #hero-section {
+        /* 0% anchors the left side of the photo to the left edge of the screen */
+        background-position: 0% top !important; 
+        background-size: cover !important;
+        height: 75vh !important;
+    }
+
+    /* 2. ABOUT PAGE: Background Framing */
+    .about-image-container {
+        height: 400px !important;
+        background-position: 0% center !important; 
+        background-size: cover !important;
+        display: block !important;
+    }
+
+    /* 3. HEADER: Locked Center Grid */
     nav {
         display: grid !important;
-        /* Middle column is wider to ensure the logo is perfectly centered */
         grid-template-columns: 1fr 2fr 1fr !important; 
         align-items: center;
         padding: 0 24px !important;
         height: 80px !important;
         width: 100% !important;
-        box-sizing: border-box !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-    }
-
-    .nav-left {
-        grid-column: 1;
-        display: flex !important;
-        justify-content: flex-start !important;
-        gap: 15px !important;
     }
 
     .nav-center {
         grid-column: 2;
         display: flex !important;
         justify-content: center !important;
-        align-items: center !important;
-        position: static !important; /* Removes absolute drift */
+        position: static !important;
         transform: none !important;
     }
 
     #logo {
         font-size: 26px !important;
         white-space: nowrap !important;
-        text-align: center !important;
-        margin: 0 !important;
     }
 
-    .nav-right {
-        grid-column: 3;
+    /* 4. CAROUSEL DOTS: Center Alignment */
+    .carousel-dots {
+        position: absolute !important;
+        /* Using 50% left + -50% transform is the most reliable center lock */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: 10px !important;
+        width: auto !important;
         display: flex !important;
-        justify-content: flex-end !important;
-        gap: 15px !important;
+        justify-content: center !important;
+        gap: 12px !important;
     }
 
-    /* 2. ABOUT PAGE: Background Framing */
-    .about-image-container {
-        height: 400px !important;
-        /* 0% or 10% pulls the image to the far left to show the desk */
-        background-position: 0% center !important; 
-        background-size: cover !important;
-        display: block !important;
-        margin-bottom: 20px !important;
-    }
-
-    .profile-cube {
-        width: 150px !important;
-        height: 150px !important;
-        z-index: 2 !important;
-    }
-
-    /* 3. FOOTER: Locked Grid Sync */
+    /* 5. FOOTER: Sync Grid with Header */
     .footer-container {
         display: grid !important;
-        /* Matches the header grid exactly for perfect alignment */
         grid-template-columns: 1fr 2fr 1fr !important;
         align-items: center;
         width: 100% !important;
-    }
-
-    .footer-left {
-        grid-column: 1;
-        justify-content: flex-start !important;
     }
 
     .footer-nav {
@@ -1328,23 +1313,12 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         gap: 20px !important;
     }
 
-    .footer-right {
-        grid-column: 3;
-        justify-content: flex-end !important;
+    /* 6. HERO CONTENT & TEXT: Global Center */
+    .hero-content {
+        padding-top: 150px !important;
+        text-align: center !important;
     }
 
-    /* 4. CAROUSEL DOTS: Center Lock */
-    .carousel-dots {
-        position: absolute !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        bottom: 10px !important;
-        display: flex !important;
-        justify-content: center !important;
-        width: auto !important;
-    }
-
-    /* 5. HERO TEXT RESET */
     .hero-headline, 
     .hero-subtitle p, 
     .hero-details p, 
