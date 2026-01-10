@@ -1423,80 +1423,84 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }}
 
 /* =========================================
-   IPHONE PORTRAIT (Max-width: 480px)
+   IPHONE PORTRAIT (Standard & Max)
    ========================================= */
 @media (max-width: 480px) {
-    /* 1. HEADER: Shrink & Simplify */
-    nav {
-        height: 70px !important;
-        padding: 0 15px !important;
-    }
-    /* Hide nav text to prevent clumping; keep icons and logo */
-    .nav-left a, .nav-right a:not(.social-link) { display: none !important; }
-    
-    #logo { font-size: 24px !important; }
-    .social-icon { width: 22px !important; height: 22px !important; }
 
-    /* 2. HERO CONTENT: Center Everything & Shrink */
-    .hero-content {
-        padding-top: 80px !important;
-        padding-left: 20px !important;  /* Reset iPad 60% push */
+    /* 1. HERO TEXT: High-Contrast Shadow */
+    .hero-headline, .hero-subtitle p, .hero-details p {
+        text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.9), 0px 0px 20px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* 2. FOOTER: Remove Name & Tighten Spacing */
+    .footer-left {
+        display: none !important; /* Removes your name logo as requested */
+    }
+
+    .slim-footer {
+        padding: 20px 0 10px 0 !important; /* Tightens bottom room */
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .footer-nav {
+        position: static !important;
+        transform: none !important;
+        gap: 15px !important;
+    }
+
+    /* 3. HOME PAGE MOBILE ALIGNMENT */
+    #hero-section .hero-content {
+        padding-top: 100px !important;
+        padding-left: 20px !important;
         padding-right: 20px !important;
-        align-items: center !important; /* Center the stack */
+        align-items: center !important;
         text-align: center !important;
-        gap: 5px !important;
     }
-
-    .hero-headline { font-size: 28px !important; }
-    .hero-subtitle p { font-size: 18px !important; }
-    .hero-details p { 
-        font-size: 14px !important; 
-        max-width: 100% !important;
-        margin: 5px auto !important; 
-    }
-
-    .hero-resume {
-        font-size: 16px !important;
-        padding: 12px 15px 12px 55px !important;
-    }
-    .btn-icon { width: 30px !important; height: 30px !important; }
-
-    .hero-tech-stack { margin-top: 10px !important; }
-    .hero-tech-stack p { font-size: 12px !important; }
-
-    /* 3. CARDS: Vertical Stack */
-    .project-card { flex-direction: column !important; height: auto !important; }
-    .card-image-wrapper { height: 180px !important; width: 100% !important; }
-    .card-details { padding: 20px !important; }
-    .card-details h3 { font-size: 20px !important; }
-
-    /* 4. FOOTER: Center Stack */
-    .footer-container { flex-direction: column !important; gap: 10px !important; }
-    .footer-nav { position: static !important; transform: none !important; gap: 15px !important; }
 }
 
 /* =========================================
-   IPHONE LANDSCAPE (Max-height: 480px)
+   IPHONE LANDSCAPE (Universal for All Models)
    ========================================= */
 @media (max-device-width: 932px) and (orientation: landscape) {
-    /* Shrink the Hero height so it fits the short screen */
-    #hero-section { height: 100vh !important; min-height: 320px !important; }
 
-    .hero-content {
-        padding-top: 60px !important;
-        padding-left: 50px !important; /* Side-align looks better in landscape */
-        align-items: flex-start !important;
-        text-align: left !important;
+    /* 1. FIX BROKEN BACKGROUND: Full coverage with Dark Overlay */
+    #hero-section {
+        height: 100vh !important;
+        min-height: 380px !important;
+        /* Using a gradient to ensure text remains readable over the photo */
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/images/keyon-park.png") !important;
+        background-position: center 20% !important;
+        background-size: cover !important;
     }
 
-    .hero-headline { font-size: 26px !important; }
-    .hero-subtitle p { font-size: 16px !important; margin-bottom: 0 !important; }
-    
-    /* Hide details in landscape if it's too cramped, or make it tiny */
-    .hero-details p { font-size: 13px !important; line-height: 1.2 !important; }
+    /* 2. COMPACT HERO: Prevents scrolling on 13 Pro Max */
+    .hero-content {
+        padding-top: 50px !important;
+        padding-left: 40px !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 4px !important;
+    }
 
-    .hero-resume { transform: scale(0.8); transform-origin: left; }
-    
-    /* Move dots out of the way */
-    .carousel-dots { bottom: 10px !important; left: 50px !important; transform: none !important; }
+    .hero-headline { font-size: 30px !important; line-height: 1.0 !important; }
+    .hero-subtitle p { font-size: 18px !important; }
+    .hero-details p { font-size: 14px !important; line-height: 1.2 !important; max-width: 60% !important; }
+
+    /* Shrink resume button for short landscape height */
+    .hero-resume {
+        transform: scale(0.75) !important;
+        transform-origin: left center !important;
+        margin-top: 0 !important;
+    }
+
+    /* 3. FOOTER LANDSCAPE: Ultra Compact */
+    .slim-footer {
+        padding: 10px 20px !important;
+    }
+    .footer-left { display: none !important; }
 }
