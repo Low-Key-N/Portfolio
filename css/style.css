@@ -1323,22 +1323,25 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-  .hero-content {
+  /* 1. HERO CONTENT: Right-Aligned Stack */
+    .hero-content {
         padding-top: 100px !important; 
-        /* Pushes the entire block to the right */
-        padding-left: 60px !important; 
+        /* Reset left padding and push from the right */
+        padding-left: 0 !important;
+        padding-right: 60px !important; 
+        
         display: flex !important;
         flex-direction: column !important;
-        /* Forces all children (headline, button, etc.) to the same left edge */
-        align-items: flex-start !important; 
-        text-align: left !important;
+        /* Forces all children to the RIGHT edge */
+        align-items: flex-end !important; 
+        text-align: right !important;
         gap: 8px !important; 
     }
 
     .hero-headline {
         font-size: 38px !important;
         line-height: 1.1 !important;
-        margin-left: 0 !important;
+        margin-right: 0 !important; /* Lock to right side */
         max-width: 90% !important; 
     }
 
@@ -1352,24 +1355,27 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         font-size: 16px !important;
         max-width: 80% !important; 
         line-height: 1.4 !important;
-        /* Removed 'auto' to keep it locked to the left edge */
-        margin: 5px 0 15px 0 !important; 
+        /* Aligns description text box to the right */
+        margin: 5px 0 10px 0 !important; 
     }
 
     .hero-resume {
         margin-top: 5px !important; 
-        margin-left: 0 !important;
+        margin-right: 0 !important;
+        /* Flip the internal button padding if icon needs to be on right */
+        padding: 16px 70px 16px 20px !important; 
     }
 
-    /* 3. TECH STACK: Un-bunched & Spaced Out */
+    /* 2. TECH STACK: Shortened Spacing & Right Aligned */
     .hero-tech-stack {
-        /* Pushes the tech stack down away from the description */
-        margin-top: 40px !important; 
-        text-align: left !important;
+        /* Reduced from 40px to 15px to shorten the gap */
+        margin-top: 15px !important; 
+        text-align: right !important;
+        width: 100% !important;
     }
 
     .hero-tech-stack p {
         font-size: 14px !important;
         line-height: 1.6 !important;
-        margin-left: 0 !important;
+        margin-right: 0 !important;
     }}
