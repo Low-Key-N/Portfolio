@@ -1323,14 +1323,45 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-    /* 6. HERO CONTENT: Center Lock */
+   /* 6. HERO CONTENT: Compact PC-Style Layout */
     .hero-content {
-        padding-top: 150px !important;
-        text-align: center !important;
+        /* Bringing the text up so it's not buried at the bottom */
+        padding-top: 100px !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        /* Tightens the space between the Headline, Subtitle, and Button */
+        gap: 8px !important; 
     }
 
-    .hero-headline, .hero-subtitle p, .hero-details p, .hero-resume, .hero-tech-stack p {
-        margin-left: 0 !important;
-        text-align: center !important;
+    .hero-headline {
+        font-size: 38px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 0 !important;
+        /* Keeps the headline from hitting the screen edges */
+        max-width: 90% !important; 
+    }
+
+    .hero-subtitle p {
+        font-size: 20px !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+    }
+
+    .hero-details p {
+        font-size: 16px !important;
+        /* Constrains width to 80% to mimic the 'block' look of the PC version */
+        max-width: 80% !important; 
+        line-height: 1.4 !important;
+        margin: 5px auto 15px auto !important;
+    }
+
+    .hero-resume {
+        /* Moves the button up closer to the description */
+        margin-top: 5px !important; 
+    }
+
+    .hero-tech-stack {
+        margin-top: 10px !important;
     }
 }
