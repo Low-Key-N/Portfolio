@@ -1323,15 +1323,15 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-  .hero-content {
+  hero-content {
     padding-top: 100px !important; 
-    /* This pushes the entire block to the right side of the screen */
+    /* Keeps the stack pushed to the right side of the screen */
     padding-left: 35% !important; 
     padding-right: 30px !important;
     
     display: flex !important;
     flex-direction: column !important;
-    /* This ensures all items start at the same left vertical line */
+    /* Aligns everything perfectly to the left edge under the headline */
     align-items: flex-start !important; 
     text-align: left !important;
     gap: 8px !important; 
@@ -1354,7 +1354,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     font-size: 16px !important;
     max-width: 90% !important; 
     line-height: 1.4 !important;
-    /* Margin keeps the text locked to the left alignment */
     margin: 5px 0 15px 0 !important; 
 }
 
@@ -1363,10 +1362,10 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     margin-left: 0 !important;
 }
 
-/* 3. TECH STACK: Shortened Spacing */
+/* 3. TECH STACK: Minimized Gap */
 .hero-tech-stack {
-    /* Shortened gap as requested */
-    margin-top: 10px !important; 
+    /* Space removed to sit immediately under the bio */
+    margin-top: 0px !important; 
     text-align: left !important;
 }
 
