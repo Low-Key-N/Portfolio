@@ -1444,38 +1444,16 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         padding-right: 20px !important;
         align-items: flex-start !important;
         text-align: left !important;
+        font-size: 60px !important;
     }
 
     .hero-headline, .hero-subtitle p, .hero-details p, .hero-tech-stack p {
         text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
-   /* 3. FOOTER: Restore "Octagonal" Stack */
-    .slim-footer {
-        padding: 40px 20px 20px 20px !important;
-    }
-
-    .footer-container {
-        flex-direction: column !important; /* Forces the vertical stack */
-        align-items: center !important;
-        gap: 25px !important;
-    }
-
-    .footer-left { display: none !important; } /* Removes name logo per request */
-
-    .footer-nav {
-        position: static !important;
-        transform: none !important;
-        flex-direction: column !important; /* Stack links vertically */
-        align-items: center !important;
-        gap: 15px !important;
-    }
-
-    .footer-right {
-        justify-content: center !important;
-        width: 100% !important;
-        gap: 25px !important;
-    }
+/* 4. FOOTER: Center Stack */
+    .footer-container { flex-direction: column !important; gap: 10px !important; }
+    .footer-nav { position: static !important; transform: none !important; gap: 15px !important; }
 }
 
 /* =========================================
