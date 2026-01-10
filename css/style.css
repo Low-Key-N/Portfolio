@@ -1323,23 +1323,54 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-   .hero-content {
-        padding-top: 150px !important;
-        /* Matches the starting point of your headline */
-        text-align: left !important; 
+  .hero-content {
+        /* Adjusted padding to clear the 80px nav and center in the top half */
+        padding-top: 120px !important; 
+        padding-right: 0 !important; /* Resetting the PC right-padding */
+        margin: 0 auto !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important; 
+        align-items: center !important;
+        text-align: center !important;
+        /* Uniform gap between all elements */
+        gap: 10px !important; 
     }
 
-    /* Force all subtitle, details, and tech stack text to the left */
-    .hero-headline, 
-    .hero-subtitle p, 
-    .hero-details p, 
-    .hero-tech-stack p,
+    .hero-headline {
+        font-size: 42px !important; /* Slightly larger for "Hi, I'm Keyon" impact */
+        line-height: 1.0 !important;
+        font-weight: 700 !important;
+        margin-bottom: 5px !important;
+        max-width: 95% !important; 
+        text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Boosted readability */
+    }
+
+    .hero-subtitle p {
+        font-size: 24px !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-details p {
+        font-size: 17px !important;
+        max-width: 85% !important; /* Mimics the PC 'block' feel */
+        line-height: 1.5 !important;
+        margin: 0 auto !important;
+        color: #f0f0f0;
+    }
+
     .hero-resume {
-        margin-left: 0 !important;
-        text-align: left !important;
-        width: auto !important;
-        max-width: 90% !important;
-    }}
+        /* Specific spacing for the main call-to-action button */
+        margin-top: 20px !important; 
+        padding: 14px 18px 14px 60px !important; /* Slightly tighter button for tablet */
+        font-size: 18px !important;
+    }
+
+    .hero-tech-stack p {
+        margin-top: 15px !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+}
