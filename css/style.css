@@ -1309,8 +1309,8 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 .about-image-container {
       position: relative;
       width: 100%;
-      /* Increase height slightly for portrait to show more of the desk/environment */
-      height: 450px !important; 
+      /* Lowering the height ensures the "wide" image isn't cropped as aggressively */
+      height: 300px !important; 
       border-radius: 20px;
       overflow: hidden;
       display: block;
@@ -1320,22 +1320,18 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
   .big-bg-img {
       width: 100%;
       height: 100%;
+      /* 'contain' forces the whole image to show, but it might leave gaps */
+      /* 'cover' is still better, but we need to pin it to the left edge */
       object-fit: cover;
-      object-position: 20% center !important; 
+      object-position: left center !important; 
   }
 
-  .grey-tint {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-  }
-
+  /* We need to move the profile cube so it's not covering the only visible 
+     part of the desk in portrait mode */
   .profile-cube {
-      z-index: 2;
-      width: 150px !important;
-      height: 150px !important;
+      left: 75% !important; /* Move it to the right over the grey space */
+      width: 140px !important;
+      height: 140px !important;
+      transform: translate(-50%, -50%);
   }
 }
