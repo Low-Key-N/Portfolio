@@ -1338,14 +1338,14 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }
 
 .hero-headline {
-    font-size: 38px !important;
+    font-size: 40px !important;
     line-height: 1.1 !important;
     margin-left: 0 !important;
     max-width: 100% !important; 
 }
 
 .hero-subtitle p {
-    font-size: 20px !important;
+    font-size: 25px !important;
     margin: 0 !important;
     font-weight: 600 !important;
 }
