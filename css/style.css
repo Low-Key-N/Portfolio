@@ -1245,10 +1245,16 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 @media (max-width: 1024px) {
 
     /* 1. BACKGROUND: "GOLDILOCKS" FRAMING */
-    #hero-section, .about-image-container {
+    #hero-section {
         /* 15% is the sweet spot: shows the desk setup without cutting it off */
         background-position: -200px center !important;
         background-size: cover !important;
+    }
+
+    .about-image-container {
+        background-position: center center !important; 
+        background-size: cover !important;
+        height: 400px !important;
     }
 
     /* 2. HEADER: Restore Normal Spacing */
@@ -1324,7 +1330,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
   .hero-content {
-    padding-top: 100px !important; 
+    padding-top: 150px !important; 
     /* Keeps the stack pushed to the right side of the screen */
     padding-left: 60% !important; 
     padding-right: 30px !important;
