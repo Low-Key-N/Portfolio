@@ -923,7 +923,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     list-style: none;
     padding: 0;
     margin-bottom: 40px;
-    display: flex;              /* Layout hobbies in a row or grid if you want */
+    display: flex;             
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;    /* Center the tags */
@@ -1087,8 +1087,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     background-position: center;
     animation: imageCycle 12s infinite; 
 }
-
-/* Define images here. Replace URLs with actual case study images */
 @keyframes imageCycle {
     0%   { background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'); }
     33%  { background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80'); }
@@ -1244,7 +1242,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 @media (max-width: 1024px) and (orientation: portrait) {
 
-    /* 1. BACKGROUND: "GOLDILOCKS" FRAMING */
+    /* BACKGROUND: "GOLDILOCKS" FRAMING */
     #hero-section {
         background-position: -200px center !important;
         background-size: cover !important;
@@ -1287,7 +1285,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
       transform: translate(-50%, -50%);
   }
 
-    /* 2. HEADER: Restore Normal Spacing */
+    /* HEADER: Restore Normal Spacing */
     nav {
         display: flex !important;
         justify-content: space-between !important;
@@ -1322,7 +1320,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         margin: 0 !important;
     }
 
-    /* 3. PROJECT CARD: Shrink Text for the Frame */
+    /* PROJECT CARD: Shrink Text for the Frame */
     .card-details h3 {
         font-size: 22px !important;
         margin-bottom: 8px !important;
@@ -1333,7 +1331,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         line-height: 1.5 !important;
     }
 
-    /* 5. FOOTER: Normal Spread (No Stacking) */
+    /* FOOTER: Normal Spread (No Stacking) */
     .slim-footer {
         padding: 40px 30px !important;
     }
@@ -1417,7 +1415,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    ========================================= */
 /* ADDED "and (orientation: portrait)" to isolate these styles */
 @media (max-width: 480px) and (orientation: portrait) {
-    /* 1. HEADER: Centered Logo + Hidden Side Links */
+    /* HEADER: Centered Logo + Hidden Side Links */
     nav { 
         padding: 0 15px !important; 
         height: 70px !important; 
