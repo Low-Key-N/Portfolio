@@ -1238,7 +1238,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
 
 /* =========================================
-   IPAD PORTRAIT OVERRIDE (Orientation Isolated)
+   TABLET & IPAD PORTRAIT ONLY
    ========================================= */
 @media (max-width: 1024px) and (orientation: portrait) {
 
@@ -1248,42 +1248,43 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         background-size: cover !important;
     }
 
-  .about-image-container {
-      position: relative;
-      width: 100%;
-      height: 380px !important; 
-      border-radius: 20px;
-      overflow: hidden;
-      display: block;
-      margin-bottom: 20px;
-      background-color: #333; 
-  }
+    /* ABOUT PAGE IMAGE */
+    .about-image-container {
+        position: relative;
+        width: 100%;
+        height: 380px !important; 
+        border-radius: 20px;
+        overflow: hidden;
+        display: block;
+        margin-bottom: 20px;
+        background-color: #333; 
+    }
 
-  .big-bg-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover !important; 
-      object-position: center !important; 
-      display: block;
-  }
+    .big-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important; 
+        object-position: center !important; 
+        display: block;
+    }
 
-  .grey-tint {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); 
-      z-index: 1;
-  }
+    .grey-tint {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: 1;
+    }
 
-  .profile-cube {
-      z-index: 2;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
+    .profile-cube {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     /* HEADER: Restore Normal Spacing */
     nav {
@@ -1362,67 +1363,141 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         white-space: nowrap !important;
     }
 
-  .hero-content {
-    padding-top: 150px !important; 
-    padding-left: 60% !important; 
-    padding-right: 30px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important; 
-    text-align: left !important;
-    gap: 8px !important; 
-  }
+    /* HERO CONTENT: Portrait-specific adjustments */
+    .hero-content {
+        padding-top: 150px !important; 
+        padding-left: 50% !important; 
+        padding-right: 30px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; 
+        text-align: left !important;
+        gap: 8px !important; 
+    }
 
-  .hero-headline {
-    font-size: 40px !important;
-    line-height: 1.1 !important;
-    margin-left: 0 !important;
-    max-width: 100% !important; 
-  }
+    .hero-headline {
+        font-size: 40px !important;
+        line-height: 1.1 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important; 
+        text-align: left !important;
+    }
 
-  .hero-subtitle p {
-    font-size: 25px !important;
-    margin: 0 !important;
-    font-weight: 600 !important;
-  }
+    .hero-subtitle p {
+        font-size: 25px !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+    }
 
-  .hero-details p {
-    font-size: 16px !important;
-    max-width: 90% !important; 
-    line-height: 1.4 !important;
-    margin: 5px 0 5px 0 !important; 
-  }
+    .hero-details p {
+        font-size: 16px !important;
+        max-width: 90% !important; 
+        line-height: 1.4 !important;
+        margin: 5px 0 5px 0 !important; 
+        text-align: left !important;
+    }
 
-  .hero-resume {
-    margin-top: 0px !important; 
-    margin-left: 0 !important;
-  }
+    .hero-resume {
+        margin-top: 0px !important; 
+        margin-left: 0 !important;
+        text-align: left !important;
+    }
 
-  .hero-tech-stack {
-    margin-top: 0px !important; 
-    text-align: left !important;
-  }
+    .hero-tech-stack {
+        margin-top: 0px !important; 
+        text-align: left !important;
+    }
 
-  .hero-tech-stack p {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-    margin-left: 0 !important;
-  }
+    .hero-tech-stack p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-left: 0 !important;
+        text-align: left !important;
+    }
 }
 
 /* =========================================
-   IPHONE PORTRAIT (Standard & Max)
+   TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
-/* ADDED "and (orientation: portrait)" to isolate these styles */
+@media (max-width: 1366px) and (orientation: landscape) {
+    /* RESET portrait styles and apply landscape-specific styles */
+    
+    /* Reset hero background positioning */
+    #hero-section {
+        background-position: center top !important;
+        background-size: cover !important;
+    }
+
+    /* Reset hero content positioning */
+    .hero-content {
+        padding-top: 250px !important; /* Higher padding for landscape */
+        padding-left: auto !important;
+        padding-right: 50px !important;
+        margin-left: auto !important;
+        text-align: right !important;
+    }
+
+    .hero-headline {
+        font-size: 48px !important;
+        line-height: 1 !important;
+        margin-left: 0 !important; /* Reset 50% offset from portrait */
+        text-align: right !important;
+        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .hero-subtitle p {
+        font-size: 28px !important;
+        margin-left: 0 !important; /* Reset 50% offset from portrait */
+        text-align: right !important;
+        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .hero-details p {
+        font-size: 18px !important;
+        margin-left: 0 !important; /* Reset 50% offset from portrait */
+        line-height: 1.2 !important;
+        text-align: right !important;
+        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .hero-tech-stack p {
+        font-size: 14px !important;
+        margin-left: 0 !important; /* Reset 50% offset from portrait */
+        text-align: right !important;
+        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .hero-resume {
+        margin-left: 0 !important; /* Reset 50% offset from portrait */
+        text-align: right !important;
+        transform: scale(1) !important; /* Remove iPhone landscape scaling */
+        transform-origin: left !important;
+    }
+
+    /* Reset text shadows to lighter version */
+    .hero-headline,
+    .hero-subtitle p,
+    .hero-details p,
+    .hero-tech-stack p {
+        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* =========================================
+   IPHONE PORTRAIT ONLY (Standard & Max)
+   ========================================= */
 @media (max-width: 480px) and (orientation: portrait) {
     /* HEADER: Centered Logo + Hidden Side Links */
     nav { 
         padding: 0 15px !important; 
         height: 70px !important; 
     }
+    
     .nav-left, .nav-right { 
         display: none !important; 
     }
+    
     .nav-center {
         position: relative !important;
         left: 0 !important;
@@ -1431,9 +1506,12 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         display: flex !important;
         justify-content: center !important;
     }
-    #logo { font-size: 26px !important; }
+    
+    #logo { 
+        font-size: 26px !important; 
+    }
 
-    /* 2. PROJECT CARDS: Rebalanced Proportions */
+    /* PROJECT CARDS: Rebalanced Proportions */
     .project-card {
         flex-direction: column !important; 
         height: auto !important;
@@ -1472,25 +1550,41 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         font-size: 13px !important; 
     }
 
-    /* 3. HERO CONTENT */
+    /* HERO CONTENT */
     #hero-section .hero-content {
         padding-top: 120px !important;
-        padding-left: 60% !important; 
+        padding-left: 50% !important; 
         padding-right: 20px !important;
         align-items: flex-start !important;
         text-align: left !important;
     }
 
-    .hero-headline { font-size: 28px !important; line-height: 1.1 !important; }
-    .hero-subtitle p { font-size: 18px !important; }
-    .hero-details p { font-size: 14px !important; }
-    .hero-tech-stack p { font-size: 12px !important; }
+    .hero-headline { 
+        font-size: 28px !important; 
+        line-height: 1.1 !important; 
+    }
+    
+    .hero-subtitle p { 
+        font-size: 18px !important; 
+    }
+    
+    .hero-details p { 
+        font-size: 14px !important; 
+    }
+    
+    .hero-tech-stack p { 
+        font-size: 12px !important; 
+    }
 
-    .hero-headline, .hero-subtitle p, .hero-details p, .hero-tech-stack p {
+    /* Stronger text shadows for iPhone portrait */
+    .hero-headline,
+    .hero-subtitle p,
+    .hero-details p,
+    .hero-tech-stack p {
         text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
-    /* 4. FOOTER: Shrunken Horizontal Center with Socials */
+    /* FOOTER: Shrunken Horizontal Center with Socials */
     .slim-footer { 
         padding: 20px 0 !important; 
     }
@@ -1502,7 +1596,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         gap: 15px !important;
     }
 
-    .footer-left { display: none !important; }
+    .footer-left { 
+        display: none !important; 
+    }
 
     .footer-nav { 
         position: static !important; 
@@ -1528,7 +1624,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         height: 20px !important;
     }
 }
-
 /* =========================================
    IPHONE LANDSCAPE (13 Pro Max & Standard)
    ========================================= */
