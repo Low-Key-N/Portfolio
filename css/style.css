@@ -1673,7 +1673,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         line-height: .9 !important; 
         font-weight: 590 !important;
         margin-bottom: 5px !important;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important; 
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6) !important; 
     }
 
     .hero-subtitle p { 
@@ -1683,7 +1683,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         margin-top: 5px !important;
         margin-bottom: 5px !important;
         line-height: 1.1 !important;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6) !important;
     }
 
     .hero-details p {
@@ -1700,7 +1700,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         font-weight: 600 !important;
         word-spacing: 2px !important;
         color: #ffffffd0 !important;
-        margin-top: 5px !important; /* REDUCED: Was 15px to close the gap */
+        margin-top: 1px !important; /* REDUCED: Was 15px to close the gap */
         text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8) !important;
     }
 
