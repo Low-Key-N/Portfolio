@@ -1430,7 +1430,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     
     /* Reset hero background positioning */
     #hero-section {
-        background-position: center top !important;
         background-size: cover !important;
     }
 
