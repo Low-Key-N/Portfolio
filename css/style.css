@@ -1433,58 +1433,61 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         background-size: cover !important;
     }
 
-    /* Reset hero content positioning */
+    /* HERO CONTENT: PC-Style Left Alignment */
     .hero-content {
-        padding-top: 250px !important; /* Higher padding for landscape */
-        padding-left: auto !important;
-        padding-right: 50px !important;
-        margin-left: auto !important;
-        text-align: right !important;
+        padding-top: 280px !important; /* Vertically centered relative to PC style */
+        padding-left: 60px !important;  /* Aligned to the left */
+        padding-right: auto !important;
+        margin-left: 0 !important;      /* Reset from right-aligned logic */
+        text-align: left !important;    /* Forces left alignment */
+        max-width: 700px !important;    /* Prevents text from stretching across the image */
+        display: block !important;
     }
 
     .hero-headline {
-        font-size: 48px !important;
+        font-size: 58px !important;     /* Slightly larger for landscape impact */
         line-height: 1 !important;
-        margin-left: 0 !important; /* Reset 50% offset from portrait */
-        text-align: right !important;
+        margin-left: 0 !important;
+        text-align: left !important;
         text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
     }
 
     .hero-subtitle p {
-        font-size: 28px !important;
-        margin-left: 0 !important; /* Reset 50% offset from portrait */
-        text-align: right !important;
+        font-size: 32px !important;
+        margin-left: 0 !important;
+        text-align: left !important;
         text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
     }
 
     .hero-details p {
-        font-size: 18px !important;
-        margin-left: 0 !important; /* Reset 50% offset from portrait */
-        line-height: 1.2 !important;
-        text-align: right !important;
+        font-size: 20px !important;
+        margin-left: 0 !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
         text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4) !important;
     }
 
     .hero-tech-stack p {
-        font-size: 14px !important;
-        margin-left: 0 !important; /* Reset 50% offset from portrait */
-        text-align: right !important;
+        font-size: 15px !important;
+        margin-left: 0 !important;
+        text-align: left !important;
         text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4) !important;
     }
 
     .hero-resume {
-        margin-left: 0 !important; /* Reset 50% offset from portrait */
-        text-align: right !important;
-        transform: scale(1) !important; /* Remove iPhone landscape scaling */
+        margin-left: 0 !important;
+        text-align: left !important;
+        transform: scale(1) !important; 
         transform-origin: left !important;
+        margin-top: 20px !important;
     }
 
-    /* Reset text shadows to lighter version */
+    /* Reset text shadows to match desktop feel */
     .hero-headline,
     .hero-subtitle p,
     .hero-details p,
     .hero-tech-stack p {
-        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
+        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4) !important;
     }
 }
 
