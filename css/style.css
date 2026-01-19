@@ -1708,7 +1708,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .hero-resume { 
         transform: scale(0.65) !important; 
         transform-origin: left !important; 
-        margin-top: 5px !important; /* REDUCED: Was 10px to close the gap */
+        margin-top: 1px !important; /* REDUCED: Was 10px to close the gap */
     }
 
     /* Footer Clean-up */
