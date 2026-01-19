@@ -1425,7 +1425,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 /* =========================================
    TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
-@media (max-width: 1366px) and (orientation: landscape) {
+@media (max-device-width: 1366px) and (orientation: landscape) {
     /* RESET portrait styles and apply landscape-specific styles */
     
     /* Reset hero background positioning */
@@ -1434,9 +1434,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         background-size: cover !important;
     }
 
-    /* HERO CONTENT: Moved Down and to the Left */
+    /* HERO CONTENT: Moved closer to the middle */
     .hero-content {
-        padding-top: 450px !important;  /* Pushes text DOWN further */
+        padding-top: 600px !important;  /* MOVED DOWN: Increased from 450px */
         padding-left: 100px !important;   /* Moves text to the LEFT (closer to edge) */
         padding-right: auto !important;
         margin-left: 0 !important;
@@ -1480,7 +1480,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         text-align: left !important;
         transform: scale(1) !important; 
         transform-origin: left !important;
-        margin-top: 25px !important; /* Added a bit more breathing room above button */
+        margin-top: 25px !important; 
     }
 
     /* Standard Desktop-style Shadows */
