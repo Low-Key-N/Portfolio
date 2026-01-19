@@ -1375,27 +1375,31 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         gap: 8px !important; 
     }
 
+    /* Applied heavy iPhone-style shadows to all hero text */
     .hero-headline {
-        font-size: 54px !important; /* Increased for visibility */
+        font-size: 54px !important; 
         line-height: 1.1 !important;
         margin-left: 0 !important;
         max-width: 100% !important; 
         text-align: left !important;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
     .hero-subtitle p {
-        font-size: 32px !important; /* Increased for visibility */
+        font-size: 32px !important; 
         margin: 0 !important;
         font-weight: 600 !important;
         text-align: left !important;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
     .hero-details p {
-        font-size: 22px !important; /* Increased for visibility */
+        font-size: 22px !important; 
         max-width: 90% !important; 
         line-height: 1.4 !important;
         margin: 5px 0 5px 0 !important; 
         text-align: left !important;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 
     .hero-resume {
@@ -1410,13 +1414,13 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-tech-stack p {
-        font-size: 16px !important; /* Increased for visibility */
+        font-size: 16px !important; 
         line-height: 1.6 !important;
         margin-left: 0 !important;
         text-align: left !important;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
     }
 }
-
 /* =========================================
    TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
