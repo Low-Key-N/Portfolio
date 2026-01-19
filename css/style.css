@@ -1657,11 +1657,11 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         left: 0 !important;
     }
 
-    /* 2. PC-STYLE TEXT LAYOUT: Re-applying Desktop logic */
+    /* 2. PC-STYLE TEXT LAYOUT: Updated padding and alignment */
     #hero-section .hero-content {
         padding-top: 80px !important; 
-        padding-left: 55% !important; 
-        padding-right: 50px !important;
+        padding-left: 45% !important; /* MOVED LEFT: Reduced from 55% */
+        padding-right: 40px !important;
         max-width: none !important;
         margin-left: 0 !important;
         display: block !important; 
@@ -1669,7 +1669,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-headline { 
-        font-size: 44px !important; 
+        font-size: 36px !important; /* SHRUNK: Reduced from 44px */
         line-height: .9 !important; 
         font-weight: 590 !important;
         margin-bottom: 5px !important;
@@ -1677,7 +1677,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-subtitle p { 
-        font-size: 26px !important; 
+        font-size: 22px !important; /* SHRUNK: Reduced from 26px */
         font-weight: 530 !important;
         word-spacing: 2px !important; 
         margin-top: 5px !important;
@@ -1687,7 +1687,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-details p {
-        font-size: 18px !important; 
+        font-size: 16px !important; /* SHRUNK: Reduced from 18px */
         font-weight: 550 !important;
         line-height: 1.2 !important; 
         word-spacing: 2px !important; 
@@ -1696,7 +1696,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-tech-stack p {
-        font-size: 13px !important; 
+        font-size: 12px !important; /* SHRUNK: Reduced from 13px */
         font-weight: 600 !important;
         word-spacing: 2px !important;
         color: #ffffffd0 !important;
@@ -1706,9 +1706,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     /* Resume Button: Scaled for screen height */
     .hero-resume { 
-        transform: scale(0.7) !important; 
+        transform: scale(0.65) !important; /* Slightly smaller scale */
         transform-origin: left !important; 
-        margin-top: 15px !important;
+        margin-top: 10px !important;
     }
 
     /* Footer Clean-up */
