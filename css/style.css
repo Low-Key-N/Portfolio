@@ -1425,18 +1425,20 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 /* =========================================
    TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
-@media (max-device-width: 1366px) and (orientation: landscape) {
+@media (max-width: 1366px) and (orientation: landscape) {
     /* RESET portrait styles and apply landscape-specific styles */
     
-    /* Reset hero background positioning */
+    /* Reset hero background positioning and increase height to allow more movement */
     #hero-section {
+        height: 100vh !important;       /* Forces the section to fill the screen height */
+        background-position: center top !important;
         background-size: cover !important;
     }
 
-    /* HERO CONTENT: Moved closer to the middle */
+    /* HERO CONTENT: Moved significantly closer to the middle */
     .hero-content {
-        padding-top: 600px !important;  /* MOVED DOWN: Increased from 450px */
-        padding-left: 100px !important;   /* Moves text to the LEFT (closer to edge) */
+        padding-top: 680px !important;  /* MOVED DOWN: Increased from 600px */
+        padding-left: 100px !important; 
         padding-right: auto !important;
         margin-left: 0 !important;
         text-align: left !important;
