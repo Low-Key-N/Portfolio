@@ -1436,7 +1436,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     /* HERO CONTENT: Moved Down and to the Left */
     .hero-content {
-        padding-top: 900px !important;  /* Pushes text DOWN further */
+        padding-top: 280px !important;  /* Pushes text DOWN further */
         padding-left: 100px !important;   /* Moves text to the LEFT (closer to edge) */
         padding-right: auto !important;
         margin-left: 0 !important;
