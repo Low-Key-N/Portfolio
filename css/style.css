@@ -1538,24 +1538,25 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         border-radius: 0 0 20px 20px !important; 
     }
 
+    /* SHRUNK CARD TEXT (Portrait) */
     .card-details h3 {
-        font-size: 18px !important; 
-        margin-bottom: 5px !important;
+        font-size: 16px !important; /* Shrunk from 18px */
+        margin-bottom: 4px !important;
     }
 
     .card-details .tech-stack {
-        font-size: 9px !important; 
-        margin-bottom: 8px !important;
+        font-size: 8px !important; /* Shrunk from 9px */
+        margin-bottom: 6px !important;
     }
 
     .card-details .description {
-        font-size: 11px !important; 
-        line-height: 1.4 !important;
-        margin-bottom: 12px !important;
+        font-size: 10px !important; /* Shrunk from 11px */
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
     }
 
     .card-details .view-project {
-        font-size: 13px !important; 
+        font-size: 12px !important; 
     }
 
     /* HERO CONTENT */
@@ -1700,7 +1701,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         font-weight: 600 !important;
         word-spacing: 2px !important;
         color: #ffffffd0 !important;
-        margin-top: 1px !important; /* REDUCED: Was 15px to close the gap */
+        margin-top: 1px !important; 
         text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8) !important;
     }
 
@@ -1708,7 +1709,28 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .hero-resume { 
         transform: scale(0.65) !important; 
         transform-origin: left !important; 
-        margin-top: 1px !important; /* REDUCED: Was 10px to close the gap */
+        margin-top: 1px !important; 
+    }
+
+    /* PROJECT CARDS: Shrunk inner text for mobile landscape carousel */
+    .card-details {
+        padding: 15px 25px !important; /* Tighter padding for horizontal view */
+    }
+
+    .card-details h3 {
+        font-size: 18px !important; 
+        margin-bottom: 4px !important;
+    }
+
+    .card-details .tech-stack {
+        font-size: 9px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .card-details .description {
+        font-size: 12px !important; 
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
     }
 
     /* Footer Clean-up */
