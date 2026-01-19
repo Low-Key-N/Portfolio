@@ -1433,19 +1433,19 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         background-size: cover !important;
     }
 
-    /* HERO CONTENT: PC-Style Left Alignment */
+    /* HERO CONTENT: Moved Down and to the Left */
     .hero-content {
-        padding-top: 280px !important; /* Vertically centered relative to PC style */
-        padding-left: 60px !important;  /* Aligned to the left */
+        padding-top: 340px !important;  /* Pushes text DOWN further */
+        padding-left: 40px !important;   /* Moves text to the LEFT (closer to edge) */
         padding-right: auto !important;
-        margin-left: 0 !important;      /* Reset from right-aligned logic */
-        text-align: left !important;    /* Forces left alignment */
-        max-width: 700px !important;    /* Prevents text from stretching across the image */
+        margin-left: 0 !important;
+        text-align: left !important;
+        max-width: 650px !important;    /* Keeps text from overlapping your face */
         display: block !important;
     }
 
     .hero-headline {
-        font-size: 58px !important;     /* Slightly larger for landscape impact */
+        font-size: 58px !important;
         line-height: 1 !important;
         margin-left: 0 !important;
         text-align: left !important;
@@ -1479,10 +1479,10 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         text-align: left !important;
         transform: scale(1) !important; 
         transform-origin: left !important;
-        margin-top: 20px !important;
+        margin-top: 25px !important; /* Added a bit more breathing room above button */
     }
 
-    /* Reset text shadows to match desktop feel */
+    /* Standard Desktop-style Shadows */
     .hero-headline,
     .hero-subtitle p,
     .hero-details p,
