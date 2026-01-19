@@ -1366,7 +1366,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     /* HERO CONTENT: Portrait-specific adjustments */
     .hero-content {
         padding-top: 150px !important; 
-        padding-left: 50% !important; 
+        padding-left: 55% !important;  /* MOVED RIGHT: Increased from 50% */
         padding-right: 30px !important;
         display: flex !important;
         flex-direction: column !important;
@@ -1375,14 +1375,14 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         gap: 8px !important; 
     }
 
-    /* Applied heavy iPhone-style shadows to all hero text */
+    /* TURNED DOWN SHADOWS: Reduced blur and opacity for a cleaner look */
     .hero-headline {
         font-size: 54px !important; 
         line-height: 1.1 !important;
         margin-left: 0 !important;
         max-width: 100% !important; 
         text-align: left !important;
-        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6) !important;
     }
 
     .hero-subtitle p {
@@ -1390,7 +1390,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         margin: 0 !important;
         font-weight: 600 !important;
         text-align: left !important;
-        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6) !important;
     }
 
     .hero-details p {
@@ -1399,7 +1399,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         line-height: 1.4 !important;
         margin: 5px 0 5px 0 !important; 
         text-align: left !important;
-        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6) !important;
     }
 
     .hero-resume {
@@ -1418,9 +1418,10 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         line-height: 1.6 !important;
         margin-left: 0 !important;
         text-align: left !important;
-        text-shadow: 2px 2px 15px rgba(0, 0, 0, 1), 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6) !important;
     }
 }
+
 /* =========================================
    TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
@@ -1435,8 +1436,8 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 
     /* HERO CONTENT: Moved Down and to the Left */
     .hero-content {
-        padding-top: 340px !important;  /* Pushes text DOWN further */
-        padding-left: 40px !important;   /* Moves text to the LEFT (closer to edge) */
+        padding-top: 380px !important;  /* Pushes text DOWN further */
+        padding-left: 70px !important;   /* Moves text to the LEFT (closer to edge) */
         padding-right: auto !important;
         margin-left: 0 !important;
         text-align: left !important;
