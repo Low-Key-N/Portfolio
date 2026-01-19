@@ -1660,7 +1660,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     /* 2. PC-STYLE TEXT LAYOUT: Updated padding and alignment */
     #hero-section .hero-content {
         padding-top: 120px !important; 
-        padding-left: 45% !important; /* MOVED LEFT: Reduced from 55% */
+        padding-left: 45% !important; 
         padding-right: 40px !important;
         max-width: none !important;
         margin-left: 0 !important;
@@ -1669,44 +1669,48 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-headline { 
-        font-size: 36px !important; /* SHRUNK: Reduced from 44px */
+        font-size: 36px !important; 
         line-height: .9 !important; 
         font-weight: 590 !important;
         margin-bottom: 5px !important;
-        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important; 
+        /* Added a slightly more defined "little shadow" */
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important; 
     }
 
     .hero-subtitle p { 
-        font-size: 22px !important; /* SHRUNK: Reduced from 26px */
+        font-size: 22px !important; 
         font-weight: 530 !important;
         word-spacing: 2px !important; 
         margin-top: 5px !important;
         margin-bottom: 5px !important;
         line-height: 1.1 !important;
-        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
+        /* Added a slightly more defined "little shadow" */
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
     }
 
     .hero-details p {
-        font-size: 16px !important; /* SHRUNK: Reduced from 18px */
+        font-size: 16px !important; 
         font-weight: 550 !important;
         line-height: 1.2 !important; 
         word-spacing: 2px !important; 
         margin-top: 10px !important;
-        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4) !important;
+        /* Added a slightly more defined "little shadow" */
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6) !important;
     }
 
     .hero-tech-stack p {
-        font-size: 12px !important; /* SHRUNK: Reduced from 13px */
+        font-size: 12px !important; 
         font-weight: 600 !important;
         word-spacing: 2px !important;
         color: #ffffffd0 !important;
         margin-top: 15px !important;
-        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7) !important;
+        /* Kept the tech stack shadow punchy for contrast */
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8) !important;
     }
 
     /* Resume Button: Scaled for screen height */
     .hero-resume { 
-        transform: scale(0.65) !important; /* Slightly smaller scale */
+        transform: scale(0.65) !important; 
         transform-origin: left !important; 
         margin-top: 10px !important;
     }
