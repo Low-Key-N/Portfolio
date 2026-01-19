@@ -1673,7 +1673,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         line-height: .9 !important; 
         font-weight: 590 !important;
         margin-bottom: 5px !important;
-        /* Added a slightly more defined "little shadow" */
         text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important; 
     }
 
@@ -1684,7 +1683,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         margin-top: 5px !important;
         margin-bottom: 5px !important;
         line-height: 1.1 !important;
-        /* Added a slightly more defined "little shadow" */
         text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
     }
 
@@ -1694,7 +1692,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         line-height: 1.2 !important; 
         word-spacing: 2px !important; 
         margin-top: 10px !important;
-        /* Added a slightly more defined "little shadow" */
         text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6) !important;
     }
 
@@ -1703,8 +1700,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         font-weight: 600 !important;
         word-spacing: 2px !important;
         color: #ffffffd0 !important;
-        margin-top: 15px !important;
-        /* Kept the tech stack shadow punchy for contrast */
+        margin-top: 5px !important; /* REDUCED: Was 15px to close the gap */
         text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8) !important;
     }
 
@@ -1712,7 +1708,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .hero-resume { 
         transform: scale(0.65) !important; 
         transform-origin: left !important; 
-        margin-top: 10px !important;
+        margin-top: 5px !important; /* REDUCED: Was 10px to close the gap */
     }
 
     /* Footer Clean-up */
