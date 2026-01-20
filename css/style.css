@@ -1434,7 +1434,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         justify-content: center !important; 
         background-position: center top !important;
         background-size: cover !important;
-        padding: 0 !important; /* Clears any inherited padding */
+        padding: 0 !important;
     }
 
     /* 2. HERO CONTENT: Shifted Right and Up */
@@ -1443,18 +1443,14 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         padding-left: 140px !important; 
         padding-right: 40px !important;
         margin-left: 0 !important;
-        margin-right: 0 !important;
-        
-        /* Pulls text up from the center */
         margin-top: -60px !important; 
-        
         text-align: left !important;
         max-width: 1200px !important;   
         display: block !important;
         box-sizing: border-box !important;
     }
 
-    /* 3. TYPOGRAPHY: Massive font sizes */
+    /* 3. TYPOGRAPHY: Massive font sizes + Tightened Subtitle Spacing */
     .hero-headline {
         font-size: 130px !important;    
         line-height: 0.9 !important;
@@ -1462,38 +1458,40 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         text-align: left !important;
     }
 
+    /* SHORTENED SPACING: Applied line-height and margin reset to subtitle lines */
     .hero-subtitle p {
         font-size: 65px !important;     
-        margin: 0 0 15px 0 !important;
         text-align: left !important;
+        line-height: 1.1 !important; /* Pulls the lines closer together */
+        margin: 0 !important;        /* Removes the vertical gap between p tags */
     }
 
     .hero-details p {
         font-size: 40px !important;     
         line-height: 1.2 !important;
-        margin: 0 0 20px 0 !important;
+        margin: 15px 0 0 0 !important; /* Space only at the top */
         text-align: left !important;
     }
 
-    /* 4. SPACING FIX: Tech Stack and Button */
+    /* 4. TECH STACK: Explicitly Re-aligned to Left */
     .hero-tech-stack p {
         font-size: 24px !important;     
-        text-align: left !important;
-        /* Large gap from details above */
-        margin-top: 60px !important;    
+        text-align: left !important;   /* FORCED LEFT ALIGNMENT */
+        margin-top: 50px !important;    
         margin-bottom: 0 !important;
+        margin-left: 0 !important;     /* Ensures no inherited offset */
     }
 
+    /* 5. BUTTON: Closing the sizing/gap issue */
     .hero-resume {
         margin-left: 0 !important;
         text-align: left !important;
         display: inline-block !important;
         
-        /* Scale makes it look big, but we use margin to kill the gap */
+        /* Using origin left top ensures it doesn't create "ghost padding" above it */
         transform: scale(1.4) !important; 
         transform-origin: left top !important;
         
-        /* Tiny margin to remove the gap caused by the scale transformation */
         margin-top: 5px !important;    
     }
 
