@@ -1426,7 +1426,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
 @media (max-width: 1366px) and (orientation: landscape) {
-    /* 1. SECTION: Shorter height with Flexbox centering */
+    /* 1. SECTION: Shorter background height */
     #hero-section {
         height: 80vh !important;       
         display: flex !important;       
@@ -1437,72 +1437,72 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         padding: 0 !important;
     }
 
-    /* 2. HERO CONTENT: Shifted Right and Up */
+    /* 2. HERO CONTENT: Shifted further Right and Up */
     .hero-content {
         padding-top: 0 !important;      
-        padding-left: 140px !important; 
+        padding-left: 220px !important; /* MOVED RIGHT: Increased from 140px */
         padding-right: 40px !important;
         margin-left: 0 !important;
-        margin-top: -60px !important; 
+        margin-top: -80px !important;   /* Adjusted vertical lift */
         text-align: left !important;
-        max-width: 1200px !important;   
+        max-width: 1400px !important;   /* Widened for massive text */
         display: block !important;
         box-sizing: border-box !important;
     }
 
-    /* 3. TYPOGRAPHY: Massive font sizes + Tightened Subtitle Spacing */
+    /* 3. TYPOGRAPHY: Even larger font sizes */
     .hero-headline {
-        font-size: 130px !important;    
-        line-height: 0.9 !important;
-        margin: 0 0 10px 0 !important;
+        font-size: 180px !important;    /* INCREASED A LOT (was 130px) */
+        line-height: 0.85 !important;
+        margin: 0 0 15px 0 !important;
         text-align: left !important;
     }
 
-    /* SHORTENED SPACING: Applied line-height and margin reset to subtitle lines */
     .hero-subtitle p {
-        font-size: 65px !important;     
+        font-size: 90px !important;     /* INCREASED A LOT (was 65px) */
         text-align: left !important;
-        line-height: 1.1 !important; /* Pulls the lines closer together */
-        margin: 0 !important;        /* Removes the vertical gap between p tags */
+        line-height: 1.0 !important; 
+        margin: 0 !important;        
     }
 
     .hero-details p {
-        font-size: 40px !important;     
-        line-height: 1.2 !important;
-        margin: 15px 0 0 0 !important; /* Space only at the top */
+        font-size: 55px !important;     /* INCREASED (was 40px) */
+        line-height: 1.1 !important;
+        margin: 20px 0 0 0 !important; 
         text-align: left !important;
     }
 
-    /* 4. TECH STACK: Explicitly Re-aligned to Left */
+    /* 4. TECH STACK: Re-aligned and sized */
     .hero-tech-stack p {
-        font-size: 24px !important;     
-        text-align: left !important;   /* FORCED LEFT ALIGNMENT */
-        margin-top: 50px !important;    
+        font-size: 32px !important;     /* INCREASED (was 24px) */
+        text-align: left !important;   
+        margin-top: 60px !important;    
         margin-bottom: 0 !important;
-        margin-left: 0 !important;     /* Ensures no inherited offset */
+        margin-left: 0 !important;     
     }
 
-    /* 5. BUTTON: Closing the sizing/gap issue */
+    /* 5. BUTTON: Scaled to match huge text */
     .hero-resume {
         margin-left: 0 !important;
         text-align: left !important;
         display: inline-block !important;
         
-        /* Using origin left top ensures it doesn't create "ghost padding" above it */
-        transform: scale(1.4) !important; 
+        /* Scaled up more to stay proportional to text */
+        transform: scale(1.8) !important; 
         transform-origin: left top !important;
         
-        margin-top: 5px !important;    
+        margin-top: 10px !important;    
     }
 
-    /* High-Impact Shadows */
-    .hero-headline,
-    .hero-subtitle p,
-    .hero-details p,
+    /* Enhanced Shadows for High-Impact Visibility */
+    .hero-headline, 
+    .hero-subtitle p, 
+    .hero-details p, 
     .hero-tech-stack p {
-        text-shadow: 0px 4px 25px rgba(0, 0, 0, 0.6) !important;
+        text-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6) !important;
     }
 }
+
 /* =========================================
    IPHONE PORTRAIT ONLY (Standard & Max)
    ========================================= */
