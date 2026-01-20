@@ -1423,78 +1423,80 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }
 
 /* =========================================
-   TABLET & IPAD LANDSCAPE ONLY
-   ========================================= */
+   TABLET & IPAD LANDSCAPE ONLY
+   ========================================= */
 @media (max-width: 1366px) and (orientation: landscape) {
     /* 1. SECTION: Enable Flexbox for automatic vertical centering */
     #hero-section {
         height: 100vh !important;       /* Fills the whole screen */
         display: flex !important;       /* Enable Flexbox centering */
         flex-direction: column !important;
-        justify-content: center !important; /* Perfect vertical middle */
+        justify-content: center !important; /* Vertical middle */
         background-position: center top !important;
         background-size: cover !important;
     }
 
-    /* 2. HERO CONTENT: Alignment and Container */
+    /* 2. HERO CONTENT: Alignment and Vertical Shift */
     .hero-content {
-        padding-top: 0 !important;      /* Removed padding since Flexbox centers it */
-        padding-left: 80px !important;  /* Horizontal alignment */
+        padding-top: 0 !important;      
+        padding-left: 80px !important;  
         padding-right: auto !important;
         margin-left: 0 !important;
+        
+        /* THIS BRINGS IT UP: Negative margin pulls it above the dead center */
+        margin-top: -100px !important; 
+        
         text-align: left !important;
-        max-width: 850px !important;    /* Widened container for bigger text */
+        max-width: 1000px !important;    /* Widened further for massive text */
         display: block !important;
     }
 
-    /* 3. TYPOGRAPHY: Significantly increased font sizes */
+    /* 3. TYPOGRAPHY: Massive font size increases */
     .hero-headline {
-        font-size: 84px !important;     /* INCREASED A LOT (was 58px) */
-        line-height: 1 !important;
+        font-size: 110px !important;     /* INCREASED SIGNIFICANTLY (was 84px) */
+        line-height: 0.95 !important;
         margin-left: 0 !important;
         text-align: left !important;
-        text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.4) !important;
     }
 
     .hero-subtitle p {
-        font-size: 42px !important;     /* INCREASED A LOT (was 32px) */
+        font-size: 55px !important;      /* INCREASED SIGNIFICANTLY (was 42px) */
         margin-left: 0 !important;
         text-align: left !important;
-        text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4) !important;
+        margin-top: 10px !important;
     }
 
     .hero-details p {
-        font-size: 26px !important;     /* INCREASED (was 20px) */
+        font-size: 34px !important;      /* INCREASED (was 26px) */
         margin-left: 0 !important;
-        line-height: 1.4 !important;
+        line-height: 1.2 !important;
         text-align: left !important;
-        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4) !important;
+        margin-top: 15px !important;
     }
 
     .hero-tech-stack p {
-        font-size: 18px !important;     /* INCREASED (was 15px) */
+        font-size: 22px !important;      /* INCREASED (was 18px) */
         margin-left: 0 !important;
         text-align: left !important;
-        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4) !important;
+        margin-top: 25px !important;
     }
 
     .hero-resume {
         margin-left: 0 !important;
         text-align: left !important;
-        transform: scale(1.1) !important; /* Slightly bigger button */
+        transform: scale(1.3) !important; /* Scaled up to match huge text */
         transform-origin: left !important;
-        margin-top: 30px !important; 
+        margin-top: 40px !important; 
     }
 
-    /* Standard Shadows for readability */
+    /* Enhanced Shadows for High-Impact Visibility */
     .hero-headline,
     .hero-subtitle p,
     .hero-details p,
     .hero-tech-stack p {
-        text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5) !important;
+        text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6) !important;
     }
 }
-
 /* =========================================
    IPHONE PORTRAIT ONLY (Standard & Max)
    ========================================= */
