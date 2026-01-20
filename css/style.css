@@ -1426,9 +1426,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
    TABLET & IPAD LANDSCAPE ONLY
    ========================================= */
 @media (max-width: 1366px) and (orientation: landscape) {
-    /* 1. SECTION: Enable Flexbox for automatic vertical centering */
+    /* 1. SECTION: Reduced height to make the background shorter */
     #hero-section {
-        height: 100vh !important;       
+        height: 80vh !important;       /* SHORTER: Reduced from 100vh */
         display: flex !important;       
         flex-direction: column !important;
         justify-content: center !important; 
@@ -1439,35 +1439,35 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     /* 2. HERO CONTENT: Alignment and Vertical Shift */
     .hero-content {
         padding-top: 0 !important;      
-        padding-left: 140px !important; /* MOVED RIGHT: Increased from 80px */
+        padding-left: 140px !important; 
         padding-right: auto !important;
         margin-left: 0 !important;
         
-        /* Positioned above dead center */
-        margin-top: -120px !important; 
+        /* Adjusted shift for shorter section height */
+        margin-top: -50px !important; 
         
         text-align: left !important;
-        max-width: 1100px !important;   /* Widened for even larger text */
+        max-width: 1100px !important;   
         display: block !important;
     }
 
-    /* 3. TYPOGRAPHY: Even larger font sizes and rebalanced spacing */
+    /* 3. TYPOGRAPHY: Massive font sizes and rebalanced spacing */
     .hero-headline {
-        font-size: 130px !important;    /* INCREASED MORE (was 110px) */
+        font-size: 130px !important;    
         line-height: 0.9 !important;
         margin-left: 0 !important;
         text-align: left !important;
     }
 
     .hero-subtitle p {
-        font-size: 65px !important;     /* INCREASED MORE (was 55px) */
+        font-size: 65px !important;     
         margin-left: 0 !important;
         text-align: left !important;
         margin-top: 15px !important;
     }
 
     .hero-details p {
-        font-size: 40px !important;     /* INCREASED (was 34px) */
+        font-size: 40px !important;     
         margin-left: 0 !important;
         line-height: 1.2 !important;
         text-align: left !important;
@@ -1475,10 +1475,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     }
 
     .hero-tech-stack p {
-        font-size: 24px !important;     /* INCREASED (was 22px) */
+        font-size: 24px !important;     
         margin-left: 0 !important;
         text-align: left !important;
-        /* INCREASED SPACING from details above */
         margin-top: 50px !important;    
     }
 
@@ -1487,7 +1486,6 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         text-align: left !important;
         transform: scale(1.4) !important; 
         transform-origin: left !important;
-        /* DECREASED SPACING from tech stack above */
         margin-top: 15px !important;    
     }
 
