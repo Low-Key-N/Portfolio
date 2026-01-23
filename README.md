@@ -41,4 +41,4 @@ LinkedIn: [Keyon Bigelow](https://www.linkedin.com/in/keyon-bigelow-5568bb364/)
 
 GitHub: [Low-Key-N](https://low-key-n.github.io/Portfolio/)
 
-© 2025 Keyon Bigelow. All Rights Reserved.
+© 2026 Keyon Bigelow. All Rights Reserved.
