@@ -9,6 +9,24 @@ A personal portfolio website designed to showcase my projects, design philosophy
 ![Desktop Preview](assets/images/portfolio-preview.png)
 *Desktop View featuring the Hero Section and Tech Stack.*
 
+## 🧠 Design Process
+
+Before building the portfolio, I sketched the layout by hand to plan the information hierarchy, navigation flow, and placement of major sections like the hero, portfolio carousel, and contact area.
+
+These sketches helped guide the visual hierarchy and structure before moving into development.
+
+### Initial Wireframe (Front)
+
+![Front Wireframe](assets/images/portfolio-sketch-front.jpg)
+
+*Front layout sketch planning the hero section, navigation, and portfolio structure.*
+
+### Layout Planning (Back)
+
+![Back Wireframe](assets/images/portfolio-sketch-back.jpg)
+
+*Back sketch used to organize content flow and section placement before coding the site.*
+
 ## 🚀 Features
 
 * **Responsive Design:** Fully optimized layouts for Desktop, iPad (Landscape & Portrait), and Mobile.
