@@ -18,7 +18,7 @@ These sketches helped guide the visual hierarchy and structure before moving int
 ### Initial Wireframe (Front)
 
 <p align="center">
-  <img src="assets/images/portfolio-sketch-front.jpeg" width="600">
+  <img src="assets/images/portfolio-sketch-front.jpeg" width="400">
 </p>
 
 *Front layout sketch planning the hero section, navigation, and portfolio structure.*
@@ -26,7 +26,7 @@ These sketches helped guide the visual hierarchy and structure before moving int
 ### Layout Planning (Back)
 
 <p align="center">
-  <img src="assets/images/portfolio-sketch-back.jpeg" width="600">
+  <img src="assets/images/portfolio-sketch-back.jpeg" width="400">
 </p>
 
 *Back sketch used to organize content flow and section placement before coding the site.*
