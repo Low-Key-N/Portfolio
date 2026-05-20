@@ -1752,3 +1752,218 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     .footer-left { display: none !important; }
     .slim-footer { padding: 10px 20px !important; }
 }
+/* =========================================
+   DARK MODE TOGGLE BUTTON (in navbar)
+   ========================================= */
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.dark-mode-toggle:hover {
+    opacity: 0.7;
+    transform: rotate(15deg);
+}
+
+.toggle-icon {
+    width: 26px;
+    height: 26px;
+    display: block;
+    stroke: white;
+    fill: none;
+    transition: stroke 0.3s ease;
+}
+
+/* =========================================
+   DARK MODE — SITE-WIDE STYLES
+   ========================================= */
+
+/* Applied when user toggles dark mode ON */
+body.site-dark-mode {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+}
+
+/* --- HERO SECTION (index.html): no change needed — photo bg --- */
+
+/* --- CONTENT SECTION (white cards → dark) --- */
+body.site-dark-mode #content-section {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .content-headline p {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .project-card {
+    background-color: #1a1a1a;
+}
+
+body.site-dark-mode .card-details {
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: #1a1a1a;
+}
+
+body.site-dark-mode .card-details h3 {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .tech-stack {
+    color: #aaa;
+}
+
+body.site-dark-mode .description {
+    color: #bbb;
+}
+
+body.site-dark-mode .view-project {
+    color: #f0f0f0;
+    border-bottom-color: #f0f0f0;
+}
+
+/* Carousel buttons */
+body.site-dark-mode .carousel-btn {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+body.site-dark-mode .carousel-btn:hover {
+    background-color: #2a2a2a;
+}
+
+body.site-dark-mode .dot {
+    background-color: #555;
+}
+
+body.site-dark-mode .dot.active {
+    background-color: #f0f0f0;
+}
+
+/* --- FOOTER --- */
+body.site-dark-mode .slim-footer {
+    background-color: #0d0d0d;
+    border-top-color: #222;
+}
+
+body.site-dark-mode .footer-logo-text {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .footer-nav a {
+    color: #aaa;
+}
+
+body.site-dark-mode .footer-nav a:hover {
+    opacity: 0.5;
+}
+
+body.site-dark-mode .footer-right a {
+    color: #f0f0f0;
+}
+
+/* --- ABOUT PAGE --- */
+body.site-dark-mode .about-page-section {
+    background: linear-gradient(to right, #0d0d0d 0%, #1a1a1a 100%);
+}
+
+body.site-dark-mode .about-text-container {
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.site-dark-mode .about-text-container h1 {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .about-text-container p {
+    color: #bbb;
+}
+
+body.site-dark-mode .hobbies-list li {
+    background-color: #2a2a2a;
+    color: #ddd;
+}
+
+body.site-dark-mode .about-resume-btn {
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+body.site-dark-mode .about-resume-btn:hover {
+    background-color: #ccc;
+}
+
+/* --- PORTFOLIO PAGE --- */
+body.site-dark-mode .portfolio-page-section {
+    background: linear-gradient(to right, #0d0d0d 0%, #1a1a1a 100%);
+}
+
+body.site-dark-mode .hero-title {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .hero-desc {
+    color: #bbb;
+}
+
+body.site-dark-mode .toggle-placeholder {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .philosophy-text {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .philosophy-label {
+    color: #777;
+}
+
+body.site-dark-mode .philosophy-label::before,
+body.site-dark-mode .philosophy-label::after {
+    background-color: #333;
+}
+
+/* G-Cards */
+body.site-dark-mode .card-blue .g-card-body  { background-color: #0f2040; }
+body.site-dark-mode .card-yellow .g-card-body { background-color: #2a1f00; }
+body.site-dark-mode .card-red .g-card-body   { background-color: #2a0a09; }
+body.site-dark-mode .card-green .g-card-body  { background-color: #0a2015; }
+
+body.site-dark-mode .g-card-body h2 {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .card-subtitle {
+    color: #bbb;
+}
+
+/* cycle-overlay on portfolio hero image card */
+body.site-dark-mode .cycle-overlay {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .cycle-overlay h3 {
+    color: #f0f0f0;
+}
+
+body.site-dark-mode .cycle-overlay p {
+    color: #aaa;
+}
+
+/* Toggle icon stays white in both modes since nav is always dark */
+body.site-dark-mode .dark-mode-toggle {
+    color: #f0f0f0;
+}
