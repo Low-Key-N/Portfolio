@@ -1,6 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =========================================
+       0. STARTUP INTRO
+       ========================================= */
+    const playStartupIntro = () => {
+        const hasPlayed = sessionStorage.getItem('startupIntroPlayed') === 'true';
+        if (hasPlayed) return;
+
+        sessionStorage.setItem('startupIntroPlayed', 'true');
+
+        const favicon = document.querySelector('link[rel~="icon"]');
+        const faviconSrc = favicon ? favicon.href : 'assets/images/keyon-favicon.png';
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const intro = document.createElement('div');
+        intro.className = 'startup-intro';
+        intro.setAttribute('aria-hidden', 'true');
+        intro.innerHTML = `
+            <span class="startup-iris"></span>
+            <span class="startup-ripple startup-ripple-one"></span>
+            <span class="startup-ripple startup-ripple-two"></span>
+            <div class="startup-hello">
+                <span class="startup-hello-text"></span><span class="startup-hello-cursor">|</span>
+            </div>
+            <div class="startup-mark">
+                <img src="${faviconSrc}" alt="">
+            </div>
+        `;
+
+        document.body.appendChild(intro);
+
+        const helloText = intro.querySelector('.startup-hello-text');
+        const typeStartupHello = () => {
+            if (prefersReducedMotion) {
+                helloText.textContent = 'Hello';
+                return;
+            }
+
+            const message = 'Hello';
+            const typingSpeed = 115;
+            let index = 0;
+
+            const typeNextLetter = () => {
+                if (index >= message.length) return;
+                helloText.textContent += message.charAt(index);
+                index++;
+                window.setTimeout(typeNextLetter, typingSpeed);
+            };
+
+            window.setTimeout(typeNextLetter, 260);
+        };
+
+        typeStartupHello();
+
+        const finishIntro = () => {
+            intro.classList.add('startup-intro-exit');
+            window.setTimeout(() => {
+                intro.remove();
+            }, prefersReducedMotion ? 120 : 800);
+        };
+
+        window.setTimeout(finishIntro, prefersReducedMotion ? 160 : 2100);
+    };
+
+    playStartupIntro();
+
+    /* =========================================
        1. NAVBAR SCROLL LOGIC
        ========================================= */
     const nav = document.querySelector('nav');
