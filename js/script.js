@@ -4,10 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
        0. STARTUP INTRO
        ========================================= */
     const playStartupIntro = () => {
-        const hasPlayed = sessionStorage.getItem('startupIntroPlayed') === 'true';
-        if (hasPlayed) return;
+        const forceIntro = /[?&]intro(?:=|&|$)/.test(window.location.search);
+        let hasPlayed = false;
 
-        sessionStorage.setItem('startupIntroPlayed', 'true');
+        try {
+            hasPlayed = sessionStorage.getItem('startupIntroPlayed') === 'true';
+            if (!forceIntro && hasPlayed) return;
+            sessionStorage.setItem('startupIntroPlayed', 'true');
+        } catch (error) {
+            hasPlayed = false;
+        }
 
         const favicon = document.querySelector('link[rel~="icon"]');
         const faviconSrc = favicon ? favicon.href : 'assets/images/keyon-favicon.png';

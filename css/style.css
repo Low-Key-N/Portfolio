@@ -28,12 +28,6 @@ html {
     scrollbar-gutter: stable;
 }
 
-@property --startup-iris-radius {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0vmax;
-}
-
 body{
 margin: 0; 
 padding: 0;
@@ -59,24 +53,17 @@ font-family: 'Eina';
 
 .startup-iris {
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 50%;
     z-index: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
     pointer-events: none;
-    --startup-iris-radius: 0vmax;
-    background: rgba(8, 9, 12, 0.56);
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    background: transparent;
+    box-shadow: 0 0 0 160vmax rgba(8, 9, 12, 0.56);
     opacity: 0;
-    -webkit-mask: radial-gradient(
-        circle at 50% 50%,
-        transparent var(--startup-iris-radius),
-        #000 calc(var(--startup-iris-radius) + 2px)
-    );
-    mask: radial-gradient(
-        circle at 50% 50%,
-        transparent var(--startup-iris-radius),
-        #000 calc(var(--startup-iris-radius) + 2px)
-    );
+    transform: translate(-50%, -50%);
 }
 
 .startup-mark {
@@ -192,6 +179,10 @@ font-family: 'Eina';
     animation: startupCursorBlink 0.9s infinite;
 }
 
+.startup-hello-text {
+    display: inline-block;
+}
+
 @keyframes startupBackdropIn {
     from {
         opacity: 0;
@@ -288,19 +279,19 @@ font-family: 'Eina';
 
 @keyframes startupIrisRing {
     0% {
-        --startup-iris-radius: 0vmax;
+        width: 0;
+        height: 0;
         opacity: 1;
-        backdrop-filter: blur(24px) saturate(150%);
-        -webkit-backdrop-filter: blur(24px) saturate(150%);
+        box-shadow: 0 0 0 160vmax rgba(8, 9, 12, 0.56);
     }
     74% {
         opacity: 1;
     }
     100% {
-        --startup-iris-radius: 150vmax;
+        width: 300vmax;
+        height: 300vmax;
         opacity: 0;
-        backdrop-filter: blur(0) saturate(100%);
-        -webkit-backdrop-filter: blur(0) saturate(100%);
+        box-shadow: 0 0 0 0 rgba(8, 9, 12, 0);
     }
 }
 
@@ -346,9 +337,7 @@ font-family: 'Eina';
     }
 
     .startup-iris {
-        background: rgba(8, 9, 12, 0.58);
-        backdrop-filter: blur(18px) saturate(140%);
-        -webkit-backdrop-filter: blur(18px) saturate(140%);
+        box-shadow: 0 0 0 160vmax rgba(8, 9, 12, 0.58);
     }
 
     .startup-mark {
@@ -365,13 +354,27 @@ font-family: 'Eina';
     }
 
     .startup-hello {
-        font-size: clamp(6.8rem, 42vw, 12rem);
+        font-size: clamp(5.6rem, 34vw, 9.5rem);
         color: rgba(255, 255, 255, 0.22);
-        line-height: 0.78;
-        transform: translateY(-1vh);
+        line-height: 0.86;
+        transform: translateY(0);
+        width: 100%;
+        padding-left: 0.12em;
+        box-sizing: border-box;
         text-shadow:
             0 16px 46px rgba(0, 0, 0, 0.28),
             0 0 36px rgba(255, 255, 255, 0.1);
+    }
+
+    .startup-hello-text {
+        width: 4.7ch;
+        text-align: left;
+    }
+
+    .startup-hello-cursor {
+        width: 0.28em;
+        margin-left: 0.02em;
+        text-align: left;
     }
 
     .startup-ripple {
@@ -388,6 +391,10 @@ font-family: 'Eina';
         box-shadow:
             0 0 42px rgba(255, 255, 255, 0.38),
             inset 0 0 42px rgba(255, 255, 255, 0.12);
+    }
+
+    .startup-intro-exit .startup-hello {
+        animation-name: startupHelloMobileExit;
     }
 }
 
@@ -407,6 +414,13 @@ font-family: 'Eina';
 
     .startup-ripple-one {
         width: 70vmax;
+    }
+}
+
+@keyframes startupHelloMobileExit {
+    to {
+        opacity: 0;
+        transform: scale(1.03);
     }
 }
 
@@ -2039,6 +2053,75 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
         margin: 0 !important;
         padding: 0 !important;
         overflow-x: hidden !important;
+    }
+
+    nav {
+        height: 54px !important;
+        padding: 0 14px !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+        column-gap: 10px !important;
+        align-items: center !important;
+    }
+
+    .nav-left,
+    .nav-right {
+        min-width: 0 !important;
+        gap: 10px !important;
+    }
+
+    .nav-left {
+        justify-content: flex-start !important;
+    }
+
+    .nav-right {
+        justify-content: flex-end !important;
+    }
+
+    .nav-left a,
+    .nav-right a {
+        font-size: 11px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-center {
+        position: static !important;
+        left: auto !important;
+        transform: none !important;
+        justify-self: center !important;
+        width: auto !important;
+        max-width: 34vw !important;
+        height: auto !important;
+        pointer-events: auto !important;
+    }
+
+    #logo {
+        display: block !important;
+        max-width: 100% !important;
+        font-size: clamp(15px, 3.1vw, 22px) !important;
+        line-height: 1 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    .social-icon {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    a[href*="linkedin"] .social-icon {
+        top: -1px !important;
+    }
+
+    .dark-mode-toggle {
+        padding: 0 !important;
+    }
+
+    .toggle-icon {
+        width: 18px !important;
+        height: 18px !important;
     }
 
     /* 1. FILL THE SCREEN: Fixes the gap on Pro Max */
