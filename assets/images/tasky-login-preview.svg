@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1919 620" role="img" aria-labelledby="title desc">
+  <title id="title">Tasky login page preview</title>
+  <desc id="desc">A Tasky application login page with a dark navigation bar, centered search field, and sign in card.</desc>
+  <rect width="1919" height="620" fill="#fff"/>
+  <rect width="1919" height="62" fill="#243237"/>
+  <text x="24" y="39" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">Tasky</text>
+  <rect x="532" y="11" width="600" height="41" rx="20.5" fill="#5d686d" stroke="#7a858a" stroke-width="1"/>
+  <circle cx="554" cy="31" r="5.5" fill="none" stroke="#d8dde0" stroke-width="2"/>
+  <line x1="558" y1="35" x2="564" y2="41" stroke="#d8dde0" stroke-width="2" stroke-linecap="round"/>
+  <text x="576" y="37" font-family="Arial, sans-serif" font-size="16" fill="#d3d8da">Search for tasks...</text>
+  <path d="M1593 19c-4 0-7 3-7 7v7l-3 5v1h20v-1l-3-5v-7c0-4-3-7-7-7z" fill="#fff"/>
+  <circle cx="1593" cy="43" r="2.8" fill="#fff"/>
+  <text x="1629" y="36" font-family="Arial, sans-serif" font-size="15" fill="#fff">MY TICKETS</text>
+  <text x="1741" y="36" font-family="Arial, sans-serif" font-size="15" fill="#fff">BOARDS</text>
+  <text x="1827" y="36" font-family="Arial, sans-serif" font-size="15" fill="#fff">LOGOUT</text>
+  <rect x="761" y="127" width="397" height="411" rx="5" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="960" cy="188" r="20" fill="#1976d2"/>
+  <rect x="953" y="184" width="14" height="11" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M956 184v-5c0-3 2-5 4-5s4 2 4 5v5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="960" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#111">Sign in to Tasky</text>
+  <rect x="794" y="271" width="332" height="56" rx="3" fill="#fff" stroke="#c4c4c4"/>
+  <text x="808" y="304" font-family="Arial, sans-serif" font-size="16" fill="#4f5b62">Email Address *</text>
+  <rect x="794" y="351" width="332" height="56" rx="3" fill="#fff" stroke="#c4c4c4"/>
+  <text x="808" y="384" font-family="Arial, sans-serif" font-size="16" fill="#4f5b62">Password *</text>
+  <rect x="794" y="439" width="332" height="50" rx="4" fill="#1976d2"/>
+  <text x="960" y="469" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">SIGN IN</text>
+  <defs>
+    <filter id="shadow" x="730" y="96" width="459" height="473" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity=".22"/>
+    </filter>
+  </defs>
+</svg>

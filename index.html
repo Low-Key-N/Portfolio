@@ -5,7 +5,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/keyon-favicon.png">
 <title>My Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=91">
 </head> 
 
 <body>
@@ -57,7 +57,7 @@
 </div>
 
 </section>
-<section id="content-section">
+<section id="content-section" data-featured-works>
 
 
 <div class="content-headline">
@@ -70,43 +70,41 @@
         
         <div class="project-card active">
             <div class="card-image-wrapper">
-                <div class="card-bg" style="background-image: url('assets/images/tasky-preview.png'); background-color: #222;"></div>
+                <div class="card-bg tasky-preview-image" style="background-image: url('assets/images/tasky-login-preview.svg'); background-color: #fff;"></div>
             </div>
             
             <div class="card-details">
-                <h3>Tasky (In Development)</h3>
+                <h3>Tasky</h3>
                 <p class="tech-stack">React • Material UI • Vite</p>
-                <p class="description">Serving as <span>Lead Frontend Engineer</span> for an internal project management tool commissioned by GoPanda. 
-            I architected the frontend structure, established coding standards, and led the UI implementation.</p>
-                <a href="https://github.com/Olu1111/Tasky" class="view-project">View Progress &rarr;</a>
+                <p class="description">A collaborative task management platform built for GoPanda. I developed responsive React interfaces, integrated backend APIs, and helped establish the frontend architecture used throughout the application.</p>
+                <a href="https://github.com/Olu1111/Tasky" class="view-project" target="_blank" rel="noopener noreferrer">View Progress <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
-<!-- 
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg" style="background-image: url('your-image2.jpg'); background-color: #444;"></div>
+                <div class="card-bg" style="background-image: url('assets/images/techtint.jpg'); background-color: #666;"></div>
             </div>
             
             <div class="card-details">
-                <h3>Example</h3>
-                <p class="tech-stack">Example</p>
-                <p class="description">Example.</p>
-                <a href="#" class="view-project">View Project &rarr;</a>
+                <h3>Monthly Analytics &amp; Metrics Dashboard</h3>
+                <p class="tech-stack">React &bull; TypeScript &bull; Material UI &bull; Data Visualization</p>
+                <p class="description">An internal analytics and reporting dashboard built for Cyber4All leadership to track, filter, and analyze engagement metrics across the CLARK cybersecurity curriculum library. I developed the application shell, reporting workflows, and data visualization features using React, TypeScript, Material UI, and charting libraries.</p>
+                <a href="#" class="view-project">Coming Soon <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
 
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg" style="background-image: url('your-image3.jpg'); background-color: #666;"></div>
+                <div class="card-bg" style="background-image: url('assets/images/portfolio-preview.png'); background-color: #444;"></div>
             </div>
             
             <div class="card-details">
-                <h3>Example</h3>
-                <p class="tech-stack">Example</p>
-                <p class="description">Example.</p>
-                <a href="#" class="view-project">View Project &rarr;</a>
+                <h3>Portfolio Website</h3>
+                <p class="tech-stack">HTML &bull; CSS &bull; JavaScript &bull; Responsive Design</p>
+                <p class="description">A responsive personal portfolio website built to showcase my UX engineering work, frontend projects, and experience. It uses custom HTML, CSS, and JavaScript with animated page transitions, dark mode, responsive layouts, and interactive project cards.</p>
+                <a href="https://low-key-n.github.io/Portfolio/" class="view-project" target="_blank" rel="noopener noreferrer">Live Site <span aria-hidden="true">&rarr;</span></a>
             </div>
-        </div> -->
+        </div>
 
     </div>
 
@@ -121,6 +119,80 @@
 
 </div>
 
+</section>
+
+<section class="home-info-extension" aria-labelledby="experience-heading">
+    <div class="home-info-wrapper">
+        <h2 id="experience-heading" class="home-info-title">Experience</h2>
+        <div class="experience-timeline" data-experience-timeline>
+            <div class="experience-node-list" aria-label="Experience timeline">
+                <button type="button" class="experience-node is-active" data-experience-node="0">
+                    <span></span>
+                    <strong>Oct 2025</strong>
+                </button>
+                <button type="button" class="experience-node" data-experience-node="1">
+                    <span></span>
+                    <strong>Jun 2026</strong>
+                </button>
+                <button type="button" class="experience-node" data-experience-node="2">
+                    <span></span>
+                    <strong>Dec 2025</strong>
+                </button>
+            </div>
+
+            <article class="experience-card experience-card-compact" data-experience-card data-active-experience="0">
+                <div class="experience-content">
+                    <h3 data-experience-title>Undergraduate Research Assistant</h3>
+                    <div class="experience-meta">
+                        <span>Dates</span>
+                        <span data-experience-dates>October 2025 - Present</span>
+                    </div>
+                    <div class="experience-stack" aria-label="Technology stack" data-experience-stack>
+                        <span>Figma</span>
+                        <span>UX Research</span>
+                        <span>Literature Review</span>
+                        <span>Authentication</span>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <div class="experience-card-body">
+                        <div class="experience-copy">
+                            <p class="experience-summary" data-experience-description>
+                                Researching accessible authentication methods by analyzing usability barriers and designing
+                                UX-driven improvements for secure authentication systems.
+                            </p>
+                            <div class="experience-highlight">
+                                <span>Highlight</span>
+                                <p data-experience-highlight>Focused on improving authentication usability for neurodiverse users through human-centered security research.</p>
+                            </div>
+                        </div>
+                        <div class="experience-skills" aria-label="Skills gained" data-experience-skills>
+                            <p>Skills Gained</p>
+                            <div class="experience-skill">
+                                <span>UX Research</span>
+                                <strong aria-hidden="true"></strong>
+                                <i style="--skill-level: 85%;"></i>
+                            </div>
+                            <div class="experience-skill">
+                                <span>Accessibility Analysis</span>
+                                <strong aria-hidden="true"></strong>
+                                <i style="--skill-level: 80%;"></i>
+                            </div>
+                            <div class="experience-skill">
+                                <span>Literature Review</span>
+                                <strong aria-hidden="true"></strong>
+                                <i style="--skill-level: 80%;"></i>
+                            </div>
+                            <div class="experience-skill">
+                                <span>Authentication Design</span>
+                                <strong aria-hidden="true"></strong>
+                                <i style="--skill-level: 75%;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
 
 <footer class="slim-footer">
@@ -144,6 +216,6 @@
     </div>
 </footer>
 
-<script src="js/script.js?v=6"></script>
+<script src="js/script.js?v=91"></script>
   </body>  
  </html>
