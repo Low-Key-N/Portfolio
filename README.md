@@ -2,7 +2,7 @@
 
 A personal portfolio website designed to showcase my projects, design philosophy, and technical skills. This project highlights my focus on bridging the gap between design (UI/UX) and engineering.
 
-🔗 **Live Demo:** https://low-key-n.github.io/Portfolio/
+🔗 **Live Demo:** https://keyonbigelow.com
 
 ## 📸 Screenshots
 
