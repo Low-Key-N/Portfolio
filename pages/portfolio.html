@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/keyon-favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/keyon-favicon.png">
-    <title>Portfolio - Keyon Bigelow</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css?v=91">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+  <title>Portfolio | Keyon Bigelow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Keyon Bigelow's frontend and UX engineering projects, including Tasky, analytics dashboards, and responsive web experiences.">
+  <meta name="author" content="Keyon Bigelow">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://keyonbigelow.com/pages/portfolio.html">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/keyon-favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/keyon-favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://keyonbigelow.com/pages/portfolio.html">
+  <meta property="og:title" content="Portfolio | Keyon Bigelow">
+  <meta property="og:description" content="Frontend and UX engineering projects by Keyon Bigelow, featuring responsive applications, dashboards, and interactive web experiences.">
+  <meta property="og:image" content="https://keyonbigelow.com/assets/images/keyon-favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Portfolio | Keyon Bigelow">
+  <meta name="twitter:description" content="Projects by Keyon Bigelow across frontend development, UX engineering, and responsive web design.">
+  <meta name="twitter:image" content="https://keyonbigelow.com/assets/images/keyon-favicon.png">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Portfolio | Keyon Bigelow",
+      "url": "https://keyonbigelow.com/pages/portfolio.html",
+      "description": "Frontend and UX engineering projects by Keyon Bigelow.",
+      "creator": {
+        "@type": "Person",
+        "name": "Keyon Bigelow",
+        "url": "https://keyonbigelow.com/"
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "Tasky",
+          "url": "https://github.com/Olu1111/Tasky",
+          "description": "A collaborative task management platform built for GoPanda with responsive React interfaces and backend API integration."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Monthly Analytics & Metrics Dashboard",
+          "description": "An internal analytics and reporting dashboard for Cyber4All leadership to track engagement metrics across the CLARK cybersecurity curriculum library."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "OneTap Authentication",
+          "description": "Honors research exploring a multimodal authentication system that combines contextual signals and adaptive authentication."
+        }
+      ]
+    }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css?v=102">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
 </head>
 
 <body class="dark-mode-active">
@@ -26,10 +79,10 @@
 
       <div class="nav-right">
         <a href="mailto:kbigelo2@students.towson.edu">Contact</a>
-        <a href="https://github.com/Low-Key-N" target="_blank">
+        <a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer">
             <img src="../assets/images/github.png" class="social-icon" alt="GitHub">
         </a>
-        <a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank">
+        <a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank" rel="noopener noreferrer">
               <img src="../assets/images/Linkedin.png" class="social-icon" alt="LinkedIn" style="position: relative; top: -4px;">
         </a>
       </div>
@@ -91,33 +144,35 @@
                 </div>
             </article>
 
-            <!-- <article class="g-card card-yellow">
-                <div class="g-card-image placeholder-img"></div>
+            <article class="g-card card-yellow">
+                <div class="g-card-image" style="background-image: url('../assets/images/techtint.jpg');"></div>
                 <div class="g-card-body">
-                    <h2>Example</h2>
-                    <p class="card-subtitle">Example</p> 
-                    <a href="#" class="g-btn">See Project &rarr;</a>
+                    <h2>Monthly Analytics &amp; Metrics Dashboard</h2>
+                    <p class="card-subtitle">An internal analytics and reporting dashboard built for Cyber4All leadership to track, filter, and analyze engagement metrics across the CLARK cybersecurity curriculum library.</p>
+                    <div class="g-card-tags" aria-label="Technologies used">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Material UI</span>
+                        <span>Data Visualization</span>
+                    </div>
+                    <a href="#" class="g-btn">Coming Soon</a>
                 </div>
             </article>
 
             <article class="g-card card-red">
-                <div class="g-card-image placeholder-img"></div>
+                <div class="g-card-image onetap-preview-image" style="background-image: url('../assets/images/onetap-laboratory.png');"></div>
                 <div class="g-card-body">
-                    <h2>Example</h2>
-                    <p class="card-subtitle">Example</p> 
-                    <a href="#" class="g-btn">See Project &rarr;</a>
+                    <h2>OneTap Authentication</h2>
+                    <p class="card-subtitle">Designing and evaluating a multimodal authentication system that combines contextual signals and adaptive authentication to improve security and usability.</p>
+                    <div class="g-card-tags" aria-label="Research focus areas">
+                        <span>HCI</span>
+                        <span>UX Research</span>
+                        <span>Authentication</span>
+                        <span>React</span>
+                    </div>
+                    <a href="#" class="g-btn">Coming Fall 2026</a>
                 </div>
             </article>
-
-            <article class="g-card card-green">
-                <div class="g-card-image placeholder-img"></div>
-                <div class="g-card-body">
-                    <h2>Example</h2>
-                    <p class="card-subtitle">Example</p> 
-                    <a href="#" class="g-btn">See Project &rarr;</a>
-                </div>
-
-            </article> -->
 
         </div>
 
@@ -135,13 +190,13 @@
               <a href="mailto:kbigelo2@students.towson.edu">Contact</a>
           </div>
           <div class="footer-right">
-              <a href="https://github.com/Low-Key-N" target="_blank">GitHub</a>
-              <a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank">LinkedIn</a>
+              <a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
       </div>
   </footer>
 
 
-<script src="../js/script.js?v=91"></script>
+<script src="../js/script.js?v=102"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             hasPlayed = sessionStorage.getItem('startupIntroPlayed') === 'true';
             if (!forceIntro && hasPlayed) {
-                window.setTimeout(revealFeaturedWorks, 180);
+                window.setTimeout(revealFeaturedWorks, 80);
                 return;
             }
             sessionStorage.setItem('startupIntroPlayed', 'true');
@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const finishIntro = () => {
             intro.classList.add('startup-intro-exit');
+            window.setTimeout(revealFeaturedWorks, prefersReducedMotion ? 0 : 120);
             window.setTimeout(() => {
                 intro.remove();
-                revealFeaturedWorks();
             }, prefersReducedMotion ? 120 : 800);
         };
 
