@@ -8,20 +8,48 @@ document.addEventListener('DOMContentLoaded', () => {
     /* =========================================
        0. STARTUP INTRO
        ========================================= */
-    const playStartupIntro = () => {
-        const forceIntro = /[?&]intro(?:=|&|$)/.test(window.location.search);
-        let hasPlayed = false;
+    const startupIntroSessionKey = 'startupIntroPlayed';
+    const startupIntroTimeKey = 'startupIntroPlayedAt';
+    const startupIntroWindowFlag = 'startupIntroPlayed=true';
+    const startupIntroCooldown = 30 * 60 * 1000;
+
+    const startupIntroPlayedInTab = () => window.name.includes(startupIntroWindowFlag);
+
+    const hasStartupIntroPlayed = () => {
+        if (startupIntroPlayedInTab()) return true;
 
         try {
-            hasPlayed = sessionStorage.getItem('startupIntroPlayed') === 'true';
-            if (!forceIntro && hasPlayed) {
-                window.setTimeout(revealFeaturedWorks, 80);
-                return;
-            }
-            sessionStorage.setItem('startupIntroPlayed', 'true');
+            const playedThisSession = sessionStorage.getItem(startupIntroSessionKey) === 'true';
+            const playedAt = Number(localStorage.getItem(startupIntroTimeKey) || 0);
+            const playedRecently = playedAt > 0 && Date.now() - playedAt < startupIntroCooldown;
+            return playedThisSession || playedRecently;
         } catch (error) {
-            hasPlayed = false;
+            return false;
         }
+    };
+
+    const markStartupIntroPlayed = () => {
+        try {
+            sessionStorage.setItem(startupIntroSessionKey, 'true');
+            localStorage.setItem(startupIntroTimeKey, String(Date.now()));
+        } catch (error) {
+            // Storage can be unavailable in private modes, so window.name is the fallback.
+        }
+
+        if (!startupIntroPlayedInTab()) {
+            window.name = `${window.name ? `${window.name};` : ''}${startupIntroWindowFlag}`;
+        }
+    };
+
+    const playStartupIntro = () => {
+        const forceIntro = /[?&]intro(?:=|&|$)/.test(window.location.search);
+
+        if (!forceIntro && hasStartupIntroPlayed()) {
+            window.setTimeout(revealFeaturedWorks, 80);
+            return;
+        }
+
+        markStartupIntroPlayed();
 
         const favicon = document.querySelector('link[rel~="icon"]');
         const faviconSrc = favicon ? favicon.href : 'assets/images/keyon-favicon.png';
