@@ -186,6 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (experienceNodes.length && experienceCard) {
         const experienceData = [
             {
+                title: 'Software Developer <span>SecurEd Inc · CLARK Cybersecurity Library</span>',
+                dates: 'August 2026 - Present',
+                stack: ['Software Development', 'Cybersecurity', 'Contract', 'On-site'],
+                skills: [
+                    ['Software Development', 85],
+                    ['Cybersecurity', 80],
+                    ['Technical Collaboration', 80],
+                    ['On-site Development', 80]
+                ],
+                description: 'Working as a contract Software Developer with SecurEd Inc on the CLARK Cybersecurity Library in Towson, Maryland.',
+                highlight: 'Contributing software development expertise to the CLARK Cybersecurity Library.'
+            },
+            {
                 title: 'Undergraduate Research Assistant',
                 dates: 'October 2025 - Present',
                 stack: ['Figma', 'UX Research', 'Literature Review', 'Authentication', 'Cybersecurity'],
