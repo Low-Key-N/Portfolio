@@ -4180,3 +4180,52 @@ svg {
         font-size: 13px !important;
     }
 }
+
+/* Tablet landscape: give the hero portrait-like scale and room to breathe. */
+@media (min-width: 901px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+    #hero-section {
+        height: auto !important;
+        min-height: 85svh !important;
+        justify-content: center !important;
+        background-position: 32% center !important;
+    }
+
+    #hero-section .hero-content {
+        width: 56% !important;
+        max-width: 760px !important;
+        margin: 0 0 0 auto !important;
+        padding: 120px clamp(28px, 3vw, 44px) 56px 0 !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+
+    #hero-section .hero-headline {
+        font-size: clamp(72px, 7.5vw, 104px) !important;
+        line-height: 1.02 !important;
+        margin: 0 0 18px !important;
+    }
+
+    #hero-section .hero-subtitle p {
+        font-size: clamp(40px, 4vw, 54px) !important;
+        line-height: 1.2 !important;
+        margin: 0 0 20px !important;
+    }
+
+    #hero-section .hero-details p {
+        font-size: clamp(26px, 2.6vw, 34px) !important;
+        line-height: 1.35 !important;
+        margin: 0 0 12px !important;
+    }
+
+    #hero-section .hero-tech-stack p {
+        font-size: clamp(18px, 1.8vw, 24px) !important;
+        line-height: 1.5 !important;
+        margin: 24px 0 20px !important;
+    }
+
+    #hero-section .hero-resume {
+        font-size: 20px !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+}
