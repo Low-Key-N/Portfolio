@@ -362,14 +362,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let scrollSettleTimer;
         let requestedIndex = null;
-
-        // Measure actual positions so card widths, gaps and Safari rounding agree.
-        const slidePosition = (index) => {
-            const trackRect = track.getBoundingClientRect();
-            const cardRect = cards[index].getBoundingClientRect();
-            const left = track.scrollLeft + cardRect.left - trackRect.left;
-            return Math.max(0, Math.min(left, track.scrollWidth - track.clientWidth));
+        const touchMode = window.matchMedia('(pointer: coarse)');
+        const container = track.closest('.carousel-container');
+        let positions = [];
+        const measureSlides = () => {
+            const first = cards[0].getBoundingClientRect().left;
+            positions = cards.map(card => card.getBoundingClientRect().left - first);
         };
+        container.classList.toggle('is-touch-carousel', touchMode.matches);
+        measureSlides();
+
+        const slidePosition = (index) => Math.max(0,
+            Math.min(positions[index], track.scrollWidth - track.clientWidth));
 
         const syncFromScroll = () => {
             const index = cards.reduce((closest, card, candidate) =>
@@ -390,11 +394,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const moveToSlide = (index, direction = 'right', animate = true) => {
             index = (index + cards.length) % cards.length;
-            if (animate) stageCarouselTransition(currentIndex, index, direction);
+            if (animate && !touchMode.matches) stageCarouselTransition(currentIndex, index, direction);
             currentIndex = index;
             requestedIndex = index;
             updateDots(index);
             cards.forEach((card, i) => card.classList.toggle('active', i === index));
+            if (!touchMode.matches) {
+                requestedIndex = null;
+                track.style.setProperty('--carousel-shift', `${-positions[index]}px`);
+                return;
+            }
             track.scrollTo({
                 left: slidePosition(index),
                 behavior: animate && !prefersReducedMotion ? 'smooth' : 'instant'
@@ -403,12 +412,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         track.addEventListener('scroll', () => {
-            // Intermediate smooth-scroll frames must not overwrite an arrow's target.
-            if (requestedIndex === null) syncFromScroll();
-            settleScroll();
+            // Let native momentum finish; avoid layout reads on every scroll frame.
+            if (touchMode.matches) settleScroll();
         }, { passive: true });
 
         const startManualScroll = () => {
+            if (!touchMode.matches) return;
+            if (requestedIndex !== null) {
+                track.scrollTo({ left: track.scrollLeft, behavior: 'instant' });
+            }
             requestedIndex = null;
             window.clearTimeout(scrollSettleTimer);
             syncFromScroll();
@@ -428,9 +440,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const resizeObserver = new ResizeObserver(() => {
             if (track.clientWidth === trackWidth) return;
             trackWidth = track.clientWidth;
+            measureSlides();
             moveToSlide(currentIndex, 'right', false);
         });
         resizeObserver.observe(track);
+        touchMode.addEventListener('change', () => {
+            window.clearTimeout(scrollSettleTimer);
+            container.classList.toggle('is-touch-carousel', touchMode.matches);
+            track.scrollTo({ left: 0, behavior: 'instant' });
+            measureSlides();
+            moveToSlide(currentIndex, 'right', false);
+        });
 
     }
 

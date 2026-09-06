@@ -4230,20 +4230,63 @@ svg {
     }
 }
 
-/* One native scroll surface for swipes, trackpads, dots and arrow buttons. */
-#content-section .carousel-track {
+/* Desktop retains the button-driven translated track. */
+#content-section .carousel-container:not(.is-touch-carousel) .carousel-track {
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+    transform: translateX(var(--carousel-shift, 0px)) !important;
+}
+
+/* Native momentum scrolling is limited to touch devices. */
+#content-section .is-touch-carousel {
+    height: auto !important;
+    padding-bottom: 0;
+}
+
+#content-section .is-touch-carousel .carousel-track {
     overflow-x: auto !important;
     overflow-y: hidden !important;
     transform: none !important;
+    transition: none;
     scroll-snap-type: x mandatory !important;
     scroll-behavior: auto;
     scrollbar-width: none;
 }
 
-#content-section .carousel-track::-webkit-scrollbar {
+#content-section .is-touch-carousel .carousel-track::-webkit-scrollbar {
     display: none;
 }
 
-#content-section .project-card {
+#content-section .is-touch-carousel .project-card {
     scroll-snap-align: start;
+}
+
+/* Keep pagination in normal flow so it cannot be clipped below the section. */
+#content-section .is-touch-carousel .carousel-dots {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    display: flex !important;
+    width: 100% !important;
+    min-height: 28px;
+    margin: 20px 0 0 !important;
+}
+
+#content-section .is-touch-carousel .carousel-btn {
+    top: calc((100% - 48px) / 2) !important;
+}
+
+/* Do not layer image/text transitions over native touch momentum. */
+#content-section .is-touch-carousel .project-card,
+#content-section .is-touch-carousel .card-image-wrapper,
+#content-section .is-touch-carousel .card-bg,
+#content-section .is-touch-carousel .card-details > * {
+    animation: none !important;
+    transition: none !important;
+}
+
+@media (min-width: 901px) {
+    #content-section .is-touch-carousel .carousel-track {
+        height: clamp(420px, 38vw, 500px) !important;
+    }
 }
