@@ -4290,3 +4290,8 @@ svg {
         height: clamp(420px, 38vw, 500px) !important;
     }
 }
+
+/* Swipe pagination changes immediately with the nearest card. */
+#content-section .is-touch-carousel .dot {
+    transition: none;
+}

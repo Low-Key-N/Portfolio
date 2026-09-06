@@ -365,20 +365,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const touchMode = window.matchMedia('(pointer: coarse)');
         const container = track.closest('.carousel-container');
         let positions = [];
+        let scrollPositions = [];
+        let scrollSyncFrame = null;
         const measureSlides = () => {
             const first = cards[0].getBoundingClientRect().left;
             positions = cards.map(card => card.getBoundingClientRect().left - first);
+            const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+            scrollPositions = positions.map(left => Math.max(0, Math.min(left, maxScroll)));
         };
         container.classList.toggle('is-touch-carousel', touchMode.matches);
         measureSlides();
 
-        const slidePosition = (index) => Math.max(0,
-            Math.min(positions[index], track.scrollWidth - track.clientWidth));
+        const slidePosition = (index) => scrollPositions[index];
 
         const syncFromScroll = () => {
+            const scrollLeft = track.scrollLeft;
             const index = cards.reduce((closest, card, candidate) =>
-                Math.abs(track.scrollLeft - slidePosition(candidate)) <
-                Math.abs(track.scrollLeft - slidePosition(closest)) ? candidate : closest, 0);
+                Math.abs(scrollLeft - slidePosition(candidate)) <
+                Math.abs(scrollLeft - slidePosition(closest)) ? candidate : closest, 0);
+            if (index === currentIndex) return;
             currentIndex = index;
             updateDots(index);
             cards.forEach((card, i) => card.classList.toggle('active', i === index));
@@ -412,8 +417,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         track.addEventListener('scroll', () => {
-            // Let native momentum finish; avoid layout reads on every scroll frame.
-            if (touchMode.matches) settleScroll();
+            if (!touchMode.matches) return;
+            // Follow a swipe once per frame using cached positions, without reflow.
+            if (requestedIndex === null && scrollSyncFrame === null) {
+                scrollSyncFrame = window.requestAnimationFrame(() => {
+                    scrollSyncFrame = null;
+                    if (touchMode.matches && requestedIndex === null) syncFromScroll();
+                });
+            }
+            settleScroll();
         }, { passive: true });
 
         const startManualScroll = () => {
