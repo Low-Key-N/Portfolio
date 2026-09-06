@@ -4229,3 +4229,21 @@ svg {
         transform: none !important;
     }
 }
+
+/* One native scroll surface for swipes, trackpads, dots and arrow buttons. */
+#content-section .carousel-track {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    transform: none !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: auto;
+    scrollbar-width: none;
+}
+
+#content-section .carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+#content-section .project-card {
+    scroll-snap-align: start;
+}

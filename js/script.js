@@ -337,9 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
         let carouselTransitionTimer;
 
-        const isMobileMode = () => window.innerWidth <= 900;
-        const getCarouselGap = () => parseFloat(window.getComputedStyle(track).columnGap) || 20;
-
         const updateDots = (index) => {
             dots.forEach(dot => dot.classList.remove('active'));
             if (dots[index]) dots[index].classList.add('active');
@@ -363,69 +360,78 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 760);
         };
 
-        const moveToSlide = (index, direction = index > currentIndex ? 'right' : 'left') => {
-            if (index < 0 || index >= cards.length) return;
-            if (index === currentIndex) return;
-            const cardWidth = cards[0].getBoundingClientRect().width;
-            const previousIndex = currentIndex;
+        let scrollSettleTimer;
+        let requestedIndex = null;
 
-            stageCarouselTransition(previousIndex, index, direction);
+        // Measure actual positions so card widths, gaps and Safari rounding agree.
+        const slidePosition = (index) => {
+            const trackRect = track.getBoundingClientRect();
+            const cardRect = cards[index].getBoundingClientRect();
+            const left = track.scrollLeft + cardRect.left - trackRect.left;
+            return Math.max(0, Math.min(left, track.scrollWidth - track.clientWidth));
+        };
 
-            if (isMobileMode()) {
-                const gap = getCarouselGap();
-                const scrollPosition = index * (cardWidth + gap);
-                track.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-            } else {
-                const gap = getCarouselGap();
-                const slideAmount = index * -(cardWidth + gap);
-                track.style.transform = `translateX(${slideAmount}px)`;
-            }
-
-            updateDots(index);
+        const syncFromScroll = () => {
+            const index = cards.reduce((closest, card, candidate) =>
+                Math.abs(track.scrollLeft - slidePosition(candidate)) <
+                Math.abs(track.scrollLeft - slidePosition(closest)) ? candidate : closest, 0);
             currentIndex = index;
+            updateDots(index);
+            cards.forEach((card, i) => card.classList.toggle('active', i === index));
+        };
+
+        const settleScroll = () => {
+            window.clearTimeout(scrollSettleTimer);
+            scrollSettleTimer = window.setTimeout(() => {
+                requestedIndex = null;
+                syncFromScroll();
+            }, 180);
+        };
+
+        const moveToSlide = (index, direction = 'right', animate = true) => {
+            index = (index + cards.length) % cards.length;
+            if (animate) stageCarouselTransition(currentIndex, index, direction);
+            currentIndex = index;
+            requestedIndex = index;
+            updateDots(index);
+            cards.forEach((card, i) => card.classList.toggle('active', i === index));
+            track.scrollTo({
+                left: slidePosition(index),
+                behavior: animate && !prefersReducedMotion ? 'smooth' : 'instant'
+            });
+            settleScroll();
         };
 
         track.addEventListener('scroll', () => {
-            if (isMobileMode()) {
-                const cardWidth = cards[0].getBoundingClientRect().width;
-                const gap = getCarouselGap();
-                const scrollLeft = track.scrollLeft;
-                const newIndex = Math.round(scrollLeft / (cardWidth + gap));
+            // Intermediate smooth-scroll frames must not overwrite an arrow's target.
+            if (requestedIndex === null) syncFromScroll();
+            settleScroll();
+        }, { passive: true });
 
-                if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
-                    currentIndex = newIndex;
-                    updateDots(currentIndex);
-                }
-            }
-        });
+        const startManualScroll = () => {
+            requestedIndex = null;
+            window.clearTimeout(scrollSettleTimer);
+            syncFromScroll();
+        };
+        track.addEventListener('pointerdown', startManualScroll, { passive: true });
+        track.addEventListener('touchstart', startManualScroll, { passive: true });
+        track.addEventListener('wheel', startManualScroll, { passive: true });
 
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const nextIndex = currentIndex + 1;
-                if (!isMobileMode()) {
-                    if (nextIndex >= cards.length) moveToSlide(0, 'right');
-                    else moveToSlide(nextIndex, 'right');
-                } else {
-                    if (nextIndex < cards.length) moveToSlide(nextIndex, 'right');
-                }
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                const prevIndex = currentIndex - 1;
-                if (!isMobileMode()) {
-                    if (prevIndex < 0) moveToSlide(cards.length - 1, 'left');
-                    else moveToSlide(prevIndex, 'left');
-                } else {
-                    if (prevIndex >= 0) moveToSlide(prevIndex, 'left');
-                }
-            });
-        }
-
+        nextBtn?.addEventListener('click', () => moveToSlide(currentIndex + 1, 'right'));
+        prevBtn?.addEventListener('click', () => moveToSlide(currentIndex - 1, 'left'));
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => moveToSlide(index, index > currentIndex ? 'right' : 'left'));
         });
+
+        // Rotation and window resizing preserve the selected card without stale offsets.
+        let trackWidth = track.clientWidth;
+        const resizeObserver = new ResizeObserver(() => {
+            if (track.clientWidth === trackWidth) return;
+            trackWidth = track.clientWidth;
+            moveToSlide(currentIndex, 'right', false);
+        });
+        resizeObserver.observe(track);
+
     }
 
     /* =========================================
