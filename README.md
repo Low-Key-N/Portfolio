@@ -9,6 +9,12 @@ A personal portfolio website designed to showcase my projects, design philosophy
 ![Desktop Preview](assets/images/portfolio-preview.png)
 *Desktop View featuring the Hero Section and Tech Stack.*
 
+### Hand-Drawn Startup Screen Concept
+
+![Hand-drawn startup screen storyboard showing the logo fading in, a wave ripple, and a fade-out transition](assets/images/startup-screen-sketch.jpg)
+
+*Original hand-drawn concept for the startup screen, showing the logo fade-in, wave ripple, and fade-out sequence.*
+
 ## 🧠 Design Process
 
 Before building the portfolio, I sketched the layout by hand to plan the information hierarchy, navigation flow, and placement of major sections like the hero, portfolio carousel, and contact area.
