@@ -454,14 +454,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Read from localStorage on every page load and apply immediately
-    const saved = localStorage.getItem('siteDarkMode');
+    let saved = null;
+    try {
+        saved = localStorage.getItem('siteDarkMode');
+    } catch {
+        // Navigation must still initialize when browser storage is unavailable.
+    }
     applyDarkMode(saved === 'on');
 
     toggleBtn.addEventListener('click', () => {
         const nowDark = document.body.classList.contains('site-dark-mode');
         const next = !nowDark;
         applyDarkMode(next);
-        localStorage.setItem('siteDarkMode', next ? 'on' : 'off');
+        try {
+            localStorage.setItem('siteDarkMode', next ? 'on' : 'off');
+        } catch {
+            // The theme still works for this page without persistent storage.
+        }
     });
 
     // Insert at the end of nav-right
@@ -471,5 +480,67 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         navEl.appendChild(toggleBtn);
     }
+
+    /* =========================================
+       6. MOBILE NAVIGATION
+       ========================================= */
+    const mobileMenuId = 'mobile-navigation-menu';
+    const mobileMenuButton = document.createElement('button');
+    mobileMenuButton.className = 'mobile-menu-toggle';
+    mobileMenuButton.type = 'button';
+    mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+    mobileMenuButton.setAttribute('aria-controls', mobileMenuId);
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.innerHTML = '<span></span><span></span><span></span>';
+
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-nav-menu';
+    mobileMenu.id = mobileMenuId;
+
+    const desktopNavLinks = navEl.querySelectorAll('.nav-left > a, .nav-right > a');
+    desktopNavLinks.forEach((link) => mobileMenu.appendChild(link.cloneNode(true)));
+
+    const mobileThemeButton = document.createElement('button');
+    mobileThemeButton.className = 'mobile-theme-toggle';
+    mobileThemeButton.type = 'button';
+    mobileThemeButton.textContent = 'Toggle theme';
+    mobileThemeButton.addEventListener('click', () => toggleBtn.click());
+    mobileMenu.appendChild(mobileThemeButton);
+
+    const closeMobileMenu = () => {
+        navEl.classList.remove('mobile-menu-open');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+    };
+
+    mobileMenuButton.addEventListener('click', () => {
+        const willOpen = !navEl.classList.contains('mobile-menu-open');
+        navEl.classList.toggle('mobile-menu-open', willOpen);
+        mobileMenuButton.setAttribute('aria-expanded', String(willOpen));
+        mobileMenuButton.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+
+    mobileMenu.addEventListener('click', (event) => {
+        if (event.target.closest('a')) closeMobileMenu();
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navEl.contains(event.target)) closeMobileMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navEl.classList.contains('mobile-menu-open')) {
+            closeMobileMenu();
+            mobileMenuButton.focus();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 900px)').matches) {
+            closeMobileMenu();
+        }
+    });
+
+    navEl.append(mobileMenuButton, mobileMenu);
 
 });
