@@ -5,8 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
         if (featuredWorks) featuredWorks.classList.add('is-visible');
     };
 
+    const portfolioPage = document.querySelector('[data-portfolio-page]');
+    const portfolioBackdrop = portfolioPage?.querySelector('.portfolio-backdrop');
+    const projectGrid = portfolioPage?.querySelector('.projects-grid');
+
+    if (portfolioBackdrop && projectGrid) {
+        const alignPortfolioBackdrop = () => {
+            const sectionBounds = portfolioPage.getBoundingClientRect();
+            const gridBounds = projectGrid.getBoundingClientRect();
+            portfolioBackdrop.style.setProperty('--backdrop-top', `${gridBounds.top - sectionBounds.top - 30}px`);
+            portfolioBackdrop.style.setProperty('--backdrop-height', `${gridBounds.height + 80}px`);
+        };
+
+        projectGrid.querySelectorAll(':scope > .g-card').forEach((card, index) => {
+            const selectBackdrop = () => portfolioBackdrop.style.setProperty('--backdrop-index', index);
+            card.addEventListener('pointerenter', selectBackdrop);
+            card.addEventListener('focusin', selectBackdrop);
+        });
+
+        const backdropResizeObserver = new ResizeObserver(alignPortfolioBackdrop);
+        backdropResizeObserver.observe(portfolioPage);
+        backdropResizeObserver.observe(projectGrid);
+        alignPortfolioBackdrop();
+    }
+
     /* =========================================
-       0. STARTUP INTRO
+       1. STARTUP INTRO
        ========================================= */
     const startupIntroSessionKey = 'startupIntroPlayed';
     const startupIntroTimeKey = 'startupIntroPlayedAt';
@@ -106,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.setTimeout(finishIntro, prefersReducedMotion ? 160 : 2100);
     };
 
-    playStartupIntro();
+    if (document.getElementById('hero-section')) playStartupIntro();
 
     /* =========================================
        1. NAVBAR SCROLL LOGIC

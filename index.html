@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Keyon Bigelow | UX Engineer & Frontend Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Keyon Bigelow is a UX engineer and frontend developer building responsive web applications, dashboards, and accessible user experiences.">
@@ -48,7 +49,13 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/style.css?v=108">
+  <link rel="preload" as="font" href="assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="assets/Fonts/Eina01-SemiBold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="assets/Fonts/Eina01-Bold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="assets/images/keyon-park-preview.webp">
+  <link rel="preload" as="image" href="assets/images/keyon-park-hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css?v=116">
+  <script src="js/page-navigation.js?v=1"></script>
 </head> 
 
 <body>
@@ -102,7 +109,6 @@
 </section>
 <section id="content-section" data-featured-works>
 
-
 <div class="content-headline">
   <p>My Featured Works</p>
 </div>
@@ -113,7 +119,7 @@
         
         <div class="project-card active">
             <div class="card-image-wrapper">
-                <div class="card-bg onetap-preview-image" style="background-image: url('assets/images/onetap-laboratory.png'); background-color: #dff3ff;"></div>
+                <div class="card-bg onetap-preview-image" style="background-image: url('assets/images/onetap-laboratory.png');"></div>
             </div>
 
             <div class="card-details">
@@ -126,7 +132,7 @@
 
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg code-clash-preview-image" style="background-image: url('assets/images/code-clash/code-clash-home.png'); background-color: #111;"></div>
+                <div class="card-bg code-clash-preview-image" style="background-image: url('assets/images/code-clash/code-clash-home.png');"></div>
             </div>
 
             <div class="card-details">
@@ -142,7 +148,7 @@
 
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg tasky-preview-image" style="background-image: url('assets/images/tasky-login-preview.svg'); background-color: #fff;"></div>
+                <div class="card-bg tasky-preview-image" style="background-image: url('assets/images/tasky-login-preview.svg');"></div>
             </div>
             
             <div class="card-details">
@@ -155,7 +161,7 @@
         <!-- Secured metrics dashboard card on standby.
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg" style="background-image: url('assets/images/techtint.jpg'); background-color: #666;"></div>
+                <div class="card-bg" style="background-image: url('assets/images/techtint.jpg');"></div>
             </div>
             
             <div class="card-details">
@@ -282,6 +288,6 @@
     </div>
 </footer>
 
-<script src="js/script.js?v=108"></script>
+<script src="js/script.js?v=111"></script>
   </body>  
  </html>

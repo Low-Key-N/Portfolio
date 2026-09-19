@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Portfolio | Keyon Bigelow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore Keyon Bigelow's frontend and UX engineering projects, including the CODE/CLASH hackathon platform, Tasky, and responsive web experiences.">
@@ -53,14 +54,22 @@
     }
   </script>
 
-  <link rel="stylesheet" href="../css/style.css?v=108">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-SemiBold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Bold.ttf" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../css/style.css?v=116">
+  <script src="../js/page-navigation.js?v=1"></script>
 </head>
 
-<body class="dark-mode-active">
+<body class="dark-mode-active portfolio-page">
 <script>if(localStorage.getItem('siteDarkMode')==='on'){document.body.classList.add('site-dark-mode');}</script>
+<script>
+if (document.fonts) {
+    document.body.classList.add('portfolio-fonts-loading');
+    Promise.all([400, 600, 700].map(weight => document.fonts.load(`${weight} 16px Eina`)))
+        .finally(() => document.body.classList.remove('portfolio-fonts-loading'));
+}
+</script>
     
   <nav class="dark-mode-nav">
       <div class="nav-left">
@@ -83,7 +92,14 @@
       </div>
   </nav>
 
-  <section class="portfolio-page-section">
+  <section class="portfolio-page-section" data-portfolio-page>
+    <div class="portfolio-backdrop" aria-hidden="true">
+        <div class="portfolio-backdrop-track">
+            <div class="portfolio-backdrop-slide"><img src="../assets/images/onetap-laboratory.png" alt=""></div>
+            <div class="portfolio-backdrop-slide"><img src="../assets/images/code-clash/code-clash-home.png" alt=""></div>
+            <div class="portfolio-backdrop-slide"><img src="../assets/images/tasky-login-preview.svg" alt=""></div>
+        </div>
+    </div>
     <div class="content-wrapper">
         
         <div class="portfolio-hero">
@@ -93,19 +109,18 @@
                     I am a Computer Science student at Towson University. 
             This collection documents my journey in software engineering, 
             web development, and UI design as I build my skillset.
+                </p>
                 <div class="toggle-placeholder">
                     <span>Clear & usable</span>
                     <div class="toggle-switch"></div>
                 </div>
             </div>
-            
+
             <div class="hero-right">
                 <div class="cycling-card">
-<div class="slide slide-1"></div>
-    <div class="slide slide-2"></div>
-    <div class="slide slide-3"></div>
-
-
+                    <div class="slide slide-1"></div>
+                    <div class="slide slide-2"></div>
+                    <div class="slide slide-3"></div>
                     <div class="cycle-overlay">
                         <span class="cycle-tag">Featured Work</span>
                         <h3>Design Highlights</h3>
@@ -124,54 +139,45 @@
 
         <div class="projects-grid">
 
-            <article class="g-card card-red">
+            <article class="g-card card-red" data-load-reveal>
                 <div class="g-card-image onetap-preview-image" style="background-image: url('../assets/images/onetap-laboratory.png');"></div>
                 <div class="g-card-body">
                     <h2>OneTap Authentication</h2>
-                    <p class="card-subtitle">Designing and evaluating a multimodal authentication system that combines contextual signals and adaptive authentication to improve security and usability.</p>
+                    <p class="card-subtitle">Adaptive authentication designed to improve security without adding friction.</p>
                     <div class="g-card-tags" aria-label="Research focus areas">
-                        <span>HCI</span>
                         <span>UX Research</span>
-                        <span>Authentication</span>
-                        <span>React</span>
+                        <span>HCI</span>
+                        <span>Prototype</span>
                     </div>
-                    <a href="#" class="g-btn">Coming Fall 2026</a>
+                    <p class="project-status">In progress &middot; Fall 2026</p>
                 </div>
             </article>
 
-            <article class="g-card card-yellow code-clash-card">
+            <article class="g-card card-yellow code-clash-card" data-load-reveal>
                 <img class="g-card-project-image" src="../assets/images/code-clash/code-clash-home.png" alt="CODE/CLASH event website homepage featuring the Towson skyline and event countdown">
                 <div class="g-card-body">
-                    <h2>CODE/CLASH Hackathon Platform</h2>
-                    <p class="card-subtitle">Designed and developed the official web platform for a student hackathon organized by Bit Brothers and Sister Scripters at Towson University. Built a responsive event site, secure application workflow, and moderated team-assembly board.</p>
+                    <h2>CODE/CLASH Platform</h2>
+                    <p class="card-subtitle">A responsive event platform supporting registration and team formation for a student hackathon.</p>
                     <div class="g-card-tags" aria-label="Technologies used">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                        <span>Product Design</span>
+                        <span>Development</span>
                         <span>Supabase</span>
-                        <span>PostgreSQL</span>
-                        <span>Edge Functions</span>
                     </div>
-                    <div class="g-card-actions">
-                        <a href="https://codeclashtu.com/" class="g-btn" target="_blank" rel="noopener noreferrer">Live Site</a>
-                        <a href="https://github.com/Low-Key-N/TowsonHackathonWebsite" class="g-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    </div>
-                    <p class="project-outcomes-note">Event outcomes and participation numbers will be added after the hackathon.</p>
+                    <p class="project-status">Case study coming soon</p>
                 </div>
             </article>
             
-            <article class="g-card card-blue">
+            <article class="g-card card-blue" data-load-reveal>
                 <div class="g-card-image tasky-preview-image" style="background-image: url('../assets/images/tasky-login-preview.svg');"></div>
                 <div class="g-card-body">
                     <h2>Tasky</h2>
-                    <p class="card-subtitle">A collaborative task management platform built for GoPanda with responsive React interfaces, backend API integration, and reusable frontend architecture.</p>
+                    <p class="card-subtitle">A collaborative task platform built around a reusable React architecture.</p>
                     <div class="g-card-tags" aria-label="Technologies used">
+                        <span>Frontend</span>
                         <span>React</span>
-                        <span>Material UI</span>
-                        <span>Vite</span>
-                        <span>Node</span>
+                        <span>API Integration</span>
                     </div>
-                    <a href="https://github.com/Olu1111/Tasky" class="g-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <p class="project-status">Case study coming soon</p>
                 </div>
             </article>
 
@@ -215,6 +221,6 @@
   </footer>
 
 
-<script src="../js/script.js?v=108"></script>
+<script src="../js/script.js?v=111"></script>
 </body>
 </html>

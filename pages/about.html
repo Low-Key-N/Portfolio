@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>About | Keyon Bigelow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn about Keyon Bigelow, a UX engineer and frontend developer focused on accessible design, responsive interfaces, and human-centered software.">
@@ -25,10 +26,15 @@
   <meta name="twitter:description" content="Background, design philosophy, and frontend development focus of Keyon Bigelow.">
   <meta name="twitter:image" content="https://keyonbigelow.com/assets/images/keyon-favicon.png">
 
-  <link rel="stylesheet" href="../css/style.css?v=108">
+  <link rel="preload" as="image" href="../assets/images/techtint-about.webp">
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-SemiBold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Bold.ttf" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../css/style.css?v=116">
+  <script src="../js/page-navigation.js?v=1"></script>
 </head>
 
-<body class="dark-mode-active">
+<body class="dark-mode-active about-page">
 <script>if(localStorage.getItem('siteDarkMode')==='on'){document.body.classList.add('site-dark-mode');}</script>
 
   <nav class="dark-mode-nav">
@@ -61,11 +67,11 @@
           
 <div class="about-image-container">
     <div class="grey-tint"></div>
-    <img src="../assets/images/profile.jpeg" class="profile-cube" alt="Keyon Profile">
+    <img src="../assets/images/profile.jpeg" class="profile-cube" alt="Keyon Profile" width="180" height="180" fetchpriority="high" decoding="async">
 
 </div>
 
-          <div class="about-text-container">
+          <div class="about-text-container" data-load-reveal>
               <h1>Beyond the Code.</h1>
               <p class="intro">
                   I’m a Computer Science student at Towson University with an interest in 
@@ -115,6 +121,6 @@
   </footer>
 
 
-<script src="../js/script.js?v=108"></script>
+<script src="../js/script.js?v=111"></script>
 </body>
 </html>
