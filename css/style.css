@@ -863,6 +863,13 @@ border: none;
     background-position: center !important;
 }
 
+/* Monthly Reports card: fill the media panel while preserving its dashboard navigation. */
+.monthly-reports-preview-image {
+    background-size: 100% 100% !important;
+    background-position: left top !important;
+    background-repeat: no-repeat;
+}
+
 /* --- HOVER EFFECT --- */
 .project-card:hover {
     transform: none;
@@ -1031,19 +1038,39 @@ border: none;
 }
 
 .view-project {
-    text-decoration: none;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #0b63f6;
+    border-radius: 999px;
+    color: #0b63f6;
+    display: inline-flex;
+    font-size: 14px;
     font-weight: 600;
-    color: black;
-    border-bottom: 2px solid black;
-    display: inline-block;
+    gap: 8px;
+    line-height: 1;
+    min-height: 32px;
+    padding: 6px 14px;
+    text-decoration: none;
     width: fit-content;
-    padding-bottom: 2px;
-    transition: color 0.24s ease, border-bottom-color 0.24s ease;
+    transition: background-color 0.24s ease, color 0.24s ease, border-color 0.24s ease;
 }
 
 .view-project:hover {
-    color: #2563eb;
-    border-bottom-color: #2563eb;
+    background: #0b63f6;
+    border-color: #0b63f6;
+    color: #fff;
+}
+
+/* Case-study links are informational, matching the quiet internal-tool pill. */
+.view-project.view-case-study {
+    border-color: #d8dfe8;
+    color: #596372;
+}
+
+.view-project.view-case-study:hover {
+    background: #f1f6fc;
+    border-color: #d8dfe8;
+    color: #596372;
 }
 
 .view-project span {
@@ -1057,9 +1084,13 @@ border: none;
     gap: 22px;
 }
 
-.project-card:hover .view-project span,
 .view-project:hover span {
     transform: translateX(5px);
+}
+
+/* Card hover may lift the card, but only the directly hovered pill moves its arrow. */
+.project-card:hover .view-project:not(:hover) span {
+    transform: translateX(0);
 }
 
 /* CARD 1: Portfolio Website */
@@ -2532,7 +2563,7 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }
 
 .g-card-image {
-    height: 210px;
+    height: 230px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -2542,18 +2573,15 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 .g-card-project-image {
     display: block;
     width: 100%;
-    height: 210px;
+    height: 230px;
     object-fit: cover;
     object-position: center;
     border-bottom: 1px solid #d7dce2;
 }
 
-/* Dashboard UI is a 3:2 composition, so preserve the complete reporting screen. */
+/* Portfolio crop excludes the logout row and fills the shared card media frame. */
 .monthly-reports-card .g-card-project-image {
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: contain;
-    background: #f5f7fa;
+    object-fit: fill;
 }
 
 .g-card-body {
@@ -3021,7 +3049,8 @@ body.site-dark-mode .project-status { color: #b7bfca; }
 
     .card-details .view-project {
         font-size: 11px !important; /* Shrunk link */
-        padding-bottom: 1px !important;
+        min-height: 30px;
+        padding: 7px 12px;
     }
 
     /* HERO CONTENT */
@@ -3624,13 +3653,21 @@ body.site-dark-mode .description {
 }
 
 body.site-dark-mode .view-project {
-    color: #f0f0f0;
-    border-bottom-color: #f0f0f0;
+    border-color: #60a5fa;
+    color: #93c5fd;
 }
 
 body.site-dark-mode .view-project:hover {
-    color: #60a5fa;
-    border-bottom-color: #60a5fa;
+    background-color: #60a5fa;
+    border-color: #60a5fa;
+    color: #111;
+}
+
+body.site-dark-mode .view-project.view-case-study,
+body.site-dark-mode .view-project.view-case-study:hover {
+    background: transparent;
+    border-color: #596372;
+    color: #c7d0dc;
 }
 
 /* Carousel buttons */
@@ -4241,7 +4278,8 @@ svg {
         font-size: 22px;
     }
 
-    .g-card-image {
+    .g-card-image,
+    .g-card-project-image {
         height: 190px;
     }
 
