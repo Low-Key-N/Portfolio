@@ -4511,3 +4511,60 @@ svg {
 #content-section .is-touch-carousel .dot {
     transition: none;
 }
+
+/* =========================================
+   COMPACT TOUCH NAVIGATION
+   Keep one navigation system active on iPhones and sideways tablets. Earlier
+   landscape rules size the hero, but must not re-enable the desktop link rows.
+   ========================================= */
+@media (max-width: 1100px) and (orientation: landscape) and (pointer: coarse),
+       (max-width: 900px) {
+    nav {
+        height: 64px !important;
+        padding-left: max(16px, env(safe-area-inset-left)) !important;
+        padding-right: max(16px, env(safe-area-inset-right)) !important;
+        justify-content: center !important;
+    }
+
+    nav .nav-left,
+    nav .nav-right {
+        display: none !important;
+    }
+
+    nav .nav-center {
+        position: static !important;
+        left: auto !important;
+        transform: none !important;
+        width: auto !important;
+        max-width: calc(100% - 72px) !important;
+        height: auto !important;
+        pointer-events: auto !important;
+    }
+
+    nav #logo {
+        display: block !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        font-size: clamp(20px, 3.4vw, 28px) !important;
+        line-height: 1 !important;
+    }
+
+    nav .mobile-menu-toggle {
+        display: flex !important;
+        right: max(12px, env(safe-area-inset-right)) !important;
+    }
+
+    nav .mobile-nav-menu {
+        right: max(12px, env(safe-area-inset-right)) !important;
+        top: calc(100% + 6px) !important;
+        max-height: calc(100dvh - 76px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    nav #logo {
+        font-size: 22px !important;
+    }
+}
