@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODE/CLASH Case Study | Keyon Bigelow</title>
+  <meta name="description" content="A work-in-progress case study for the CODE/CLASH hackathon platform.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/png" href="../assets/images/keyon-favicon.png">
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-SemiBold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Bold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="../assets/images/code-clash/code-clash-home.png" fetchpriority="high">
+  <link rel="stylesheet" href="../css/style.css?v=117">
+  <link rel="stylesheet" href="../css/case-study.css?v=29">
+  <script src="../js/page-navigation.js?v=1"></script>
+  <script src="../js/case-study.js?v=4" defer></script>
+</head>
+<body class="dark-mode-active case-study-page code-clash-case">
+  <script>try { if (localStorage.getItem('siteDarkMode') === 'on') document.body.classList.add('site-dark-mode'); } catch {}</script>
+  <!-- Shared site header. Keep links aligned with pages/portfolio.html. -->
+  <a class="case-skip-link" href="#case-main">Skip to case study</a>
+  <nav class="dark-mode-nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <a href="about.html">About</a>
+      <a href="portfolio.html" style="opacity: 1; border-bottom: 2px solid white;">Portfolio</a>
+    </div>
+    <div class="nav-center"><a href="../index.html" id="logo">Keyon Bigelow</a></div>
+    <div class="nav-right">
+      <a href="mailto:kbigelo2@students.towson.edu">Contact</a>
+      <a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer"><img src="../assets/images/github.png" class="social-icon" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank" rel="noopener noreferrer"><img src="../assets/images/Linkedin.png" class="social-icon" alt="LinkedIn" style="position: relative; top: -4px;"></a>
+    </div>
+  </nav>
+
+  <!-- Desktop-only section rail. The href values match the section IDs below. -->
+  <aside class="case-rail" aria-label="Case study sections">
+    <a href="#intro" aria-current="location">Intro</a>
+    <a href="#overview">Overview</a>
+    <a href="#problem">Problem</a>
+    <a href="#process">Process</a>
+    <a href="#outcome">Outcome</a>
+  </aside>
+
+  <!-- Case-study content: intro, overview, problem, process, and outcome. -->
+  <main id="case-main" class="case-main">
+    <section id="intro" class="case-hero" aria-labelledby="case-title" data-case-section>
+      <div class="case-hero-copy">
+        <div class="case-breadcrumb"><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span>Case Study</span></div>
+        <p class="case-eyebrow">Web design &amp; development</p>
+        <h1 id="case-title">CODE/CLASH<br><span>Platform</span></h1>
+        <p class="case-lead">A comic-inspired platform for a planned 24-hour Towson hackathon, bringing event information, registration, and team formation into one place.</p>
+        <div class="case-hero-actions">
+          <dl class="case-date"><dt>Date</dt><dd>July 2026 - August 2026</dd></dl>
+          <a class="case-pill" href="https://codeclashtu.com/" target="_blank" rel="noopener noreferrer">Visit live site <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+      <figure class="case-hero-visual">
+        <div class="case-browser-bar" aria-hidden="true"><span class="case-browser-dots"><i></i><i></i><i></i></span><span>codeclashtu.com</span><span>&#8599;</span></div>
+        <img src="../assets/images/code-clash/code-clash-home.png" width="1740" height="904" alt="CODE/CLASH homepage with yellow event branding over the Towson skyline" fetchpriority="high">
+        <figcaption><span>CODE/CLASH</span><span>Student hackathon platform</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="overview" class="case-section case-section-visual case-section-backdrop" aria-labelledby="overview-title" data-case-section>
+      <div class="case-overview-copy">
+        <header class="case-section-heading"><span>01</span><h2 id="overview-title">Overview</h2></header>
+        <div class="case-prose">
+          <p>CODE/CLASH is a proposed 24-hour student hackathon presented by Bit Brothers at Towson University. I designed and built its public-facing website to help students understand the event, explore participant roles, review the schedule and FAQs, and apply to take part.</p>
+          <p>The platform also includes a public team board and an organizer dashboard for application review and team management.</p>
+        </div>
+      </div>
+      <dl class="case-meta case-overview-meta">
+        <div><dt>Role</dt><dd>UX Engineer &amp; Developer</dd></div>
+        <div><dt>Status</dt><dd>Live planning platform; event details subject to approval and change</dd></div>
+        <div><dt>Focus</dt><dd>Web design, development, event information</dd></div>
+      </dl>
+    </section>
+
+    <section id="problem" class="case-section case-section-visual" aria-labelledby="problem-title" data-case-section>
+      <div class="case-overview-copy">
+        <header class="case-section-heading"><span>02</span><h2 id="problem-title">The Problem</h2></header>
+        <div class="case-prose">
+          <p>A new hackathon needs a clear home where students can learn what it is, how to participate, and what to expect. Organizers also need a way to review applications and help participants find teammates.</p>
+          <p>I brought those needs together in one platform, with public event information for participants and management tools for organizers.</p>
+        </div>
+      </div>
+      <figure class="case-section-image code-clash-application-image">
+        <a href="../assets/images/code-clash/pdf-screen-1.png" target="_blank" rel="noopener noreferrer" aria-label="Open CODE/CLASH application form image">
+          <img src="../assets/images/code-clash/pdf-screen-1.png" width="1584" height="1224" alt="CODE/CLASH application form with participant information, preferred roles, and team status fields" loading="lazy" decoding="async">
+        </a>
+        <figcaption>CODE/CLASH &middot; Application workflow</figcaption>
+      </figure>
+    </section>
+
+    <section id="process" class="case-section case-section-visual" aria-labelledby="process-title" data-case-section>
+      <div class="case-overview-copy">
+        <header class="case-section-heading"><span>03</span><h2 id="process-title">Process</h2></header>
+        <div class="case-prose">
+          <ol class="case-steps">
+            <li><h3>Research</h3><p>I mapped the needs of two audiences: students looking for event details and teammates, and organizers coordinating applications and teams.</p></li>
+            <li><h3>Design</h3><p>I built the visual direction around CODE/CLASH's Ideas Assemble theme, using comic-inspired details to make the platform feel energetic while keeping key information easy to find.</p></li>
+            <li><h3>Build &amp; Test</h3><p>I developed the responsive site with HTML, CSS, and JavaScript, and connected Supabase features for applications and team coordination. I also built an organizer dashboard for reviewing applications and managing teams.</p></li>
+          </ol>
+        </div>
+      </div>
+      <div class="case-process-features">
+        <div class="case-process-feature">
+          <figure class="code-clash-role-image">
+            <img src="../assets/images/code-clash/pdf-screen-3.png" width="1584" height="1224" alt="CODE/CLASH participant roles screen with builder, defender, analyst, designer, and strategist paths" loading="lazy" decoding="async">
+          </figure>
+          <div class="case-feature-copy">
+            <h3>Design direction</h3>
+            <p>A comic-inspired identity gives the event a recognizable personality and supports the Ideas Assemble theme.</p>
+          </div>
+        </div>
+        <div class="case-process-feature case-process-feature-reverse">
+          <figure class="case-feature-detail code-clash-faq-image">
+            <img src="../assets/images/code-clash/pdf-screen-2.png" width="1584" height="1224" alt="CODE/CLASH FAQ screen answering common hackathon questions" loading="lazy" decoding="async">
+          </figure>
+          <div class="case-feature-copy">
+            <h3>The details</h3>
+            <p>The site brings event information, participant roles, schedule, FAQs, applications, and team formation into one experience, with an organizer dashboard supporting event planning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcome" class="case-section" aria-labelledby="outcome-title" data-case-section>
+      <header class="case-section-heading"><span>04</span><h2 id="outcome-title">Outcome</h2></header>
+      <div class="case-prose">
+        <p>The result is a live platform for the CODE/CLASH planning initiative. Students can explore the proposed event and apply, while organizers can review applications and coordinate teams. Registration is open; event dates, venue, and programming remain subject to approval and change.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="slim-footer">
+    <div class="footer-container">
+      <div class="footer-left"><span class="footer-logo-text">Keyon Bigelow</span></div>
+      <div class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a></div>
+      <div class="footer-right"><a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:kbigelo2@students.towson.edu">Contact</a></div>
+    </div>
+  </footer>
+  <script src="../js/script.js?v=111"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Reports Web Tool Case Study | Keyon Bigelow</title>
+  <meta name="description" content="Case study for an internal analytics and reporting web tool designed for SecurEd administrators.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <link rel="icon" type="image/png" href="../assets/images/keyon-favicon.png">
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-SemiBold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="../assets/images/monthly-reports/report-page-2.png" fetchpriority="high">
+  <link rel="stylesheet" href="../css/style.css?v=120">
+  <link rel="stylesheet" href="../css/case-study.css?v=29">
+  <script src="../js/page-navigation.js?v=1"></script>
+  <script src="../js/case-study.js?v=4" defer></script>
+</head>
+<body class="dark-mode-active case-study-page monthly-reports-case">
+  <script>try { if (localStorage.getItem('siteDarkMode') === 'on') document.body.classList.add('site-dark-mode'); } catch {}</script>
+  <!-- Shared site header. Keep links aligned with pages/portfolio.html. -->
+  <a class="case-skip-link" href="#case-main">Skip to case study</a>
+  <nav class="dark-mode-nav" aria-label="Main navigation"><div class="nav-left"><a href="about.html">About</a><a href="portfolio.html" style="opacity: 1; border-bottom: 2px solid white;">Portfolio</a></div><div class="nav-center"><a href="../index.html" id="logo">Keyon Bigelow</a></div><div class="nav-right"><a href="mailto:kbigelo2@students.towson.edu">Contact</a><a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer"><img src="../assets/images/github.png" class="social-icon" alt="GitHub"></a><a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank" rel="noopener noreferrer"><img src="../assets/images/Linkedin.png" class="social-icon" alt="LinkedIn" style="position: relative; top: -4px;"></a></div></nav>
+  <!-- Desktop-only section rail. The href values match the section IDs below. -->
+  <aside class="case-rail" aria-label="Case study sections"><a href="#intro" aria-current="location">Intro</a><a href="#overview">Overview</a><a href="#problem">Problem</a><a href="#process">Process</a><a href="#outcome">Outcome</a></aside>
+
+  <!-- Case-study content: intro, overview, problem, process, and outcome. -->
+  <main id="case-main" class="case-main">
+    <section id="intro" class="case-hero" aria-labelledby="case-title" data-case-section>
+      <div class="case-hero-copy"><div class="case-breadcrumb"><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span>Case Study</span></div><p class="case-eyebrow">Product design &amp; development</p><h1 id="case-title">Monthly Reports<br><span>Web Tool</span></h1><p class="case-lead">An internal dashboard for exploring CLARK curriculum engagement data across selected date ranges.</p><div class="case-hero-actions"><dl class="case-date"><dt>Date</dt><dd>June 2026 - August 2026</dd></dl><span class="case-pill case-pill-static">Internal Tool</span></div></div>
+      <figure class="case-hero-visual"><div class="case-browser-bar" aria-hidden="true"><span class="case-browser-dots"><i></i><i></i><i></i></span><span>secured analytics</span><span>&nearr;</span></div><img src="../assets/images/monthly-reports/report-page-2.png" width="2880" height="1920" alt="SecurEd Analytics dashboard showing platform activity, metrics, and trending topics" fetchpriority="high"><figcaption><span>SecurEd Analytics</span><span>Internal reporting tool</span></figcaption></figure>
+    </section>
+
+    <section id="overview" class="case-section case-section-visual case-section-backdrop" aria-labelledby="overview-title" data-case-section><div class="case-overview-copy"><header class="case-section-heading"><span>01</span><h2 id="overview-title">Overview</h2></header><div class="case-prose"><p>As a Software Development Intern, I helped build a functional React dashboard for SecurEd administrators to explore CLARK curriculum activity across 2,240+ learning objects and 2,740+ resources.</p></div></div><dl class="case-meta case-overview-meta"><div><dt>Role</dt><dd>Software Development Intern</dd></div><div><dt>Audience</dt><dd>SecurEd Administrators</dd></div><div><dt>Scope</dt><dd>Functional MVP</dd></div></dl></section>
+
+    <section id="problem" class="case-section case-section-visual" aria-labelledby="problem-title" data-case-section><div class="case-overview-copy"><header class="case-section-heading"><span>02</span><h2 id="problem-title">The Problem</h2></header><div class="case-prose"><p>Reporting on engagement across a growing curriculum library required data to be gathered from several views. The tool needed to make monthly performance, audience growth, and popular learning topics easy to scan, compare, and share.</p></div></div><figure class="case-section-image"><img src="../assets/images/monthly-reports/report-page-3.png" width="2880" height="1920" alt="SecurEd curriculum engagement report with filters and learning-object metrics" loading="lazy" decoding="async"><figcaption>SecurEd Analytics &middot; Curriculum engagement</figcaption></figure></section>
+
+    <section id="process" class="case-section case-section-visual" aria-labelledby="process-title" data-case-section><div class="case-overview-copy"><header class="case-section-heading"><span>03</span><h2 id="process-title">Process</h2></header><div class="case-prose"><ol class="case-steps"><li><h3>Research</h3><p>I mapped reporting needs to the available CLARK API data and clarified how shared filters should apply across report views.</p></li><li><h3>Design</h3><p>I used Figma to organize reusable navigation, date-range and Top N filters, and report panels so administrators can move between views consistently.</p></li><li><h3>Build &amp; test</h3><p>I implemented React, TypeScript, and Material UI components; connected report views to the CLARK API; and handled validation and loading, empty, and error states.</p></li></ol></div></div><div class="case-process-features"><div class="case-process-feature"><figure><img src="../assets/images/monthly-reports/report-page-4.png" width="2880" height="1920" alt="Contributor activity report with contributor ranking and monthly additions" loading="lazy" decoding="async"></figure><div class="case-feature-copy"><h3>Explore contributors</h3><p>Contributor views make participation and new additions easier to assess.</p></div></div><div class="case-process-feature case-process-feature-reverse"><figure class="case-feature-detail"><img src="../assets/images/monthly-reports/report-page-6.png" width="2880" height="1920" alt="Comparison screen showing month-over-month platform metrics" loading="lazy" decoding="async"></figure><div class="case-feature-copy"><h3>Find the signal</h3><p>Comparison views give changes in activity the context they need.</p></div></div></div></section>
+
+    <section id="outcome" class="case-section" aria-labelledby="outcome-title" data-case-section><header class="case-section-heading"><span>04</span><h2 id="outcome-title">Outcome</h2></header><div class="case-prose"><p>The result is a functional MVP with administrator sign-in, shared report filters, and API-backed tables for key curriculum activity. It establishes the foundation for additional visualizations and export features as the remaining dashboard views are completed.</p></div></section>
+  </main>
+  <footer class="slim-footer"><div class="footer-container"><div class="footer-left"><span class="footer-logo-text">Keyon Bigelow</span></div><div class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a></div><div class="footer-right"><a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:kbigelo2@students.towson.edu">Contact</a></div></div></footer>
+  <script src="../js/script.js?v=111"></script>
+</body>
+</html>

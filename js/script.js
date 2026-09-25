@@ -1,10 +1,20 @@
+/* =========================================
+   SHARED SITE INTERACTIONS
+   Each feature below first checks for its own markup, allowing this one
+   script to run safely on the home page, portfolio, about, and case studies.
+   ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Home-only helpers: these are no-ops on pages without the featured-work section.
     const revealFeaturedWorks = () => {
         const featuredWorks = document.querySelector('[data-featured-works]');
         if (featuredWorks) featuredWorks.classList.add('is-visible');
     };
 
+    /* =========================================
+       0. PORTFOLIO BACKDROP ALIGNMENT
+       Keeps the background artwork aligned to the project card grid.
+       ========================================= */
     const portfolioPage = document.querySelector('[data-portfolio-page]');
     const portfolioBackdrop = portfolioPage?.querySelector('.portfolio-backdrop');
     const projectGrid = portfolioPage?.querySelector('.projects-grid');

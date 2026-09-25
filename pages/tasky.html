@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasky Case Study | Keyon Bigelow</title>
+  <meta name="description" content="Case study for Tasky, an internal task management platform built for GoPanda's product team.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <link rel="icon" type="image/png" href="../assets/images/keyon-favicon.png">
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-SemiBold.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="../assets/images/tasky-login-preview.svg" fetchpriority="high">
+  <link rel="stylesheet" href="../css/style.css?v=120">
+  <link rel="stylesheet" href="../css/case-study.css?v=29">
+  <script src="../js/page-navigation.js?v=1"></script>
+  <script src="../js/case-study.js?v=4" defer></script>
+</head>
+<body class="dark-mode-active case-study-page tasky-case">
+  <script>try { if (localStorage.getItem('siteDarkMode') === 'on') document.body.classList.add('site-dark-mode'); } catch {}</script>
+  <!-- Shared site header. Keep links aligned with pages/portfolio.html. -->
+  <a class="case-skip-link" href="#case-main">Skip to case study</a>
+  <nav class="dark-mode-nav" aria-label="Main navigation">
+    <div class="nav-left"><a href="about.html">About</a><a href="portfolio.html" style="opacity: 1; border-bottom: 2px solid white;">Portfolio</a></div>
+    <div class="nav-center"><a href="../index.html" id="logo">Keyon Bigelow</a></div>
+    <div class="nav-right"><a href="mailto:kbigelo2@students.towson.edu">Contact</a><a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer"><img src="../assets/images/github.png" class="social-icon" alt="GitHub"></a><a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank" rel="noopener noreferrer"><img src="../assets/images/Linkedin.png" class="social-icon" alt="LinkedIn" style="position: relative; top: -4px;"></a></div>
+  </nav>
+  <!-- Desktop-only section rail. The href values match the section IDs below. -->
+  <aside class="case-rail" aria-label="Case study sections"><a href="#intro" aria-current="location">Intro</a><a href="#overview">Overview</a><a href="#problem">Problem</a><a href="#process">Process</a><a href="#outcome">Outcome</a></aside>
+
+  <!-- Case-study content: intro, overview, problem, process, and outcome. -->
+  <main id="case-main" class="case-main">
+    <section id="intro" class="case-hero" aria-labelledby="case-title" data-case-section>
+      <div class="case-hero-copy"><div class="case-breadcrumb"><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span>Case Study</span></div><p class="case-eyebrow">Software development</p><h1 id="case-title">Tasky<br><span>Team Task Management Platform</span></h1><p class="case-lead">An internal task management platform built for GoPanda's product team to manage tickets, comments, assignments, and work status in one place.</p><div class="case-hero-actions"><dl class="case-date"><dt>Date</dt><dd>December 2025 - January 2026</dd></dl><span class="case-pill case-pill-static">Internal Web Tool</span></div></div>
+      <figure class="case-hero-visual"><div class="case-browser-bar" aria-hidden="true"><span class="case-browser-dots"><i></i><i></i><i></i></span><span>tasky workspace</span><span>&nearr;</span></div><img src="../assets/images/tasky-login-preview.svg" width="1919" height="620" alt="Tasky sign-in page with a centered login form" fetchpriority="high"><figcaption><span>Tasky</span><span>Internal task management platform</span></figcaption></figure>
+    </section>
+
+    <section id="overview" class="case-section case-section-visual case-section-backdrop" aria-labelledby="overview-title" data-case-section><div class="case-overview-copy"><header class="case-section-heading"><span>01</span><h2 id="overview-title">Overview</h2></header><div class="case-prose"><p>Tasky brings day-to-day product work into a shared workspace. The team can create and assign tickets, discuss work through comments, track activity, and follow tasks through their status workflows.</p></div></div><dl class="case-meta case-overview-meta"><div><dt>Role</dt><dd>Software Developer · Team project</dd></div><div><dt>Status</dt><dd>Delivered</dd></div><div><dt>Focus</dt><dd>Task workflows, Collaboration, Access Control</dd></div></dl></section>
+
+    <section id="problem" class="case-section case-section-visual" aria-labelledby="problem-title" data-case-section><div class="case-overview-copy"><header class="case-section-heading"><span>02</span><h2 id="problem-title">The Problem</h2></header><div class="case-prose"><p>The product team needed a shared way to manage tasks and see how work changed over time. Tasky brings tickets, assignments, comments, and activity tracking together in one internal application.</p></div></div><figure class="case-section-image"><img src="../assets/images/tasky/kanbanboard-screenshot-2.png" width="1488" height="768" alt="Tasky board directory showing marketing, design system, and product roadmap boards" loading="lazy" decoding="async"><figcaption>Tasky · Shared project boards</figcaption></figure></section>
+
+    <section id="process" class="case-section case-section-visual" aria-labelledby="process-title" data-case-section><div class="case-overview-copy"><header class="case-section-heading"><span>03</span><h2 id="process-title">Process</h2></header><div class="case-prose"><ol class="case-steps"><li><h3>Map the workflows</h3><p>Worked on the core task flow: creating tickets, assigning work, adding comments, and updating status.</p></li><li><h3>Build the application</h3><p>Contributed to a MERN stack platform with a React frontend and Node.js and Express backend, backed by MongoDB.</p></li><li><h3>Add operational safeguards</h3><p>Helped implement role-based access control, audit logging, API documentation, and rate limiting.</p></li></ol></div></div><div class="case-process-features"><div class="case-process-feature"><figure class="tasky-board-image"><img src="../assets/images/tasky/kanbanboard-screenshot-1.png" width="1488" height="514" alt="Tasky kanban board organized by task status" loading="lazy" decoding="async"></figure><div class="case-feature-copy"><h3>Design direction</h3><p>A practical workspace centered on the information teams need to move tasks forward: ownership, discussion, status, and activity.</p></div></div><div class="case-process-feature case-process-feature-reverse"><figure class="case-feature-detail tasky-ticket-image"><img src="../assets/images/tasky/kanbanboard-screenshot-3.png" width="1128" height="1388" alt="Tasky new ticket form with title, description, priority, and assignee fields" loading="lazy" decoding="async"></figure><div class="case-feature-copy"><h3>The details</h3><p>The application includes more than 20 REST endpoints, role-based permissions, activity logs, and five-tier rate limiting.</p></div></div></div></section>
+
+    <section id="outcome" class="case-section" aria-labelledby="outcome-title" data-case-section><header class="case-section-heading"><span>04</span><h2 id="outcome-title">Outcome</h2></header><div class="case-prose"><p>Delivered an internal task management platform for GoPanda's product team. Tasky supports ticket management, comments, assignments, activity tracking, and status workflows, with backend controls for permissions and API traffic.</p></div></section>
+  </main>
+  <footer class="slim-footer"><div class="footer-container"><div class="footer-left"><span class="footer-logo-text">Keyon Bigelow</span></div><div class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a></div><div class="footer-right"><a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:kbigelo2@students.towson.edu">Contact</a></div></div></footer>
+  <script src="../js/script.js?v=111"></script>
+</body>
+</html>

@@ -1,9 +1,15 @@
+/* =========================================
+   PAGE TRANSITIONS
+   Adds a short fade between local HTML pages. External links, downloads,
+   modified clicks, and reduced-motion preferences keep their normal behavior.
+   ========================================= */
 (() => {
     const root = document.documentElement;
     const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
     const storageKey = 'pageFadeDestination';
     let navigating = false;
 
+    // Restore the arrival animation only after a recent in-site navigation.
     try {
         const pending = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
         sessionStorage.removeItem(storageKey);
@@ -30,6 +36,7 @@
         Promise.race([fontsReady, new Promise(resolve => setTimeout(resolve, 500))]).then(revealPage);
     }, { once: true });
 
+    // Intercept only ordinary same-site HTML navigation.
     document.addEventListener('click', event => {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || reducedMotion.matches) return;
         const link = event.target.closest('a[href]');

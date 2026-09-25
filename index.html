@@ -60,6 +60,9 @@
 
 <body>
 <script>if(localStorage.getItem('siteDarkMode')==='on'){document.body.classList.add('site-dark-mode');}</script>
+  <!-- =========================================
+       HOME HERO: shared navigation, introduction, and resume link.
+       ========================================= -->
   <section id="hero-section">
     <nav>
 
@@ -107,6 +110,9 @@
 </div>
 
 </section>
+<!-- =========================================
+     FEATURED WORKS: home-page project carousel and navigation controls.
+     ========================================= -->
 <section id="content-section" data-featured-works>
 
 <div class="content-headline">
@@ -132,30 +138,27 @@
 
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg code-clash-preview-image" style="background-image: url('assets/images/code-clash/code-clash-home.png');"></div>
+                <div class="card-bg" style="background-image: url('assets/images/monthly-reports/report-page-2.png'); background-size: contain; background-repeat: no-repeat; background-color: #f5f7fa;"></div>
             </div>
 
             <div class="card-details">
-                <h3>CODE/CLASH Hackathon Platform</h3>
-                <p class="tech-stack">HTML &bull; CSS &bull; JavaScript &bull; Supabase &bull; PostgreSQL &bull; Edge Functions</p>
-                <p class="description">Designed and developed the official web platform for a student hackathon organized by Bit Brothers and Sister Scripters at Towson University, including a responsive event site, secure application workflow, and moderated team-assembly board.</p>
-                <div class="project-actions">
-                    <a href="https://codeclashtu.com/" class="view-project" target="_blank" rel="noopener noreferrer">Live Site <span aria-hidden="true">&rarr;</span></a>
-                    <a href="https://github.com/Low-Key-N/TowsonHackathonWebsite" class="view-project" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&rarr;</span></a>
-                </div>
+                <h3>Monthly Reports Web Tool</h3>
+                <p class="tech-stack">React &bull; TypeScript &bull; Analytics Dashboard</p>
+                <p class="description">An internal dashboard for exploring CLARK curriculum activity across selected date ranges.</p>
+                <a href="pages/monthly-reports.html" class="view-project">View case study <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
 
         <div class="project-card">
             <div class="card-image-wrapper">
-                <div class="card-bg tasky-preview-image" style="background-image: url('assets/images/tasky-login-preview.svg');"></div>
+                <div class="card-bg code-clash-preview-image" style="background-image: url('assets/images/code-clash/code-clash-home.png');"></div>
             </div>
             
             <div class="card-details">
-                <h3>Tasky</h3>
-                <p class="tech-stack">React • Material UI • Vite</p>
-                <p class="description">A collaborative task management platform built for GoPanda. I developed responsive React interfaces, integrated backend APIs, and helped establish the frontend architecture used throughout the application.</p>
-                <a href="https://github.com/Olu1111/Tasky" class="view-project" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&rarr;</span></a>
+                <h3>CODE/CLASH Hackathon Platform</h3>
+                <p class="tech-stack">HTML &bull; CSS &bull; JavaScript &bull; Supabase</p>
+                <p class="description">A responsive event platform supporting registration and team formation for a student hackathon.</p>
+                <a href="pages/code-clash.html" class="view-project">View case study <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
         <!-- Secured metrics dashboard card on standby.

@@ -2548,6 +2548,14 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     border-bottom: 1px solid #d7dce2;
 }
 
+/* Dashboard UI is a 3:2 composition, so preserve the complete reporting screen. */
+.monthly-reports-card .g-card-project-image {
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    background: #f5f7fa;
+}
+
 .g-card-body {
     flex: 1;
     padding: 18px 16px 16px;
@@ -2667,6 +2675,9 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
 }
 
 body.site-dark-mode .project-status { color: #b7bfca; }
+
+.project-case-link { display: inline-flex; align-items: center; gap: 8px; }
+.project-case-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
 .project-outcomes-note {
     margin: 12px 0 0;
