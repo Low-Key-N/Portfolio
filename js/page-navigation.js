@@ -9,11 +9,29 @@
     const storageKey = 'pageFadeDestination';
     let navigating = false;
 
+    const getFadeTheme = () => {
+        if (document.body?.classList.contains('site-dark-mode')) return 'dark';
+        try {
+            return localStorage.getItem('siteDarkMode') === 'on' ? 'dark' : 'light';
+        } catch {
+            return 'light';
+        }
+    };
+
+    const syncFadeTheme = theme => {
+        root.dataset.pageFadeTheme = theme || getFadeTheme();
+    };
+
+    // This runs in the document head so the overlay has the right color before
+    // either the desktop or mobile destination page becomes visible.
+    syncFadeTheme();
+
     // Restore the arrival animation only after a recent in-site navigation.
     try {
         const pending = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
         sessionStorage.removeItem(storageKey);
         if (pending && pending.url === location.href && Date.now() - pending.time < 10000 && !reducedMotion.matches) {
+            syncFadeTheme(pending.theme);
             root.dataset.pageFade = 'arriving';
         }
     } catch {
@@ -49,10 +67,16 @@
         event.preventDefault();
         if (navigating) return;
         navigating = true;
+        const fadeTheme = getFadeTheme();
+        syncFadeTheme(fadeTheme);
         root.dataset.pageFade = 'leaving';
         setTimeout(() => {
             try {
-                sessionStorage.setItem(storageKey, JSON.stringify({ url: destination.href, time: Date.now() }));
+                sessionStorage.setItem(storageKey, JSON.stringify({
+                    url: destination.href,
+                    time: Date.now(),
+                    theme: fadeTheme
+                }));
             } catch {
                 // Do not hold up a normal link when storage is unavailable.
             }
@@ -63,6 +87,7 @@
     window.addEventListener('pageshow', event => {
         navigating = false;
         if (event.persisted && !reducedMotion.matches) {
+            syncFadeTheme();
             root.dataset.pageFade = 'arriving';
             revealPage();
         } else if (root.dataset.pageFade === 'leaving') {

@@ -66,6 +66,11 @@ html::after {
     transition: opacity 240ms ease-out;
 }
 
+/* Match the page-navigation fade to the saved theme before the next page paints. */
+html[data-page-fade-theme="dark"]::after {
+    background: #0d0d0d;
+}
+
 html[data-page-fade]::after {
     opacity: 1;
     pointer-events: auto;
@@ -3321,6 +3326,94 @@ body.site-dark-mode .project-status { color: #b7bfca; }
 .dark-mode-toggle:hover {
     opacity: 0.7;
     transform: rotate(15deg);
+}
+
+/* Brief two-beat ripple for light/dark theme changes. */
+html.theme-transitioning,
+html.theme-transitioning body,
+html.theme-transitioning body *:not(.theme-heartbeat),
+html.theme-transitioning body *:not(.theme-heartbeat)::before,
+html.theme-transitioning body *:not(.theme-heartbeat)::after {
+    transition-property: background-color, color, border-color, outline-color, text-decoration-color, box-shadow, fill, stroke, opacity, filter;
+    transition-duration: 620ms;
+    transition-timing-function: ease;
+}
+
+.theme-heartbeat {
+    --theme-origin-x: 50vw;
+    --theme-origin-y: 50vh;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.theme-heartbeat.is-active {
+    animation: themeHeartbeatWash 840ms ease-out both;
+}
+
+.theme-heartbeat::before,
+.theme-heartbeat::after {
+    content: '';
+    position: absolute;
+    left: var(--theme-origin-x);
+    top: var(--theme-origin-y);
+    width: min(44vmax, 720px);
+    aspect-ratio: 1;
+    border: clamp(3px, 0.32vw, 6px) solid currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 22px currentColor, inset 0 0 16px currentColor;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.06);
+}
+
+.theme-heartbeat.is-active::before {
+    animation: themeHeartbeatRipple 760ms cubic-bezier(.12, .7, .2, 1) both;
+}
+
+.theme-heartbeat.is-active::after {
+    animation: themeHeartbeatRipple 740ms cubic-bezier(.12, .7, .2, 1) 120ms both;
+}
+
+.theme-heartbeat-to-dark {
+    color: rgba(214, 218, 224, 0.76);
+    background: radial-gradient(circle at var(--theme-origin-x) var(--theme-origin-y), rgba(8, 9, 12, 0.22), transparent 32%);
+}
+
+.theme-heartbeat-to-light {
+    color: rgba(255, 255, 255, 0.86);
+    background: radial-gradient(circle at var(--theme-origin-x) var(--theme-origin-y), rgba(255, 255, 255, 0.24), transparent 32%);
+}
+
+@keyframes themeHeartbeatWash {
+    0% { opacity: 0; }
+    18% { opacity: 0.8; }
+    38% { opacity: 0.24; }
+    58% { opacity: 0.58; }
+    100% { opacity: 0; }
+}
+
+@keyframes themeHeartbeatRipple {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.06); }
+    16% { opacity: 0.92; }
+    56% { opacity: 0.42; }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(3.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.theme-transitioning,
+    html.theme-transitioning body,
+    html.theme-transitioning body *,
+    html.theme-transitioning body *::before,
+    html.theme-transitioning body *::after {
+        transition: none !important;
+    }
+
+    .theme-heartbeat {
+        display: none;
+    }
 }
 
 .toggle-icon {

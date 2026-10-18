@@ -525,6 +525,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    let themeTransitionActive = false;
+
+    const transitionTheme = (isDark, sourceElement) => {
+        if (themeTransitionActive) return;
+
+        if (prefersReducedMotion) {
+            applyDarkMode(isDark);
+            return;
+        }
+
+        themeTransitionActive = true;
+        const sourceBounds = sourceElement?.getBoundingClientRect();
+        const hasVisibleSource = sourceBounds && sourceBounds.width > 0 && sourceBounds.height > 0;
+        const originX = hasVisibleSource ? sourceBounds.left + sourceBounds.width / 2 : window.innerWidth / 2;
+        const originY = hasVisibleSource ? sourceBounds.top + sourceBounds.height / 2 : window.innerHeight / 2;
+
+        const heartbeat = document.createElement('div');
+        heartbeat.className = `theme-heartbeat ${isDark ? 'theme-heartbeat-to-dark' : 'theme-heartbeat-to-light'}`;
+        heartbeat.setAttribute('aria-hidden', 'true');
+        heartbeat.style.setProperty('--theme-origin-x', `${originX}px`);
+        heartbeat.style.setProperty('--theme-origin-y', `${originY}px`);
+
+        document.documentElement.classList.add('theme-transitioning');
+        document.body.classList.add('theme-transitioning');
+        document.body.appendChild(heartbeat);
+
+        window.requestAnimationFrame(() => {
+            heartbeat.classList.add('is-active');
+            window.requestAnimationFrame(() => applyDarkMode(isDark));
+        });
+
+        window.setTimeout(() => {
+            heartbeat.remove();
+            document.documentElement.classList.remove('theme-transitioning');
+            document.body.classList.remove('theme-transitioning');
+            themeTransitionActive = false;
+        }, 940);
+    };
+
+    const toggleThemeFrom = (sourceElement) => {
+        if (themeTransitionActive) return;
+
+        const next = !document.body.classList.contains('site-dark-mode');
+        transitionTheme(next, sourceElement);
+        try {
+            localStorage.setItem('siteDarkMode', next ? 'on' : 'off');
+        } catch {
+            // The theme still works for this page without persistent storage.
+        }
+    };
+
     // Read from localStorage on every page load and apply immediately
     let saved = null;
     try {
@@ -535,14 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyDarkMode(saved === 'on');
 
     toggleBtn.addEventListener('click', () => {
-        const nowDark = document.body.classList.contains('site-dark-mode');
-        const next = !nowDark;
-        applyDarkMode(next);
-        try {
-            localStorage.setItem('siteDarkMode', next ? 'on' : 'off');
-        } catch {
-            // The theme still works for this page without persistent storage.
-        }
+        toggleThemeFrom(toggleBtn);
     });
 
     // Insert at the end of nav-right
@@ -576,7 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileThemeButton.className = 'mobile-theme-toggle';
     mobileThemeButton.type = 'button';
     mobileThemeButton.textContent = 'Toggle theme';
-    mobileThemeButton.addEventListener('click', () => toggleBtn.click());
+    mobileThemeButton.addEventListener('click', () => toggleThemeFrom(mobileThemeButton));
     mobileMenu.appendChild(mobileThemeButton);
 
     const closeMobileMenu = () => {
