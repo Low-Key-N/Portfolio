@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const favicon = document.querySelector('link[rel~="icon"]');
         const faviconSrc = favicon ? favicon.href : 'assets/images/keyon-favicon.png';
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const useCompactIntro = window.matchMedia('(max-width: 900px), (pointer: coarse)').matches;
 
         const intro = document.createElement('div');
         intro.className = 'startup-intro';
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, prefersReducedMotion ? 120 : 800);
         };
 
-        window.setTimeout(finishIntro, prefersReducedMotion ? 160 : 2100);
+        window.setTimeout(finishIntro, prefersReducedMotion ? 160 : (useCompactIntro ? 1650 : 2100));
     };
 
     if (document.getElementById('hero-section')) playStartupIntro();
@@ -149,11 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('hero-section');
     const heroContent = document.querySelector('#hero-section .hero-content');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const useLightweightMotion = window.matchMedia('(max-width: 900px), (pointer: coarse)').matches;
     let heroScrollTicking = false;
 
     const updateHeroScroll = () => {
         heroScrollTicking = false;
-        if (!heroSection || !heroContent || prefersReducedMotion) return;
+        if (!heroSection || !heroContent || prefersReducedMotion || useLightweightMotion) return;
 
         const heroHeight = heroSection.offsetHeight || window.innerHeight;
         const progress = Math.min(window.scrollY / heroHeight, 1);
@@ -561,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.classList.remove('theme-transitioning');
             document.body.classList.remove('theme-transitioning');
             themeTransitionActive = false;
-        }, 940);
+        }, useLightweightMotion ? 680 : 940);
     };
 
     const toggleThemeFrom = (sourceElement) => {

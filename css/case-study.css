@@ -77,7 +77,7 @@
 .case-section.case-section-visual { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); align-items: center; gap: 48px; }
 .case-section-backdrop { position: relative; isolation: isolate; border-top: 0; color: #fff; --case-muted: #e2e5ea; --case-line: rgba(255, 255, 255, 0.22); --case-accent: #9ec5ff; }
 .case-section.case-section-backdrop { padding-top: 96px; }
-.case-section-backdrop::before { content: ''; position: absolute; z-index: -2; inset: 0 calc(50% - 50vw); background: url('../assets/images/code-clash/code-clash-home-current.png') center / cover; filter: blur(4px); clip-path: inset(0); }
+.case-section-backdrop::before { content: ''; position: absolute; z-index: -2; inset: 0 calc(50% - 50vw); background: url('../assets/images/code-clash/code-clash-home-current.webp') center / cover; filter: blur(4px); clip-path: inset(0); }
 .case-section-backdrop::after { content: ''; position: absolute; z-index: -1; inset: 0 calc(50% - 50vw); background: rgba(0, 0, 0, 0.88); pointer-events: none; }
 .case-overview-copy { min-width: 0; }
 .case-overview-copy .case-section-heading { margin-bottom: 24px; }
@@ -152,7 +152,7 @@
 .tasky-case .case-process-feature .case-feature-detail img { transform: none; }
 .tasky-case .case-process-feature .tasky-board-image { aspect-ratio: 1488 / 514; border: 1px solid var(--case-line); }
 .tasky-case .case-process-feature .tasky-ticket-image { width: min(100%, 320px); aspect-ratio: 1128 / 1388; justify-self: end; }
-.monthly-reports-case .case-section-backdrop::before { background-image: url('../assets/images/monthly-reports/report-page-2.png'); filter: blur(5px) saturate(0.72); }
+.monthly-reports-case .case-section-backdrop::before { background-image: url('../assets/images/monthly-reports/report-page-2.webp'); filter: blur(5px) saturate(0.72); }
 .monthly-reports-case .case-section-backdrop::after { background: rgba(9, 24, 43, 0.9); }
 .monthly-reports-case .case-hero-visual img { object-fit: cover; }
 .monthly-reports-case .case-overview-copy .case-prose p + p { margin-top: 22px; }
