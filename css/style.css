@@ -888,8 +888,18 @@ border: none;
 }
 
 .onetap-preview-image {
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
+
+.g-card-image.onetap-preview-image {
     background-size: cover !important;
-    background-position: 62% center !important;
+    background-position: center 21% !important;
+}
+
+.card-bg.onetap-preview-image {
+    background-size: 106% auto !important;
+    background-position: center 21% !important;
 }
 
 .code-clash-preview-image {
@@ -2402,7 +2412,33 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     background: white;
     border-radius: 50%;
     top: 2px;
-    right: 2px;
+    left: 2px;
+    transform: translateX(20px);
+}
+
+.portfolio-page.portfolio-ready .toggle-switch {
+    animation: portfolioToggleTrackIn 420ms ease-out 300ms both;
+}
+
+.portfolio-page.portfolio-ready .toggle-switch::after {
+    animation: portfolioToggleSlideOn 420ms cubic-bezier(0.22, 0.61, 0.36, 1) 300ms both;
+}
+
+@keyframes portfolioToggleTrackIn {
+    from { background: #c3c8cf; }
+    to { background: #333; }
+}
+
+@keyframes portfolioToggleSlideOn {
+    from { transform: translateX(0); }
+    to { transform: translateX(20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-page.portfolio-ready .toggle-switch,
+    .portfolio-page.portfolio-ready .toggle-switch::after {
+        animation: none;
+    }
 }
 
 /* --- CYCLING IMAGE CARD (RIGHT) --- */
@@ -2543,6 +2579,10 @@ background: linear-gradient(to right, #ffffff 0%, #f0f0f0 100%);
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.portfolio-backdrop-slide.onetap-backdrop-slide img {
+    object-position: center 21%;
 }
 
 @keyframes portfolio-backdrop-float {

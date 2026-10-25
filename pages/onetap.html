@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneTap Case Study | Keyon Bigelow</title>
+  <meta name="description" content="An undergraduate HCI research case study exploring accessible, multi-method authentication, contextual security feedback, and recovery.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/png" href="../assets/images/keyon-favicon.png">
+  <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="../assets/images/onetap/welcome-enhanced.png" type="image/png" fetchpriority="high">
+  <link rel="stylesheet" href="../css/style.css?v=139">
+  <link rel="stylesheet" href="../css/case-study.css?v=55">
+  <script src="../js/page-navigation.js?v=2"></script>
+  <script src="../js/case-study.js?v=4" defer></script>
+</head>
+<body class="dark-mode-active case-study-page onetap-case">
+  <script>try { if (localStorage.getItem('siteDarkMode') === 'on') document.body.classList.add('site-dark-mode'); } catch {}</script>
+  <a class="case-skip-link" href="#case-main">Skip to case study</a>
+
+  <nav class="dark-mode-nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <a href="about.html">About</a>
+      <a href="portfolio.html" style="opacity: 1; border-bottom: 2px solid white;">Portfolio</a>
+    </div>
+    <div class="nav-center"><a href="../index.html" id="logo">Keyon Bigelow</a></div>
+    <div class="nav-right">
+      <a href="mailto:kbigelo2@students.towson.edu">Contact</a>
+      <a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer"><img src="../assets/images/github.png" class="social-icon" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/keyon-bigelow-5568bb364/" target="_blank" rel="noopener noreferrer"><img src="../assets/images/Linkedin.png" class="social-icon" alt="LinkedIn" style="position: relative; top: -4px;"></a>
+    </div>
+  </nav>
+
+  <aside class="case-rail" aria-label="Case study sections">
+    <a href="#intro" aria-current="location">Intro</a>
+    <a href="#overview">Overview</a>
+    <a href="#problem">Problem</a>
+    <a href="#process">Process</a>
+    <a href="#outcome">Outcome</a>
+  </aside>
+
+  <main id="case-main" class="case-main">
+    <section id="intro" class="case-hero" aria-labelledby="case-title" data-case-section>
+      <div class="case-hero-copy">
+        <div class="case-breadcrumb"><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span>Case Study</span></div>
+        <p class="case-eyebrow">Human-Computer Interaction &middot; Undergraduate Research</p>
+        <h1 id="case-title">OneTap</h1>
+        <p class="case-lead">Exploring how authentication choice, contextual security feedback, and recovery options influence the experience of logging in.</p>
+        <div class="case-hero-actions">
+          <dl class="case-date"><dt>Date</dt><dd>October 2025 &ndash; Present</dd></dl>
+          <span class="case-pill case-pill-static">Research in Progress</span>
+        </div>
+      </div>
+      <figure class="case-hero-visual">
+        <div class="case-browser-bar" aria-hidden="true"><span class="case-browser-dots"><i></i><i></i><i></i></span><span>OneTap research prototype</span><span>&nearr;</span></div>
+        <img src="../assets/images/onetap/welcome-enhanced.png" width="939" height="1675" alt="OneTap welcome screen introducing the authentication research prototype" fetchpriority="high" decoding="async">
+        <figcaption><span>Prototype welcome experience</span><span>Undergraduate research</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="overview" class="case-section case-section-visual case-section-backdrop" aria-labelledby="overview-title" data-case-section>
+      <div class="case-overview-copy">
+        <header class="case-section-heading"><span>01</span><h2 id="overview-title">Overview</h2></header>
+        <div class="case-prose">
+          <p>OneTap is an experimental authentication prototype designed to investigate whether giving users multiple ways to authenticate can improve their experience compared with a fixed PIN-only login.</p>
+        </div>
+      </div>
+      <dl class="case-meta case-overview-meta">
+        <div><dt>Role</dt><dd>Undergraduate Researcher &middot; UX Designer &middot; Prototype Developer</dd></div>
+        <div><dt>Faculty Mentor</dt><dd>Dr. Joyram Chakraborty &middot; Towson University</dd></div>
+        <div><dt>Focus</dt><dd>Human-Computer Interaction, Usable Security, Accessibility, Authentication</dd></div>
+      </dl>
+    </section>
+
+    <section id="problem" class="case-section case-section-visual" aria-labelledby="problem-title" data-case-section>
+      <div class="case-overview-copy">
+        <header class="case-section-heading"><span>02</span><h2 id="problem-title">The Problem</h2></header>
+        <div class="case-prose">
+          <p>Fixed login methods may not accommodate every user's needs, preferences, or circumstances. A method that feels intuitive to one person may introduce difficulty for another, while limited recovery options can add frustration when authentication fails.</p>
+          <p>OneTap investigates whether flexibility can reduce friction without sacrificing users' understanding of security-related decisions.</p>
+        </div>
+      </div>
+      <div class="onetap-problem-side">
+        <aside class="onetap-research-question" aria-label="Research question">
+          <span>Research question</span>
+          <p>How does user-selectable multi-method authentication affect task completion, risk understanding, and perceived control compared with a fixed PIN-only flow?</p>
+        </aside>
+        <div class="onetap-login-comparison" aria-label="Authentication condition comparison">
+          <figure class="onetap-condition-fixed">
+            <div class="onetap-comparison-label"><span>Condition A</span><strong>Fixed authentication</strong><p>One required method &middot; PIN</p></div>
+            <div class="onetap-comparison-frame"><img src="../assets/images/onetap/fixed-pin.png" width="1284" height="2349" alt="Fixed authentication condition offering only a PIN login" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="onetap-condition-flexible">
+            <div class="onetap-comparison-label"><span>Condition B</span><strong>Flexible authentication</strong><p>PIN &middot; Tap / NFC &middot; Pattern &middot; Phrase Code</p></div>
+            <div class="onetap-comparison-frame"><img src="../assets/images/onetap/multimethod-login.png" width="1284" height="2375" alt="OneTap condition offering four user-selectable authentication methods" loading="lazy" decoding="async"></div>
+          </figure>
+          <p class="onetap-comparison-caption">Fixed PIN-only authentication versus user-selectable multimethod authentication.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="case-section case-section-visual" aria-labelledby="process-title" data-case-section>
+      <div class="case-overview-copy">
+        <header class="case-section-heading"><span>03</span><h2 id="process-title">Process</h2></header>
+        <div class="case-prose">
+          <ol class="case-steps">
+            <li><h3>Establish the research foundation</h3><p>Reviewed literature on usable security, authentication accessibility, and common login challenges to center the project on choice, perceived control, and recovery.</p></li>
+            <li><h3>Design the authentication framework</h3><p>Defined four connected components: Key for method selection, Vault for credential verification, Guardian for contextual guidance, and Interface for selection, verification, and recovery.</p></li>
+            <li><h3>Build the interactive prototype</h3><p>Developed a browser-based React prototype with simulated authentication, method selection, Guardian status messages, and recovery interactions.</p></li>
+            <li><h3>Design the research evaluation</h3><p>Planned a within-subjects study comparing fixed PIN-only authentication with OneTap's flexible, multi-method experience.</p></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="case-process-features">
+        <article class="onetap-content-block">
+          <div class="onetap-guardian-feature">
+            <figure><img src="../assets/images/onetap/guardian-status.png" width="1284" height="2325" alt="Guardian status screen explaining a simulated medium-risk login and recommending Pattern authentication" loading="lazy" decoding="async"></figure>
+            <div class="onetap-guardian-copy">
+              <p class="onetap-section-label">Prototype design</p>
+              <h3>Contextual guidance through Guardian</h3>
+              <p>Guardian explains the simulated login context and recommends a method while leaving the other options available.</p>
+              <p class="onetap-prototype-note"><strong>Prototype note:</strong> The risk assessment and recommendation are simulated research prompts. Pattern authentication is not inherently stronger than a PIN; security depends on implementation and policy.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="onetap-content-block onetap-gallery-block">
+          <div class="onetap-content-heading">
+            <p class="onetap-section-label">Interactive prototype</p>
+            <h3>Four methods, one authentication framework</h3>
+            <p>Each route uses the same account context while giving participants a distinct interaction to complete.</p>
+          </div>
+          <div class="onetap-method-gallery">
+            <figure class="onetap-method-pin"><div><img src="../assets/images/onetap/pin-method.png" width="1284" height="2365" alt="OneTap PIN entry interface with a numeric keypad" loading="lazy" decoding="async"></div><figcaption><strong>PIN</strong><span>Numeric credential</span></figcaption></figure>
+            <figure class="onetap-method-nfc"><div><img src="../assets/images/onetap/nfc-method.png" width="1284" height="2242" alt="OneTap NFC authentication interface ready to scan a card" loading="lazy" decoding="async"></div><figcaption><strong>Tap / NFC</strong><span>Contact-based interaction</span></figcaption></figure>
+            <figure class="onetap-method-pattern"><div><img src="../assets/images/onetap/pattern-method.png" width="1284" height="2352" alt="OneTap Pattern authentication interface with a three-by-three point grid" loading="lazy" decoding="async"></div><figcaption><strong>Pattern</strong><span>Visual-spatial credential</span></figcaption></figure>
+            <figure class="onetap-method-phrase"><div><img src="../assets/images/onetap/phrase-code-method.png" width="1284" height="2319" alt="OneTap Phrase Code interface with phrase and numeric code choices" loading="lazy" decoding="async"></div><figcaption><strong>Phrase Code</strong><span>Phrase and code combination</span></figcaption></figure>
+          </div>
+        </article>
+
+        <article class="onetap-content-block onetap-study-block">
+          <div class="onetap-content-heading">
+            <p class="onetap-section-label">Planned evaluation</p>
+            <h3>Observe how different people authenticate</h3>
+            <p>The counterbalanced study uses fictional credentials, simulated higher-risk authentication, and unsuccessful-login recovery. Measures include task completion, login time, attempts, errors, perceived control, confidence, risk understanding, and participant preference.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="outcome" class="case-section" aria-labelledby="outcome-title" data-case-section>
+      <header class="case-section-heading"><span>04</span><h2 id="outcome-title">Outcome</h2></header>
+      <div class="case-outcome-content">
+        <div class="case-prose">
+          <p>OneTap has progressed from an authentication concept into an interactive research prototype with a defined research question, hypothesis, and usability evaluation plan.</p>
+        </div>
+        <ul class="onetap-outputs">
+          <li>A conceptual multi-method authentication framework</li>
+          <li>An interactive prototype demonstrating different authentication experiences</li>
+          <li>A comparative research design examining fixed and flexible authentication flows</li>
+          <li>Planned quantitative and qualitative measures for understanding login usability</li>
+        </ul>
+        <div class="case-reflection">
+          <p class="onetap-section-label">Research status</p>
+          <h3>Study preparation is ongoing</h3>
+          <p>Formal participant evaluation and findings remain pending the appropriate research approvals and study execution. Next steps are to refine the prototype, finalize procedures, conduct approved usability testing, and analyze how authentication flexibility influences user experience.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="slim-footer">
+    <div class="footer-container">
+      <div class="footer-left"><span class="footer-logo-text">Keyon Bigelow</span></div>
+      <div class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a></div>
+      <div class="footer-right"><a href="https://github.com/Low-Key-N" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:kbigelo2@students.towson.edu">Contact</a></div>
+    </div>
+  </footer>
+  <script src="../js/script.js?v=115"></script>
+</body>
+</html>

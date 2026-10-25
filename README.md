@@ -75,6 +75,6 @@ GitHub: [Low-Key-N](https://low-key-n.github.io/Portfolio/)
 
 * **Home page:** `index.html`
 * **Portfolio cards:** `pages/portfolio.html`
-* **Case studies:** `pages/code-clash.html`, `pages/monthly-reports.html`, and `pages/tasky.html`
+* **Case studies:** `pages/onetap.html`, `pages/code-clash.html`, `pages/monthly-reports.html`, and `pages/tasky.html`
 * **Site styles:** `css/style.css`; case-study styles: `css/case-study.css`
 * **Images and resume:** `assets/images/` and `assets/documents/`

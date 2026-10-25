@@ -143,6 +143,70 @@
 .case-main .case-pill-static:hover { background: transparent; color: var(--case-muted); }
 .monthly-reports-case { --case-accent: #1779e6; --case-surface: #eef6ff; }
 .tasky-case { --case-accent: #1779e6; --case-surface: #f1f6f8; }
+.onetap-case { --case-accent: #0b67d1; --case-surface: #edf5ff; }
+.onetap-case .case-main h1 span { font-size: 0.52em; }
+.onetap-case .case-section-backdrop::before {
+    background-color: #fff;
+    background-image: url('../assets/images/onetap/welcome.png');
+    background-size: clamp(460px, 42vw, 800px) auto;
+    background-position: center 18%;
+    background-repeat: no-repeat;
+    filter: blur(3px) saturate(0.72);
+}
+.onetap-case .case-section-backdrop::after { background: rgba(4, 24, 48, 0.9); }
+.case-study-page.onetap-case .case-hero-visual { width: 100%; margin-inline: 0; transform: none; }
+.onetap-case .case-hero-visual img { width: 100%; height: clamp(320px, 32vw, 440px); object-fit: cover; object-position: center 17%; background: #eaf4ff; }
+.onetap-case .case-overview-copy .case-prose p + p,
+.onetap-case #problem .case-prose p + p { margin-top: 22px; }
+.onetap-case #problem { align-items: start; }
+.onetap-case #process.case-section-visual { align-items: start; }
+.onetap-case .case-process-features { gap: 56px; }
+.onetap-problem-side { min-width: 0; display: grid; gap: 32px; align-self: start; }
+.onetap-research-question { align-self: start; padding: 10px 0 10px clamp(20px, 3vw, 32px); border: 0; border-left: 3px solid var(--case-accent); border-radius: 0; background: transparent; color: var(--case-ink); }
+.onetap-research-question span,
+.onetap-section-label { color: var(--case-accent); font-size: 12px; line-height: 1.4; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.onetap-research-question p { margin-top: 16px; font-size: clamp(24px, 2.2vw, 34px); line-height: 1.35; font-weight: 600; }
+.onetap-content-block { grid-column: 1 / -1; }
+.onetap-content-heading { max-width: 780px; }
+.onetap-content-heading > p:last-child { margin-top: 12px; color: var(--case-muted); font-size: 17px; line-height: 1.65; }
+.onetap-section-label { margin-bottom: 8px !important; }
+.onetap-case .case-reflection .onetap-section-label { color: var(--case-accent); }
+.onetap-login-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; width: 100%; }
+.onetap-login-comparison figure { min-width: 0; padding: 9px; border: 1px solid var(--case-line); border-radius: 10px; background: var(--case-surface); }
+.onetap-comparison-label { min-height: 76px; padding: 0 0 10px; }
+.onetap-comparison-label span { display: block; margin-bottom: 8px; color: var(--case-accent); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.onetap-comparison-label strong { display: block; font-size: 17px; line-height: 1.3; }
+.onetap-comparison-label p { margin-top: 5px; color: var(--case-muted); font-size: 12px; line-height: 1.4; }
+.onetap-comparison-frame { overflow: hidden; border: 1px solid var(--case-line); border-radius: 7px; background: #fff; }
+.onetap-comparison-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.onetap-condition-fixed .onetap-comparison-frame { aspect-ratio: 1.65 / 1; }
+.onetap-condition-fixed .onetap-comparison-frame img { object-position: center 25.5%; }
+.onetap-condition-flexible .onetap-comparison-frame { aspect-ratio: 1 / 1; }
+.onetap-condition-flexible .onetap-comparison-frame img { object-position: center 39%; }
+.onetap-comparison-caption { grid-column: 1 / -1; color: var(--case-muted); font-size: 14px; line-height: 1.55; }
+.onetap-guardian-feature { display: grid; grid-template-columns: 300px minmax(220px, 1fr); gap: 28px; align-items: center; max-width: 760px; }
+.onetap-guardian-feature figure { min-width: 0; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid var(--case-line); border-radius: 10px; background: #eef4fa; }
+.onetap-guardian-feature img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 19%; }
+.onetap-guardian-copy p:not(.onetap-section-label) { margin-top: 12px; color: var(--case-muted); font-size: 15px; line-height: 1.65; }
+.onetap-prototype-note { padding: 16px; border-left: 3px solid var(--case-accent); background: var(--case-surface); }
+.onetap-gallery-block,
+.onetap-study-block { padding-top: 40px; border-top: 1px solid var(--case-line); }
+.onetap-method-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 640px; margin-top: 24px; }
+.onetap-method-gallery figure { min-width: 0; }
+.onetap-method-gallery figure > div { display: flex; align-items: center; justify-content: center; height: 360px; padding: 10px; overflow: hidden; border: 1px solid var(--case-line); border-radius: 10px; background: #f7faff; }
+.onetap-method-gallery img { display: block; width: auto; max-width: 100%; height: 100%; object-fit: contain; object-position: center; border-radius: 5px; }
+.onetap-method-pin img,
+.onetap-method-nfc img {
+    clip-path: inset(13% 0 0);
+    transform: scale(1.15);
+    transform-origin: center bottom;
+}
+.onetap-method-gallery figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 10px; }
+.onetap-method-gallery figcaption strong { font-size: 15px; }
+.onetap-method-gallery figcaption span { color: var(--case-muted); font-size: 12px; text-align: right; }
+.onetap-outputs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; margin: 32px 0 0; padding: 0; list-style: none; }
+.onetap-outputs li { position: relative; padding: 16px 0 16px 24px; border-top: 1px solid var(--case-line); color: var(--case-muted); font-size: 17px; line-height: 1.55; }
+.onetap-outputs li::before { content: ''; position: absolute; top: 23px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--case-accent); }
 .tasky-case .case-main h1 span { font-size: 0.46em; }
 .tasky-case .case-section-backdrop::before { background-image: url('../assets/images/tasky-login-preview.svg'); filter: blur(5px) saturate(0.68); }
 .tasky-case .case-section-backdrop::after { background: rgba(18, 34, 41, 0.9); }
@@ -206,6 +270,7 @@
     .monthly-reports-case #process .case-process-features { transform: translateY(28px); }
     .monthly-reports-case .case-process-feature { grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr); }
     .monthly-reports-case .case-process-feature-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr); }
+    .onetap-case #process.case-section-visual { grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); gap: 44px; }
 }
 @media (min-width: 1200px) {
     /* Shared desktop hero proportions, based on the Monthly Reports composition. */
@@ -248,6 +313,8 @@
     .case-section.case-section-backdrop { padding-top: 72px; }
     .case-overview-copy .case-prose { padding-left: 0; }
     .case-design-question { box-shadow: 9px 9px 0 #f7bc00; }
+    .onetap-guardian-feature { grid-template-columns: 1fr; }
+    .onetap-guardian-feature figure { width: min(100%, 320px); aspect-ratio: 4 / 5; justify-self: center; }
 }
 
 @media (max-width: 540px) {
@@ -276,6 +343,14 @@
     .case-flow { grid-template-columns: 1fr; }
     .case-registration-shot { grid-template-columns: 1fr; }
     .case-design-question p { font-size: 24px; }
+    .onetap-research-question p { font-size: 24px; }
+    .onetap-login-comparison,
+    .onetap-method-gallery,
+    .onetap-outputs { grid-template-columns: 1fr; }
+    .onetap-comparison-caption { grid-column: auto; }
+    .onetap-method-gallery figure > div { height: 340px; }
+    .case-study-page.onetap-case .case-hero-visual { width: calc(100% + 16px); margin-inline: -8px !important; }
+    .onetap-case .case-hero-visual img { height: 400px; }
 }
 
 @media (max-width: 360px) {

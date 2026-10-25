@@ -55,7 +55,7 @@
   </script>
 
   <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="../css/style.css?v=129">
+  <link rel="stylesheet" href="../css/style.css?v=149">
     <script src="../js/page-navigation.js?v=2"></script>
 </head>
 
@@ -65,7 +65,12 @@
 if (document.fonts) {
     document.body.classList.add('portfolio-fonts-loading');
     Promise.all([400, 600, 700].map(weight => document.fonts.load(`${weight} 16px Eina`)))
-        .finally(() => document.body.classList.remove('portfolio-fonts-loading'));
+        .finally(() => {
+            document.body.classList.remove('portfolio-fonts-loading');
+            requestAnimationFrame(() => document.body.classList.add('portfolio-ready'));
+        });
+} else {
+    document.body.classList.add('portfolio-ready');
 }
 </script>
     
@@ -93,7 +98,7 @@ if (document.fonts) {
   <section class="portfolio-page-section" data-portfolio-page>
     <div class="portfolio-backdrop" aria-hidden="true">
         <div class="portfolio-backdrop-track">
-            <div class="portfolio-backdrop-slide"><img src="../assets/images/onetap-laboratory.webp" alt="" decoding="async"></div>
+            <div class="portfolio-backdrop-slide onetap-backdrop-slide"><img src="../assets/images/onetap/welcome.png" alt="" decoding="async"></div>
             <div class="portfolio-backdrop-slide"><img src="../assets/images/monthly-reports/report-page-2.webp" alt="" loading="lazy" decoding="async"></div>
             <div class="portfolio-backdrop-slide"><img src="../assets/images/code-clash/code-clash-home-current.webp" alt="" loading="lazy" decoding="async"></div>
             <div class="portfolio-backdrop-slide"><img src="../assets/images/tasky-login-preview.svg" alt="" loading="lazy" decoding="async"></div>
@@ -138,17 +143,17 @@ if (document.fonts) {
 
         <div class="projects-grid">
 
-            <article class="g-card card-red" data-load-reveal>
-                <div class="g-card-image onetap-preview-image" style="background-image: url('../assets/images/onetap-laboratory.webp');"></div>
+            <article class="g-card card-blue" data-load-reveal>
+                <div class="g-card-image onetap-preview-image" style="background-image: url('../assets/images/onetap/welcome.png');"></div>
                 <div class="g-card-body">
                     <h2>OneTap Authentication</h2>
-                    <p class="card-subtitle">Adaptive authentication designed to improve security without adding friction.</p>
+                    <p class="card-subtitle">Exploring how authentication choice, guidance, and recovery shape login usability.</p>
                     <div class="g-card-tags" aria-label="Research focus areas">
                         <span>UX Research</span>
                         <span>HCI</span>
                         <span>Prototype</span>
                     </div>
-                    <p class="project-status">In progress &middot; Fall 2026</p>
+                    <a class="g-btn project-case-link" href="onetap.html">View case study <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 
