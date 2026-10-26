@@ -7,7 +7,7 @@
   src: url('../assets/Fonts/Eina01-Regular.ttf');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -15,7 +15,7 @@
   src: url('../assets/Fonts/Eina01-SemiBold.ttf');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   src: url('../assets/Fonts/Eina01-Bold.ttf');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 /* =========================================
    2. GLOBAL STYLES
@@ -38,7 +38,7 @@ html {
 body{
 margin: 0; 
 padding: 0;
-font-family: 'Eina';
+font-family: 'Eina', Arial, sans-serif;
 max-width: 100%;
 overflow-x: clip;
 
