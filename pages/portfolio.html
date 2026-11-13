@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Portfolio | Keyon Bigelow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Keyon Bigelow's frontend and UX engineering projects, including the CODE/CLASH hackathon platform, Tasky, and responsive web experiences.">
+  <meta name="description" content="Explore Keyon Bigelow's frontend and UX engineering projects, including StudyMate AI, the CODE/CLASH hackathon platform, Tasky, and responsive web experiences.">
   <meta name="author" content="Keyon Bigelow">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://keyonbigelow.com/pages/portfolio.html">
@@ -46,6 +46,13 @@
           "description": "A collaborative task management platform built for GoPanda with responsive React interfaces and backend API integration."
         },
         {
+          "@type": "SoftwareApplication",
+          "name": "StudyMate AI",
+          "url": "https://studymates-ai-theta.vercel.app/",
+          "applicationCategory": "EducationalApplication",
+          "description": "An AI-powered study companion for understanding concepts, generating quizzes, and creating revision notes with Google Gemini."
+        },
+        {
           "@type": "CreativeWork",
           "name": "OneTap Authentication",
           "description": "Honors research exploring a multimodal authentication system that combines contextual signals and adaptive authentication."
@@ -55,7 +62,7 @@
   </script>
 
   <link rel="preload" as="font" href="../assets/Fonts/Eina01-Regular.ttf" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=150">
+  <link rel="stylesheet" href="../css/style.css?v=152">
     <script src="../js/page-navigation.js?v=2"></script>
 </head>
 
@@ -102,6 +109,7 @@ if (document.fonts) {
             <div class="portfolio-backdrop-slide"><img src="../assets/images/monthly-reports/report-page-2.webp" alt="" loading="lazy" decoding="async"></div>
             <div class="portfolio-backdrop-slide"><img src="../assets/images/code-clash/code-clash-home-current.webp" alt="" loading="lazy" decoding="async"></div>
             <div class="portfolio-backdrop-slide"><img src="../assets/images/tasky-login-preview.svg" alt="" loading="lazy" decoding="async"></div>
+            <div class="portfolio-backdrop-slide"><img src="../assets/images/studymate-ai.png" alt="" loading="lazy" decoding="async"></div>
         </div>
     </div>
     <div class="content-wrapper">
@@ -196,6 +204,20 @@ if (document.fonts) {
                         <span>API Integration</span>
                     </div>
                     <a class="g-btn project-case-link" href="tasky.html">View case study <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </article>
+
+            <article class="g-card card-blue" data-load-reveal>
+                <div class="g-card-image studymate-preview-image" role="img" aria-label="StudyMate AI interface with Ask AI, Explain Simply, Generate Quiz, and Study Notes modes"></div>
+                <div class="g-card-body">
+                    <h2>StudyMate AI</h2>
+                    <p class="card-subtitle">An AI-powered study companion for explaining concepts, generating quizzes, and creating revision notes.</p>
+                    <div class="g-card-tags" aria-label="Technologies used">
+                        <span>Google Gemini</span>
+                        <span>Next.js</span>
+                        <span>AI Integration</span>
+                    </div>
+                    <a class="g-btn project-case-link" href="https://studymates-ai-theta.vercel.app/" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 

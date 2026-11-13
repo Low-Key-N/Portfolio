@@ -887,6 +887,14 @@ border: none;
     background-repeat: no-repeat;
 }
 
+.studymate-preview-image {
+    background-color: #f8fafc;
+    background-image: url('../assets/images/studymate-ai.png');
+    background-size: 175% auto !important;
+    background-position: center 22% !important;
+    background-repeat: no-repeat;
+}
+
 .onetap-preview-image {
     background-color: #fff;
     background-repeat: no-repeat;
