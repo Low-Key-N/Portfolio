@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const playStartupIntro = () => {
+    const playStartupIntro = async () => {
         const forceIntro = /[?&]intro(?:=|&|$)/.test(window.location.search);
 
         if (!forceIntro && hasStartupIntroPlayed()) {
@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const favicon = document.querySelector('link[rel~="icon"]');
         const faviconSrc = favicon ? favicon.href : 'assets/images/keyon-favicon.png';
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const useCompactIntro = window.matchMedia('(max-width: 900px), (pointer: coarse)').matches;
 
         const intro = document.createElement('div');
         intro.className = 'startup-intro';
@@ -108,37 +107,43 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(intro);
 
         const helloText = intro.querySelector('.startup-hello-text');
-        const typeStartupHello = () => {
+        const wait = ms => new Promise(resolve => window.setTimeout(resolve, ms));
+        const waitForAnimations = fallback => {
+            if (!intro.getAnimations) return wait(fallback);
+
+            const active = intro.getAnimations({ subtree: true }).filter(animation =>
+                animation.playState === 'running' &&
+                Number.isFinite(animation.effect?.getComputedTiming().endTime)
+            );
+            return Promise.allSettled(active.map(animation => animation.finished));
+        };
+
+        const typeStartupHello = async () => {
             if (prefersReducedMotion) {
                 helloText.textContent = 'Hello';
                 return;
             }
 
             const message = 'Hello';
-            const typingSpeed = 115;
-            let index = 0;
-
-            const typeNextLetter = () => {
-                if (index >= message.length) return;
-                helloText.textContent += message.charAt(index);
-                index++;
-                window.setTimeout(typeNextLetter, typingSpeed);
-            };
-
-            window.setTimeout(typeNextLetter, 260);
+            await wait(260);
+            for (const letter of message) {
+                helloText.textContent += letter;
+                await wait(135);
+            }
         };
 
-        typeStartupHello();
+        if (prefersReducedMotion) {
+            await typeStartupHello();
+            await wait(160);
+        } else {
+            await Promise.all([typeStartupHello(), waitForAnimations(2260)]);
+            await wait(150);
+        }
 
-        const finishIntro = () => {
-            intro.classList.add('startup-intro-exit');
-            window.setTimeout(revealFeaturedWorks, prefersReducedMotion ? 0 : 120);
-            window.setTimeout(() => {
-                intro.remove();
-            }, prefersReducedMotion ? 120 : 800);
-        };
-
-        window.setTimeout(finishIntro, prefersReducedMotion ? 160 : (useCompactIntro ? 1650 : 2100));
+        intro.classList.add('startup-intro-exit');
+        window.setTimeout(revealFeaturedWorks, prefersReducedMotion ? 0 : 120);
+        await waitForAnimations(prefersReducedMotion ? 0 : 960);
+        intro.remove();
     };
 
     if (document.getElementById('hero-section')) playStartupIntro();
