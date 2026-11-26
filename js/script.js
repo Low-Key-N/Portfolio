@@ -658,11 +658,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.addEventListener('resize', () => {
-        if (!window.matchMedia('(max-width: 900px)').matches) {
-            closeMobileMenu();
-        }
-    });
+    const compactNavigation = window.matchMedia(
+        '(max-width: 900px), (max-width: 1100px) and (orientation: landscape) and (pointer: coarse)'
+    );
+    compactNavigation.addEventListener('change', closeMobileMenu);
 
     navEl.append(mobileMenuButton, mobileMenu);
 

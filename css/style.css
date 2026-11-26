@@ -3548,7 +3548,8 @@ html.theme-transitioning body *:not(.theme-heartbeat)::after {
     display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px),
+       (max-width: 1100px) and (orientation: landscape) and (pointer: coarse) {
     nav {
         background-color: rgba(0, 0, 0, 0.88) !important;
         backdrop-filter: blur(10px);
@@ -4732,6 +4733,7 @@ svg {
 @media (max-width: 1100px) and (orientation: landscape) and (pointer: coarse),
        (max-width: 900px) {
     nav {
+        display: flex !important;
         height: 64px !important;
         padding-left: max(16px, env(safe-area-inset-left)) !important;
         padding-right: max(16px, env(safe-area-inset-right)) !important;
@@ -4772,6 +4774,27 @@ svg {
         right: max(12px, env(safe-area-inset-right)) !important;
         top: calc(100% + 6px) !important;
         max-height: calc(100dvh - 76px) !important;
+    }
+}
+
+/* Give landscape tablets readable labels and roomy touch targets. */
+@media (min-width: 901px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+    nav .nav-left > a,
+    nav .nav-right > a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 18px !important;
+    }
+
+    nav .mobile-nav-menu {
+        width: min(320px, calc(100vw - 28px));
+    }
+
+    nav .mobile-nav-menu > a,
+    nav .mobile-theme-toggle {
+        min-height: 52px;
+        font-size: 18px !important;
     }
 }
 
