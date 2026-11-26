@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const compactNavigation = window.matchMedia(
-        '(max-width: 900px), (max-width: 1100px) and (orientation: landscape) and (pointer: coarse)'
+        '(max-width: 900px), (max-width: 999px) and (orientation: landscape) and (pointer: coarse)'
     );
     compactNavigation.addEventListener('change', closeMobileMenu);
 

@@ -3549,7 +3549,7 @@ html.theme-transitioning body *:not(.theme-heartbeat)::after {
 }
 
 @media (max-width: 900px),
-       (max-width: 1100px) and (orientation: landscape) and (pointer: coarse) {
+       (max-width: 999px) and (orientation: landscape) and (pointer: coarse) {
     nav {
         background-color: rgba(0, 0, 0, 0.88) !important;
         backdrop-filter: blur(10px);
@@ -4727,10 +4727,9 @@ svg {
 
 /* =========================================
    COMPACT TOUCH NAVIGATION
-   Keep one navigation system active on iPhones and sideways tablets. Earlier
-   landscape rules size the hero, but must not re-enable the desktop link rows.
+   Keep the compact menu on phones and narrow landscape touch screens.
    ========================================= */
-@media (max-width: 1100px) and (orientation: landscape) and (pointer: coarse),
+@media (max-width: 999px) and (orientation: landscape) and (pointer: coarse),
        (max-width: 900px) {
     nav {
         display: flex !important;
@@ -4777,16 +4776,7 @@ svg {
     }
 }
 
-/* Give landscape tablets readable labels and roomy touch targets. */
-@media (min-width: 901px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
-    nav .nav-left > a,
-    nav .nav-right > a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        font-size: 18px !important;
-    }
-
+@media (min-width: 901px) and (max-width: 999px) and (orientation: landscape) and (pointer: coarse) {
     nav .mobile-nav-menu {
         width: min(320px, calc(100vw - 28px));
     }
@@ -4795,6 +4785,54 @@ svg {
     nav .mobile-theme-toggle {
         min-height: 52px;
         font-size: 18px !important;
+    }
+}
+
+/* Match the desktop header proportions on landscape tablets. */
+@media (min-width: 1000px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+    nav {
+        display: flex !important;
+        height: 96px !important;
+        padding-inline: clamp(30px, 3vw, 40px) !important;
+    }
+
+    nav.nav-scrolled {
+        height: 80px !important;
+    }
+
+    nav .nav-left,
+    nav .nav-right {
+        gap: clamp(20px, 2vw, 28px) !important;
+    }
+
+    nav .nav-center {
+        position: absolute !important;
+        left: 50% !important;
+        height: 100% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    body nav #logo {
+        font-size: clamp(38px, 3.5vw, 40px) !important;
+        line-height: 1 !important;
+    }
+
+    body nav .nav-left > a,
+    body nav .nav-right > a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 20px !important;
+    }
+
+    nav .social-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    nav .toggle-icon {
+        width: 26px !important;
+        height: 26px !important;
     }
 }
 
